@@ -1,0 +1,198 @@
+{"attribut": [{
+	"name": "height", 
+	"type": "select", 
+	"data": [
+		{"name": "4 - 7m", "value": "7"}, 
+		{"name": "2 - 4m", "value": "4"}, 
+		{"name": "1 - 2m", "value": "2"}, 
+		{"name": "&lt; 1m", "value": "1"}
+	]
+},{
+	"name": "cover", 
+	"type": "select", 
+	"data": [
+		{"name": "0 - 10%", "value": "10"}, 
+		{"name": "11 - 25%", "value": "25"}, 
+		{"name": "26 - 50%", "value": "50"}, 
+		{"name": "51 - 75%", "value": "75"}, 
+		{"name": "76 - 100%", "value": "100"} 
+	] 
+},{
+	"name": "density", 
+	"type": "select", 
+	"data": [
+		{"value": "A", "name": "&gt; 80%"}, 
+		{"value": "B", "name": "60 - 80%"}, 
+		{"value": "C", "name": "40 - 60%"}, 
+		{"value": "D", "name": "25 - 40%"}, 
+		{"value": "NA", "name": "&lt; 25%"} 
+	] 
+},{
+	"name": "trees", 
+	"type": "select", 
+	"data": [
+		{"value": "1", "name": "&gt; 22m"}, 
+		{"value": "2", "name": "17 - 22m"}, 
+		{"value": "3", "name": "12 - 17m"}, 
+		{"value": "4", "name": "7 - 12m"}, 
+		{"value": "5", "name": "4 - 7m"}, 
+		{"value": "6", "name": "2 - 4m"}, 
+		{"value": "7", "name": "&lt; 2m"} 
+	] 
+},{
+	"name": "drain", 
+	"type": "select", 
+	"data": [
+		{"name": "Excessif", "value": "0"},
+		{"name": "Rapide", "value": "1"},
+		{"name": "Bon", "value": "2"},
+		{"name": "Mode&#769re&#769", "value": "3"},
+		{"name": "Imparfait", "value": "4"},
+		{"name": "Mauvais", "value": "5"},
+		{"name": "Tre&#768s mauvais", "value": "6"} 
+	]
+},{
+	"name": "depot", 
+	"type": "select", 
+	"data": [
+		{"name": "Sable", "value": "2A, 2AE, 2AK, 2AT, 2B, 2BD, 2BP, 2BE, 4GS, 4P, 5S, 6S, 9A, 9S"}, 
+		{"name": "Limon", "value": "3A, 3AC, 3AE, 3AN, 3D, 3DD, 3DA, 3DE, 4A, 4GA, 4GD, 8C"},
+		{"name": "Argile", "value": "5A, 5G, 8G, 8P"},		
+		{"name": "Gravier", "value": "1A, 1AA, 1AC, 1AS, 1AD, 1AB, 1B, 1BD, 1BT, 1BP, 1BC, 1BN, 1BG, 1BF, 8A"},		
+		{"name": "Roc", "value": "6G, 8E, 8F, R, RS, RC"},		
+		{"name": "Organique", "value": "7E, 7T"} 	
+	]
+},{
+	"name": "age", 
+	"type": "select", 
+	"data": [
+		{"name": "3 - 8ans", "value":"A"}, 
+		{"name": "9 - 12ans", "value":"B"}, 
+		{"name": "2ans, 13 - 20ans", "value":"C"}, 
+		{"name": "1ans, &gt; 21ans", "value":"D"} 
+	]	
+},{
+	"name": "ecological", 
+	"type": "select", 
+	"data": [
+	  {"value" : "MS1", "name": "MS1"}, 
+	  {"value" : "MS2", "name": "MS2"}, 
+	  {"value" : "MS4", "name": "MS4"}, 
+	  {"value" : "MS6", "name": "MS6"}, 
+	  {"value" : "MS7", "name": "MS7"}, 
+	  {"value" : "RB1", "name": "RB1"}, 
+	  {"value" : "RB2", "name": "RB2"}, 
+	  {"value" : "RB5", "name": "RB5"}, 
+	  {"value" : "RC3", "name": "RC3"}, 
+	  {"value" : "RE1", "name": "RE1"}, 
+	  {"value" : "RE2", "name": "RE2"}, 
+	  {"value" : "RE3", "name": "RE3"}, 
+	  {"value" : "RE4", "name": "RE4"}, 
+	  {"value" : "RE7", "name": "RE7"}, 
+	  {"value" : "RP1", "name": "RP1"}, 
+	  {"value" : "RS1", "name": "RS1"}, 
+	  {"value" : "RS2", "name": "RS2"}, 
+	  {"value" : "RS3", "name": "RS3"}, 
+	  {"value" : "RS4", "name": "RS4"}, 
+	  {"value" : "RS5", "name": "RS5"}, 
+	  {"value" : "RS7", "name": "RS7"}, 
+	  {"value" : "RT1", "name": "RT1"}, 
+	  {"value" : "LA1", "name": "LA1"}, 
+	  {"value" : "LA2", "name": "LA2"}, 
+	  {"value" : "LA3", "name": "LA3"}, 
+	  {"value" : "MA1", "name": "MA1"}, 
+	  {"value" : "MA2", "name": "MA2"}, 
+	  {"value" : "MA3", "name": "MA3"}, 
+	  {"value" : "TA1", "name": "TA1"}, 
+	  {"value" : "TA2", "name": "TA2"}, 
+	  {"value" : "TOB", "name": "TA3"}, 
+	  {"value" : "TOF", "name": "TOF"} 
+	]
+},{
+	"name":  "first_physical", 
+	"type": "select", 
+	"data": [
+		{"value": "0", "name": "0"}, 
+		{"value": "1", "name": "1"}, 
+		{"value": "2", "name": "2"}, 
+		{"value": "3", "name": "3"}, 
+		{"value": "4", "name": "4"}, 
+		{"value": "5", "name": "5"}, 
+		{"value": "6", "name": "6"}, 
+		{"value": "7", "name": "7"}, 
+		{"value": "8", "name": "8"}, 
+		{"value": "9", "name": "9"} 
+	]
+},{
+	"name": "second_physical", 
+	"type": "select", 
+	"data": [
+		{"value": "A", "name": "A"}, 
+		{"value": "B", "name": "B"}, 
+		{"value": "F", "name": "F"}, 
+		{"value": "H", "name": "H"}, 
+		{"value": "K", "name": "K"}, 
+		{"value": "L", "name": "L"}, 
+		{"value": "M", "name": "M"}, 
+		{"value": "O", "name": "O"}, 
+		{"value": "P", "name": "P"}, 
+		{"value": "S", "name": "S"}, 
+		{"value": "U", "name": "U"} 
+	]
+},{
+	"name": "essence", 
+	"type": "select",
+	"data": [
+		{"name": "Bouleau a&#768 papier", "value": "BP", "optgroup": "Feuillus"}, 
+		{"name": "Bouleau gris", "value": "BG", "optgroup": "Feuillus"},  
+		{"name": "Bouleau jaune", "value": "BJ", "optgroup": "Feuillus"},  
+		{"name": "Caryer a&#768 fruits doux", "value": "CF", "optgroup": "Feuillus"},  
+		{"name": "Caryer cordiforme", "value": "CC", "optgroup": "Feuillus"},  
+		{"name": "Cerisier tardif", "value": "CT", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne a&#768 gros fruits", "value": "CG", "optgroup": "Feuillus"}, 
+ 		{"name": "Che&#770ne bicolore", "value": "CI", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne blanc", "value": "CB", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne rouge", "value": "CR", "optgroup": "Feuillus"},  	
+		{"name": "E&#769rable argente&#769", "value": "EA", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable noir", "value": "EI", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable a&#768 sucre", "value": "ES", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable rouge", "value": "EO", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne d&#39Ame&#769rique", "value": "FA", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne de Pennsylvanie", "value": "FP", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne noir", "value": "FO", "optgroup": "Feuillus"},  
+		{"name": "Hetre a&#768 grandes feuilles", "value": "HG", "optgroup": "Feuillus"},  
+		{"name": "Noyer cendre", "value": "NC", "optgroup": "Feuillus"},  
+		{"name": "Noyer noir", "value": "NN", "optgroup": "Feuillus"},  
+		{"name": "Orme d&#39Ame&#769rique", "value": "OA", "optgroup": "Feuillus"},  
+		{"name": "Orme de thomas", "value": "OA", "optgroup": "Feuillus"},  
+		{"name": "Orme rouge", "value": "OO", "optgroup": "Feuillus"},  
+		{"name": "Ostryer de virginie", "value": "OV", "optgroup": "Feuillus"},  
+		{"name": "Peuplier a&#768 feuilles delto&#239des", "value": "PL", "optgroup": "Feuillus"},  
+		{"name": "Peuplier a&#768 grandes dents", "value": "PD", "optgroup": "Feuillus"},  
+		{"name": "Peuplier baumier", "value": "PA", "optgroup": "Feuillus"},  
+		{"name": "Peuplier faux-tremble", "value": "PT", "optgroup": "Feuillus"},  
+		{"name": "Tilleul d&#39Ame&#769rique", "value": "TA", "optgroup": "Feuillus"},  
+		{"name": "E&#769pinette blanche", "value": "EB", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette noire", "value": "EN", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette rouge", "value": "EU", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette de Norve&#768ge", "value": "EV", "optgroup": "Re&#769sineux"},  
+		{"name": "Me&#769le&#768ze laricin", "value": "ML", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin blanc", "value": "PB", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin gris", "value": "PG", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin rigide", "value": "PC", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin rouge", "value": "PR", "optgroup": "Re&#769sineux"},  
+		{"name": "Pruche de l&#39est", "value": "PU", "optgroup": "Re&#769sineux"},  
+		{"name": "Sapin baumier", "value": "SB", "optgroup": "Re&#769sineux"},  
+		{"name": "Thuya occidental", "value": "TO", "optgroup": "Re&#769sineux"}
+	]
+},{
+	"name": "disturbance", 
+	"type": "select", 
+	"data": [
+		{"value": "scarifiage", "name": "Scarifiage"}, 
+		{"value": "bois_long", "name": "Abattage bois long"}, 
+		{"value": "bois_court", "name": "Abattage bois court"}, 
+		{"value": "erosion", "name": "E&#769rosion"}, 
+		{"value": "orniere", "name": "Ornie&#768re"} 
+	]
+}]}

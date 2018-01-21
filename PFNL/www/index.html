@@ -1,60 +1,2430 @@
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-
+<!doctype html>
+<!--<?php session_start(); -->
+<!--// store session data-->
+<!--if (isset($_SESSION['id']))-->
+<!--$_SESSION['id'] = $_SESSION['id']; -->
+<!--?>-->
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SIG en ligne pour PFNL</title>
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+	<!-- Favicon and touch icons -->
+	<link rel="icon" type="image/png" href="image/image/favicon.png" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="iqh/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="iqh/bootstrap/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="lib/magnific/dist/magnific-popup.css">
+	<!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-select.css"> -->
+	<!--<link rel="stylesheet" href="lib/jquery-ui-1.11.4/jquery-ui.css" type="text/css">-->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css">
+	<link rel="stylesheet" href="lib/open-layers-3/ol.css" type="text/css">
+	<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+
+
+	<!-- iCheck -->
+	<link rel="stylesheet" href="iqh/plugins/iCheck/flat/blue.css">
+	<link rel="stylesheet" href="iqh/plugins/iCheck/line/blue.css">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="iqh/plugins/datepicker/datepicker3.css">
+	<!-- Daterange picker -->
+	<link rel="stylesheet" href="iqh/plugins/daterangepicker/daterangepicker-bs3.css">
+	<!-- bootstrap wysihtml5 - text editor -->
+	<link rel="stylesheet" href="iqh/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css"> -->
+	<link rel="stylesheet" href="styles/style.css" type="text/css">
+	<link rel="stylesheet" href="styles/media-queries.css" type="text/css">
+	<link rel="stylesheet" href="styles/menu.css">
+	<!-- DataTables -->
+	<link rel="stylesheet" href="iqh/plugins/datatables/dataTables.bootstrap.css">
+	<!-- Bootstrap Color Picker -->
+	<link rel="stylesheet" href="iqh/plugins/colorpicker/bootstrap-colorpicker.min.css">
+
+
+
+
+	<style>
+
+		.info-panel {
+			position:absolute;
+			z-index: 1;
+		//background-color: blue;
+		}
+		.tooltip.in {
+			opacity: 1;
+			filter: alpha(opacity=100);
+		}
+		.tooltip.top .tooltip-arrow {
+			border-top-color: white;
+		}
+		.tooltip-inner {
+			border: 2px solid white;
+		}
+
+		a.check, a.legend {
+			color: inherit;
+			opacity: 0.5;
+		}
+		a.legend {
+			opacity: 0.9;
+		}
+		a.check:hover, a.legend:hover {
+			opacity: 1;
+		}
+
+		.info-text > small {
+			color: #777;
+		}
+
+		.chart-legend ul {
+			list-style: none;
+		}
+		.chart-legend li span{
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			margin-right: 5px;
+		}
+
+		#occupy li {
+			display: inline-block; important!
+		}
+		#occupy span {
+			width: 20px; important!
+		}
+		#occupy p {
+			font-size: 12px; !important
+		-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+
+		tr.selected {
+			background-color: #c4dcea; !important
+		}
+		td.dt-center, th.dt-center {
+			text-align: center;
+		}
+
+		h3.row-title {
+			color: #3C8DBC;
+			border-bottom: 1px solid #3C8DBC;
+		}
+
+		span[disabled] {
+			pointer-events: none;
+		}
+
+	</style>
+
+
 </head>
-
 <body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+<div class="wrapper"></div>
+<div id="header" class="navbar navbar-fixed-top">
+	<div id="logo" class="pull-left">
+		<a href="http://www.groupeagir.com/" target='_blank' >
+			<div class="img"></div>
+		</a>
+	</div>
+
+	<div id="gSignInWrapper">
+
+
+		<div class="navbar-custom-menu pull-right">
+			<ul class="nav navbar-nav">
+
+
+				<!-- User Account: style can be found in dropdown.less -->
+				<!--  <li class="dropdown user user-menu"  id="logout">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+				<!--i class="glyphicon glyphicon-user"></i-->
+				<!--<img src="iqh/dist/img/visual_pharm/user_male.png" class="user-image" alt="User Image" style="background-color: white; border-radius: 50%; ">
+                <span class="hidden-xs"><b> Connexion</b></span>
+              </a>
+              <ul class="dropdown-menu">
+
+                <!-- Menu Body -->
+				<!--<li class="user-body">
+                  <form>
+                    <div class="form-group has-feedback">
+                      <input type="email" name="email" class="form-control online " placeholder="Adresse courriel">
+                      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                      <input type="password" name="password" class="form-control online" placeholder="Mot de passe">
+                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-xs-4 col-xs-offset-8">
+                      <button type="button" class="btn btn-primary btn-block btn-flat online" data-toggle="tooltip" data-title="Terminer" onClick="userLogin(this)">
+                        <i class="fa fa-sign-in"></i>
+                      </button>
+                    </div><!-- /.col -->
+				<!--</div>
+              </li>
+              <!-- Menu Footer-->
+				<!-- <li class="user-footer online">
+                   <a href="iqh/pages/register.html" class="text-center" style="color: #C8C8C8; !important">
+                     <i class="fa fa-users"></i>
+                     <span> Demande d'inscription</span>
+                   </a>
+                   <!--a href="#" class="text-center" style="color: #C8C8C8; !important">
+                     <i class="fa fa-question-circle"></i>
+                     <span> Mot de passe oublie&#769</span>
+                   </a-->
+				<!--</li>
+              </ul>
+            </li>
+              <!-- lien vers le portail-->
+				<li><a href="http://portailpfnl.com"><span class="glyphicon glyphicon-circle-arrow-up"></span> Portail PFNL</a></li>
+
+			</ul>
+		</div>
+
+	</div>
+	<div id="gSignInWrapperIQH">
+		<div id="customBtnIQH" class="customGPlusSignIQH pull-right">
+			<span class="icon2"></span>
+			<span id="LoginText" class="buttonText">IQH</span>
+		</div>
+	</div>
+
+
+	<div class="search-bar">
+		<div class="col-sm-3 col-md-3 pull-left">
+			<form class="navbar-form" role="search">
+				<div class="input-group">
+					<!-- <input type="text" class="form-control" placeholder="Search" name="q"> -->
+					<div id="geocodage">
+						<input id="adress" class="controls" type="text" placeholder=" Recherche par nom, rue, localité, etc." onFocus="javascript:this.value=''"/>
+					</div>
+					<!-- Control Sidebar Toggle Button -->
+					<!--<li>-->
+						<!--<a href="#" data-toggle="control-sidebar"><i class="fa fa-sliders"></i></a>-->
+					<!--</li>-->
+					<div class="input-group-btn">
+						<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Control Sidebar -->
+	<!--<aside class="control-sidebar control-sidebar-dark">
+		<!-- Create the tabs -->
+	<!--<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="layer active"><a href="#control-sidebar-layers-tab" data-toggle="tab"><i class="fa fa-map-signs"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+		<!--<div class="tab-content">
+          <!-- Layers tab content -->
+		<!--<div class="tab-pane active" id="control-sidebar-layers-tab">
+
+
+
+          <h3 class="control-sidebar-heading">
+            Pour des fonctionnalités supplémentaires, veuillez-vous connecter.
+
+          </h3>
+
+
+
+
+        </div><!-- /.tab-pane -->
+
+		<!-- </div><!-- /.tab-content -->
+	<!--</aside><!-- /.control-sidebar -->
+
+	<!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+	<!--<div class="control-sidebar-bg" ></div>
+
+
+
+	<!-- Menu principal SIG -->
+	<div id="pulldown" class="">
+		<div id="pulldown-content" class="content collapse in" aria-expanded="true" >
+
+			<div class="panel"> <!-- Base -->
+				<a id="catalogHeading" class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#pulldown-content" href="#catalog2"  aria-expanded="false">
+					<i class="visible-collapsed icon-sort-right"></i>
+					<i class="hidden-collapsed fa fa-sort-desc"></i>
+					<i class="fa fa-map"></i>
+					<span class="">Fonds de carte</span>
+				</a>
+				<div id="catalog2" class="collapse" aria-expanded="false" style="height: 0px;">
+					<!-- Définition du groupe Open Data -->
+					<ul class="group">
+						<a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#basemap"  aria-expanded="false">
+							<i class="visible-collapsed fa fa-plus-square-o"></i>
+							<i class="hidden-collapsed fa fa-minus-square-o"></i>
+						</a>
+						<li id="layer0" >
+							<label class="checkbox" for="visible0">
+								<input id="visible0" class="visible" type="checkbox"/>Données ouvertes
+							</label>
+						</li>
+					</ul>
+					<ul id="basemap" class="layertree collapse">
+						<li id="layer00">
+							<label class="checkbox" for="visible00">
+								<input id="visible00" class="visible" type="checkbox"/>OpenStreetMap
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacity</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+							</fieldset>
+						</li>
+					</ul>
+					<ul class="group">
+						<a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#basemap2"  aria-expanded="false">
+							<i class="visible-collapsed fa fa-plus-square-o"></i>
+							<i class="hidden-collapsed fa fa-minus-square-o"></i>
+						</a>
+						<li id="layer1" >
+							<label class="checkbox" for="visible1">
+								<input id="visible1" class="visible" type="checkbox"/>Données ESRI
+							</label>
+						</li>
+					</ul>
+					<ul id="basemap2" class="layertree collapse">
+						<li id="layer12">
+							<label class="checkbox" for="visible12">
+								<input id="visible12" class="visible" type="checkbox"/>Imagerie ESRI
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacity</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+							</fieldset>
+						</li>
+						<li id="layer11">
+							<label class="checkbox" for="visible11">
+								<input id="visible11" class="visible" type="checkbox"/>Topographie ESRI
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacity</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+							</fieldset>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="panel"> <!-- Sélection des couches -->
+
+				<!-- Définitions du menu -->
+				<a id="catalogHeading" class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#pulldown-content" href="#catalog"  aria-expanded="false">
+					<i class="visible-collapsed icon-sort-right"></i>
+					<i class="hidden-collapsed fa fa-sort-desc"></i>
+					<i class="fa fa-th-list"></i>
+					<span class="">PFNL | Bleuet Sauvage</span>
+				</a>
+				<div id="catalog" class=" collapse" aria-expanded="false" style="height: 0px;"> <!-- ngIf: !globals.offline -->
+
+					<!-- Groupe Couche iqh1-->
+
+					<ul class="group">
+						<a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH1"  aria-expanded="false">
+							<i class="visible-collapsed fa fa-plus-square-o"></i>
+							<i class="hidden-collapsed fa fa-minus-square-o"></i>
+						</a>
+						<li id="layer2" >
+							<label class="checkbox" for="visible2">
+								<input id="visible2" class="visible" type="checkbox"/>Bleuet 1
+							</label>
+						</li>
+					</ul>
+
+					<ul id="IQH1" class="layertree collapse">
+						<li id="layer23">
+							<label class="checkbox" for="visible23">
+								<input id="visible23" class="visible" type="checkbox"/>IQH WMS
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+
+							</fieldset>
+						</li>
+					</ul>
+					<ul class="group">
+						<a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH1"  aria-expanded="false">
+							<i class="visible-collapsed fa fa-plus-square-o"></i>
+							<i class="hidden-collapsed fa fa-minus-square-o"></i>
+						</a>
+						<li id="layer3" >
+							<label class="checkbox" for="visible3">
+								<input id="visible2" class="visible" type="checkbox"/>Bleuet 2
+							</label>
+						</li>
+					</ul>
+
+					<ul id="IQH2" class="layertree collapse">
+						<li id="layer33">
+							<label class="checkbox" for="visible33">
+								<input id="visible23" class="visible" type="checkbox"/>IQH WMS
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+
+							</fieldset>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<div class="panel"> <!-- Service -->
+				<a id="catalogHeading" class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#pulldown-content" href="#catalog3"  aria-expanded="false">
+					<i class="visible-collapsed icon-sort-right"></i>
+					<i class="hidden-collapsed fa fa-sort-desc"></i>
+					<i class="fa fa-street-view"></i>
+					<span class="">Couches de service</span>
+				</a>
+				<div id="catalog3" class="collapse" aria-expanded="false" style="height: 0px;">
+					<!-- Définition du groupe Open Data -->
+					<ul class="group">
+						<a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#weather"  aria-expanded="false">
+							<i class="visible-collapsed fa fa-plus-square-o"></i>
+							<i class="hidden-collapsed fa fa-minus-square-o"></i>
+						</a>
+						<li id="layer4" >
+							<label class="checkbox" for="visible4">
+								<input id="visible4" class="visible" type="checkbox"/>Météo
+							</label>
+						</li>
+					</ul>
+					<ul id="weather" class="layertree collapse">
+						<li id="layer40">
+							<label class="checkbox" for="visible40">
+								<input id="visible40" class="visible" type="checkbox"/>Précipitation 6h
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+								<IMG alt="legende" src="http://geo.weather.gc.ca/geomet/?SERVICE=WMS&version=1.0.0&layer=RDPA.6P_PR&REQUEST=getlegendgraphic&FORMAT=image/png">
+							</fieldset>
+						</li>
+						<li id="layer41">
+							<label class="checkbox" for="visible41">
+								<input id="visible41" class="visible" type="checkbox"/>Radar/Pluie
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+							</fieldset>
+						</li>
+						<li id="layer42">
+							<label class="checkbox" for="visible42">
+								<input id="visible42" class="visible" type="checkbox"/>Température
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+								<IMG alt="legende" src="http://geo.weather.gc.ca/geomet/?SERVICE=WMS&version=1.0.0&layer=HRDPS.CONTINENTAL_TT&REQUEST=getlegendgraphic&FORMAT=image/png">
+							</fieldset>
+						</li>
+					</ul>
+					<ul class="group">
+						<a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#travel"  aria-expanded="false">
+							<i class="visible-collapsed fa fa-plus-square-o"></i>
+							<i class="hidden-collapsed fa fa-minus-square-o"></i>
+						</a>
+						<li id="layer5" >
+							<label class="checkbox" for="visible5">
+								<input id="visible5" class="visible" type="checkbox"/>Topographie
+							</label>
+						</li>
+					</ul>
+					<ul id="travel" class="layertree collapse">
+						<li id="layer50">
+							<label class="checkbox" for="visible50">
+								<input id="visible50" class="visible" type="checkbox"/>Réseau hydro
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+							</fieldset>
+						</li>
+						<li id="layer51">
+							<label class="checkbox" for="visible51">
+								<input id="visible51" class="visible" type="checkbox"/>Réseau routier
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+							</fieldset>
+						</li>
+						<li id="layer52">
+							<label class="checkbox" for="visible52">
+								<input id="visible52" class="visible" type="checkbox"/>Chemins
+							</label>
+							<fieldset class="layer">
+								<div class="col-md-4">Opacité</div>
+								<input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+							</fieldset>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<!--<div class="panel"> <!-- Outils -->
+			<!--	<a id="toolsHeading" class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#pulldown-content" href="#tools" aria-expanded="false">
+                    <i class="visible-collapsed icon-sort-right"></i>
+                    <i class="hidden-collapsed fa fa-sort-desc"></i>
+                    <i class="fa fa-wrench"></i>
+                    <span translate="" class="">Outils</span>
+                </a>
+                <div id="tools" class="collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body panel-body-wide panel-cursor">
+                        <ul>
+                            <li>
+                                <a href="#" id="start_filter" >
+                                    <i class="fa fa-cogs"></i>
+                                    <span translate="" class="">Créateur IQH</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="start_mesure" >
+                                    <i class="fa fa-crop"></i>
+                                    <span translate="" class="">Mesurer</span>
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="#" id="query" >
+                                    <i class="fa fa-question-circle"></i>
+                                    <span translate="" class="">Information</span>
+                                </a>
+                            </li> -->
+			<!--<li>
+                <a href="#" id="start_outils" >
+                    <i class="fa fa-pencil-square-o"></i>
+                    <span translate="" class="">Planification projet</span>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+</div>
+
+
+</div>
+<!-- Bouton MENU Close -->
+			<button id="menu-button" type="button" data-toggle="collapse" data-target="#pulldown-content" class="toggle btn btn-default" aria-expanded="true">
+					<span class="hidden-collapsed">
+						<i class="icon-caret-up"></i>
+						<span translate="" class="">Fermer</span>
+						<span class="phone-toggle">×</span>
+					</span>
+				<span class="visible-collapsed">
+						<i class="fa fa-bars"></i>
+						<i class="icon-caret-down"></i>
+						<span translate="" class="">Menu</span>
+					</span>
+			</button>
+		</div>
+	</div>
+
+	<!-- Carte d'Openlayers -->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div id="map" class="map" style="height:960px !important">
+					<!--<div id="mouse-position"></div>-->
+				</div>
+				<!--<div id="popup" class="ol-popup">-->
+					<!--<a href="#" id="popup-closer" class="ol-popup-closer circle"></a>-->
+					<!--<div id="popup-content"></div>-->
+				<!--</div>-->
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Boutton de connexion -->
+	<!--<div draggable="true" class="authentication" id="draggable">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                    <div class="account-wall">
+                        <form class="form-signin" action="login.php" method="post">
+                        <input type="text" name="login" class="form-control" placeholder="Identifiant" required autofocus>
+                        <input type="password" name="pwd" class="form-control" placeholder="Mot de passe" required>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Valider</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-</body>
 
+
+
+    <!-- <div id="tabs2" class="draggable" >
+        <img id="fermer" src="image/icone/close.png" alt="Fermer">
+        <ul>
+            <li><a href="#tabs2-1">Localisation</a></li>
+            <li><a href="#tabs2-2">Poisson</a></li>
+            <li><a href="#tabs2-3">Herpetofaune</a></li>
+        </ul>
+        <div id="tabs2-1" class="popup-tabs"></div>
+        <div id="tabs2-2" class="popup-tabs"></div>
+        <div id="tabs2-3" class="popup-tabs"></div>
+    </div> -->
+
+	<!-- Mesurer -->
+	<!--<div id="dialog" class="mesurer" title="Measure Tool">
+        <form class="form-inline">
+          <label>Type de mesure &nbsp;</label>
+            <select id="type">
+              <option value="length">Distance</option>
+              <option value="area">Surface</option>
+            </select>
+            <ol id="measureOutput" reversed></ol>
+        </form>
+    </div>
+
+
+
+    <!-- Outils et composantes -->
+	<!--<div id="dialog4" title="Planification projet">-->
+		<!--<form class="form-inline">-->
+			<!--<ul class="sidebar-menu">-->
+
+
+			<!--</ul>-->
+
+		<!--</form>-->
+	<!--</div>-->
+
+	<div id="messageFin">Copyright © 2017-2018 Université de Sherbrooke. Tous droits réservés.</div>
+
+
+	<!-- Modal - Info messages -->
+	<!--<div class="modal fade" id="messages">-->
+		<!--<div class="modal-dialog">-->
+			<!--<div class="modal-content">-->
+				<!--<div class="modal-header">-->
+					<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+					<!--<h4 class="modal-title"> </h4>-->
+				<!--</div>-->
+				<!--<div class="modal-body">-->
+				<!--</div>-->
+				<!--<div class="modal-footer">-->
+					<!--<button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer"><i class="fa fa-check"></i></button>-->
+				<!--</div>-->
+			<!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+		<!--</div>&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+	<!--</div>&lt;!&ndash; /.modal#marker-group-editor &ndash;&gt;-->
+
+	<!-- Modal - Load project's feature params' window -->
+	<!--<div class="modal fade" id="load-project">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"> </h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group" id="project-list">
+                <label> Liste des projets disponibles</label>
+                <select class="form-control" id="project" name="project">
+                  <option style="display: none;"> Projets disponibles</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler"><i class="fa fa-times"></i></button>
+            <button type="button" class="btn btn-primary" data-toggle="tooltip" data-original-title="Terminer" onClick="loadProject( this )"><i class="fa fa-check"></i></button>
+          </div>
+        </div><!-- /.modal-content -->
+	<!--</div><!-- /.modal-dialog -->
+	<!--</div><!-- /.modal#marker-group-editor -->
+
+	<!-- Modal - Export project on local computer -->
+	<!--<div class="modal fade" id="publisher-local">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"> </h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group" id="format">
+                <label> Format du fichier </label>
+                <select class="form-control" name="extension">
+                  <option style="display: none;"> Format</option>
+                  <option> GeoJSON</option>
+                  <option> GPX (point et ligne seulement)</option>
+                  <option> KML</option>
+                </select>
+              </div>
+              <div class="form-group" id="projection" style="display:none">
+                <label> Système de Référence Spatiale</label>
+                <select class="form-control" id="srs" name="srs">
+                  <option style="display: none;"> SRS</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler"><i class="fa fa-times"></i></button>
+            <button type="button" class="btn btn-primary" onClick="getFeatureContent( this )" data-toggle="tooltip" data-original-title="Terminer"><i class="fa fa-check"></i></button>
+          </div>
+        </div><!-- /.modal-content -->
+	<!--  </div><!-- /.modal-dialog -->
+	<!-- </div><!-- /.modal#publisher-local -->
+
+	<!-- Modal - Save personal's project -->
+	<!--<div class="modal fade" id="publisher-personal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"> </h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group" id="filename">
+                <label> Nom du projet</label>
+                <input type="text" class="form-control" name="filename" maxlenght="15" placeholder="Fichier">
+              </div>
+              <div class="form-group" id="personal-comments" name="comments">
+                <label> Commentaire ( <small class="text-counter">200</small> )</label>
+                <textarea class="textarea" placeholder="Ajoutez un bref commentaire. " style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="200" oninput="textCounter( this )"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler"><i class="fa fa-times"></i></button>
+            <button type="button" class="btn btn-primary" onClick="getFeatureContent( this )" data-toggle="tooltip" data-original-title="Terminer"><i class="fa fa-check"></i></button>
+          </div>
+        </div><!-- /.modal-content -->
+	<!--</div><!-- /.modal-dialog -->
+	<!--</div><!-- /.modal#publisher-personal -->
+
+
+	<!-- Modal - Update project's comments -->
+	<!--<div class="modal fade" id="project-comments">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group" id="project-comments" name="comments">
+                <label> Commentaire ( <small class="text-counter">200</small> )</label>
+                <textarea class="textarea" placeholder="Ajoutez un bref commentaire. " style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="200" oninput="textCounter( this )"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler"><i class="fa fa-times"></i></button>
+            <button type="button" class="btn btn-primary" onClick="setComments( this )" data-toggle="tooltip" data-original-title="Terminer"><i class="fa fa-check"></i></button>
+          </div>
+        </div><!-- /.modal-content -->
+	<!-- </div><!-- /.modal-dialog -->
+	<!-- </div><!-- /.modal#publisher-personal -->
+
+	<!-- <div class="modal fade" id="marker-label-editor">
+         <div class="modal-dialog modal-sm">
+           <div class="modal-content">
+             <div class="modal-body">
+               <form role="form">
+                 <div class="form-group" id="feature-type">
+                   <label> Type d'entite&#769</label>
+                   <select class="form-control" id="feature-type" onchange="setFeatureType( this )">
+                     <option geom="all" type="defaut" value="De&#769faut"> De&#769faut</option>
+                     <option geom="point" type="achat" value="Poste d\&#39;achat"> Poste d'achat</option>
+                     <option geom="point" type="validation" value="Validation"> Validation</option>
+                     <option geom="linestring" type="chemin" value="Chemin d\&#39;accès"> Chemin d'accès</option>
+                     <option geom="polygon" type="site" value="Site d\&#39;exploitation"> Site d'exploitation</option>
+                   </select>
+                 </div>
+                 <div class="form-group" id="feature-name">
+                   <label> Nom de l'entite&#769</label>
+                   <input type="text" class="form-control" name="Nom" placeholder="Nom">
+                 </div>
+               </form>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler">
+                 <i class="fa fa-times"></i>
+               </button>
+               <button type="button" class="btn btn-primary" onClick="setFeatureLabel( this )" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer">
+                 <i class="fa fa-check"></i>
+               </button>
+             </div>
+           </div><!-- /.modal-content -->
+	<!-- </div><!-- /.modal-dialog -->
+	<!-- </div><!-- /.modal#marker-group-editor -->
+
+	<!-- <div class="modal fade" id="marker-style-editor">
+       <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+           <div class="modal-body">
+             <form role="form">
+               <div class="form-group" id="fill">
+                 <label> Couleur de l'entite&#769</label>
+                 <div class="input-group my-colorpicker" id="fill">
+                   <input type="text" class="form-control">
+                   <div class="input-group-addon">
+                     <i></i>
+                   </div>
+                 </div><!-- /.input group -->
+	<!--</div><!-- /.form group -->
+	<!--   </form>
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler">
+         <i class="fa fa-times"></i>
+       </button>
+       <button type="button" class="btn btn-success pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Re&#769initialiser" onClick="resetFeatureStyle( this )">
+         <i class="fa fa-refresh"></i>
+       </button>
+       <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Sauvegarder" onClick="setFeatureStyle(this)">
+         <i class="fa fa-check"></i>
+       </button>
+     </div>
+   </div><!-- /.modal-content -->
+	<!--  </div><!-- /.modal-dialog -->
+	<!-- </div><!-- /.modal#marker-group-editor -->
+
+	<!-- <div class="modal fade" id="marker-valid-blueberry">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-body">
+             <form role="form">
+
+               <div class="row" id="general">
+                 <div class="col-xs-10 col-xs-offset-1">
+                   <h3 class="row-title">Ge&#769ne&#769ral</h3>
+                 </div>
+                 <div class="col-xs-8 col-xs-offset-2">
+                   <div class="form-group" id="no_hsi">
+                     <label> # IQH </label>
+                     <select class="form-control" name="no_hsi" section="iqh">
+                       <option value="">IQH</option>
+                     </select>
+                   </div>
+                 </div>
+                 <div class="col-xs-8 col-xs-offset-2">
+                   <div class="form-group" id="forest_stand">
+                     <label> Peuplement d&#39origine</label>
+                     <input type="text" class="form-control" name="forest_stand" maxlength="25" placeholder="Peuplement">
+                   </div>
+                 </div>
+               </div><!-- /.row#general -->
+
+	<!-- <div class="row" id="blueberry">
+       <div class="col-xs-10 col-xs-offset-1">
+         <h3 class="row-title">Bleuet sauvage</h3>
+       </div>
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="bluerry-cover">
+           <label> Recouvrement </label>
+           <select class="form-control" name="bluerry_cover" section="cover">
+             <option value="">Valeur (%)</option>
+           </select>
+         </div>
+       </div>
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="blueberry-fruits">
+           <label> Fleurs - Fruits </label>
+           <select class="form-control" name="blueberry_fruits">
+             <option value="">Valeur (qlte)</option>
+             <option value="faible">Faible</option>
+             <option value="moyen">Moyen</option>
+             <option value="fort">Fort</option>
+           </select>
+         </div>
+       </div>
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="blueberry-potential">
+           <label> Productivite&#769 </label>
+           <select class="form-control" name="blueberry_potential">
+             <option value="">Valeur (qlte)</option>
+             <option value="faible">Faible</option>
+             <option value="moyen">Moyen</option>
+             <option value="eleve">E&#769leve&#769</option>
+           </select>
+         </div>
+       </div>
+     </div><!-- /.row#blueberry -->
+
+	<!--<div class="row" id="competition">
+      <div class="col-xs-10 col-xs-offset-1">
+        <h3 class="row-title">Compe&#769tition</h3>
+      </div>
+      <div class="col-xs-10 col-xs-offset-2">
+        <div class="form-group" id="competition-herbaceous">
+          <label> Strate herbace&#769e </label>
+          <div class="form-inline" id="herbaceous-layer" name="species-1">
+            <select class="form-control" name="herbaceous_name_1" section="essence">
+              <option value="">1ere espe&#768ce</option>
+            </select>
+            <select class="form-control" name="herbaceous_cover_1" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+          </div>
+          <div class="form-inline" id="herbaceous-layer" name="species-2">
+            <select class="form-control" name="herbaceous_name_2" section="essence">
+              <option value="">2e espe&#768ce</option>
+            </select>
+            <select class="form-control" name="herbaceous_cover_2" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+          </div>
+          <div class="form-inline" id="herbaceous-layer" name="species-3">
+            <select class="form-control" name="herbaceous_name_3" section="essence">
+              <option value="">3e espe&#768ce</option>
+            </select>
+            <select class="form-control" name="herbaceous_cover_3" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+          </div>
+          <div class="form-inline" id="herbaceous-layer" name="species-4">
+            <select class="form-control" name="herbaceous_name_4" section="essence">
+              <option value="">4e espe&#768ce</option>
+            </select>
+            <select class="form-control" name="herbaceous_cover_4" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-10 col-xs-offset-2">
+        <div class="form-group" id="competition-shrubby">
+          <label> Strate arbustive </label>
+          <div class="form-inline" id="shrub-layer" name="species-1">
+            <select class="form-control" name="shrub_name_1" section="essence">
+              <option value="">1ere espe&#768ce</option>
+            </select>
+            <select class="form-control" name="shrub_cover_1" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+            <select class="form-control" name="shrub_height_1" section="height">
+              <option value="">Hauteur</option>
+            </select>
+          </div>
+          <div class="form-inline" id="shrub-layer" name="species-2">
+            <select class="form-control" name="shrub_name_2" section="essence">
+              <option value="">2e espe&#768ce</option>
+            </select>
+            <select class="form-control" name="shrub_cover_2" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+            <select class="form-control" name="shrub_height_2" section="height">
+              <option value="">Hauteur</option>
+            </select>
+          </div>
+          <div class="form-inline" id="shrub-layer" name="species-3">
+            <select class="form-control" name="shrub_name_3" section="essence">
+              <option value="">3e espe&#768ce</option>
+            </select>
+            <select class="form-control" name="shrub_cover_3" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+            <select class="form-control" name="shrub_height_3" section="height">
+              <option value="">Hauteur</option>
+            </select>
+          </div>
+          <div class="form-inline" id="shrub-layer" name="species-4">
+            <select class="form-control" name="shrub_name_4" section="essence">
+              <option value="">4e espe&#768ce</option>
+            </select>
+            <select class="form-control" name="shrub_cover_4" section="cover">
+              <option value="">Recouvrement</option>
+            </select>
+            <select class="form-control" name="shrub_height_4" section="height">
+              <option value="">Hauteur</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.row#competition -->
+
+	<!-- <div class="row" id="cover">
+       <div class="col-xs-10 col-xs-offset-1">
+         <h3 class="row-title">Couvert forestier</h3>
+       </div>
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="cover-density">
+           <label> Densite&#769 du couvert</label>
+           <select class="form-control" name="cover_density" section="density">
+             <option value="">Densite&#769 (%)</option>
+           </select>
+         </div>
+       </div>
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="cover-height">
+           <label> Hauteur des arbres (~) </label>
+           <select class="form-control" name="cover_height" section="trees">
+             <option value="">Hauteur (m)</option>
+           </select>
+         </div>
+       </div>
+     </div><!-- /.row#cover -->
+
+	<!-- <div class="row" id="comments">
+       <div class="col-xs-10 col-xs-offset-1">
+         <h3 class="row-title">Remarques</h3>
+       </div>
+       <div class="col-xs-10 col-xs-offset-1">
+         <div class="form-group" name="blueberry_comments">
+           <label> Commentaire ( <small class="text-counter">200</small> )</label>
+           <textarea class="textarea" placeholder="Ajoutez un bref commentaire. " style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="200" oninput="textCounter( this )"></textarea>
+         </div>
+       </div>
+     </div><!-- /.row#comments -->
+
+	<!--  </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler">
+        <i class="fa fa-times"></i>
+      </button>
+      <button type="button" class="btn btn-success pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Re&#769initialiser">
+        <i class="fa fa-refresh"></i>
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Sauvegarder" onClick="validForms2featureProperties( this )">
+        <i class="fa fa-check"></i>
+      </button>
+    </div>
+  </div><!-- /.modal-content -->
+	<!-- </div><!-- /.modal-dialog -->
+	<!--</div><!-- /.modal#marker-valid-blueberry -->
+
+	<!-- <div class="modal fade" id="marker-valid-forest">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-body">
+             <form role="form">
+
+               <div class="row" id="general">
+                 <div class="col-xs-10 col-xs-offset-1">
+                   <h3 class="row-title">Ge&#769ne&#769ral</h3>
+                 </div>
+                 <div class="col-xs-8 col-xs-offset-2">
+                   <div class="form-group" id="no-hsi">
+                     <label> # IQH </label>
+                     <select class="form-control" name="no_hsi" section="iqh">
+                       <option value="">IQH</option>
+                     </select>
+                   </div>
+                 </div>
+                 <div class="col-xs-8 col-xs-offset-2">
+                   <div class="form-group" id="forest_stand">
+                     <label> Peuplement d&#39origine</label>
+                     <input type="text" class="form-control" name="forest_stand" maxlength="25" placeholder="Peuplement">
+                   </div>
+                 </div>
+               </div><!-- /.row#general -->
+
+	<!--  <div class="row" id="topography">
+        <div class="col-xs-10 col-xs-offset-1">
+          <h3 class="row-title">Parame&#768tres e&#769cologiques</h3>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="form-group" id="topography-slope">
+            <label> Topographie</label>
+            <input type="text" class="form-control" name="slope_situation" maxlength="25" placeholder="Situation">
+            <input type="text" class="form-control" name="slope_exposure" maxlength="25" placeholder="Exposition">
+            <input type="text" class="form-control" name="slope_shape" maxlength="25" placeholder="Forme">
+            <input type="text" class="form-control" name="slope_tilt" maxlength="25" placeholder="Inclinaison">
+          </div>
+        </div>
+      </div><!-- /.row#topography -->
+
+	<!-- <div class="row" id="soil">
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="soil-drain">
+           <label> Drainage</label>
+           <select class="form-control" name="soil_drain" section="drain">
+             <option value=""> Valeur</option>
+           </select>
+         </div>
+       </div>
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="soil-texture">
+           <label> Texture</label>
+           <select class="form-control" name="soil_texture" section="depot">
+             <option value=""> Valeur</option>
+           </select>
+         </div>
+       </div>
+     </div><!-- /.row#soil -->
+
+	<!--    <div class="row" id="disturbance">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="form-group" id="disturbance-ground">
+              <label> Perturbation du sol</label>
+              <select class="form-control" name="disturbance_ground" section="disturbance">
+                <option value=""> Valeur</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-8 col-xs-offset-2">
+            <label> A&#770ge de la perturbation </label>
+            <div class="form-group form-inline" id="disruption-source">
+              <label>
+                <input type="radio" name="disruption_source" value="fire" checked>
+                Feux
+              </label>
+              <label>
+                <input type="radio" name="disruption_source" value="woodcutting">
+                Coupe
+              </label>
+            </div>
+          </div>
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="form-group" id="disturbance-agee">
+              <select class="form-control" name="disturbance_age" section="age">
+                <option value=""> Valeur (an)</option>
+              </select>
+            </div>
+          </div>
+        </div><!-- /.row#disturbance -->
+
+	<!-- <div class="row" id="forest">
+       <div class="col-xs-8 col-xs-offset-2">
+         <div class="form-group" id="forest-gei">
+           <label> Espe&#768ces indicatrices </label>
+           <input type="text" class="form-control" name="forest_gei" maxlength="25" placeholder="GEI">
+         </div>
+       </div>
+       <div class="col-xs-10 col-xs-offset-2">
+         <div class="form-group" id="forest-ecological-type">
+           <label> Type e&#769cologique</label>
+           <div class="form-inline" id="forest-ecological-type">
+             <select class="form-control" name="forest_ecological_type" section="ecological">
+               <option value="">--</option>
+             </select>
+             <select class="form-control" name="first_physical_character" section="first_physical">
+               <option value="">--</option>
+             </select>
+             <select class="form-control" name="second_physical_character" section="second_physical">
+               <option value="">--</option>
+             </select>
+           </div>
+         </div>
+       </div>
+     </div><!-- /.row#forest -->
+
+	<!--  <div class="row" id="comments">
+        <div class="col-xs-10 col-xs-offset-1">
+          <h3 class="row-title">Remarques</h3>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
+          <div class="form-group" name="forest_comments">
+            <label> Commentaire ( <small class="text-counter">200</small> )</label>
+            <textarea class="textarea" placeholder="Ajoutez un bref commentaire. " style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="200" oninput="textCounter( this )"></textarea>
+          </div>
+        </div>
+      </div><!-- /.row#comments -->
+
+	<!--  </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler">
+        <i class="fa fa-times"></i>
+      </button>
+      <button type="button" class="btn btn-success pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Re&#769initialiser">
+        <i class="fa fa-refresh"></i>
+      </button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Sauvegarder" onClick="validForms2featureProperties( this )">
+        <i class="fa fa-check"></i>
+      </button>
+    </div>
+  </div><!-- /.modal-content -->
+	<!-- </div><!-- /.modal-dialog -->
+	<!-- </div><!-- /.modal#marker-group-editor -->
+
+
+	<!-- Modal - Load project's feature params' window -->
+	<!-- <div class="modal fade" id="user-status-managing">
+       <div class="modal-dialog modal-xl">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title"> Gestionnaire de partage </h4>
+           </div>
+           <div class="modal-body no-padding" style="height:250px;">
+             <div class="box box-widget" id="user">
+               <div class="box-header">
+                 <div class="box-tools pull-right">
+                   <button class="btn btn-box-tool online" id="refresh-user" name="user" rel="tooltip" data-title="Rafrai&#770chir" onClick="refreshTable( this )">
+                     <i class="fa fa-refresh text-green"></i>
+                   </button>
+                 </div>
+               </div>
+               <div class="box-body no-padding text-black" style="height:220px;">
+                 <div class="span-12">
+                   <table class="table display" cellspacing="0" id="user" width="100%">
+                     <thead>
+                       <tr>
+                         <th>Nom</th>
+                         <th>Prénom</th>
+                         <th>Courriel</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                     </tbody>
+                   </table>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Annuler"><i class="fa fa-times"></i></button>
+             <button type="button" class="btn btn-primary" id="share-saved" data-toggle="tooltip" data-original-title="Terminer"><i class="fa fa-check"></i></button>
+           </div>
+         </div>
+       </div>
+     </div><!-- /.modal#marker-group-editor -->
+
+
+
+	<!-------- Javascript --------->
+	<script>
+
+        var latCenter = 49.15 ;//<?php if (empty($_SESSION['user'])) {echo('49.15');} elseif ($_SESSION['user']=='test'){ echo('48.883');}elseif ($_SESSION['user']=='bonniebrook'){ echo('45.74');} ?>;
+        var lonCenter = -73 ;//<?php if (empty($_SESSION['user'])) {echo('-73');} elseif ($_SESSION['user']=='test'){ echo('-72.23');}elseif ($_SESSION['user']=='bonniebrook'){ echo('-74.16');} ?>;
+        var zoomCenter = 8 ;//<?php if (empty($_SESSION['user'])) {echo('8');} elseif ($_SESSION['user']=='test'){ echo('12');}elseif ($_SESSION['user']=='bonniebrook'){ echo('12');} ?>;
+
+	</script>
+	<script src="iqh/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+	<script>
+        $.widget.bridge('uibutton', $.ui.button);
+        $.widget.bridge("tlp", $.ui.tooltip);
+	</script>
+	<script src="iqh/bootstrap/js/bootstrap.min.js"></script>
+	<script src="lib/magnific/dist/jquery.magnific-popup.min.js"></script>
+	<!--<script src="http://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js" type="text/javascript"></script>-->
+
+	<!-- <script src="lib/bootstrap/js/bootstrap-select.min.js"></script> -->
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js" type="text/javascript"></script> -->
+	<script src="lib/open-layers-3/ol.js" type="text/javascript"></script>
+	<script src="http://maps.google.com/maps/api/js?v=3&key=AIzaSyDd-ZixqVlKTBUSgyF08dFimIaPFFDSROE&amp;sensor=false"></script>
+	<script src="lib/jquery-ui-action.js" type="text/javascript"></script>
+	<script src="plugins/chartjs/Chart.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js" type="text/javascript"></script> -->
+
+
+	<!-- Olivier -->
+
+	<!-- DataTables -->
+	<script src="iqh/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="iqh/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+	<!-- AdminLTE App -->
+	<script src="iqh/dist/js/app.min.js"></script>
+	<!-- Bootstrap WYSIHTML5 -->
+	<script src="iqh/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+	<!-- SlimScroll 1.3.0 -->
+	<script src="iqh/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<!-- iCheck 1.0.1 -->
+	<script src="iqh/plugins/iCheck/icheck.min.js"></script>
+	<!-- FastClick -->
+	<script src="iqh/plugins/fastclick/fastclick.min.js"></script>
+	<!-- bootstrap color picker -->
+	<script src="iqh/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+	<!-- End Olivier-->
+
+
+	<!--  <script src="trailjson.js" type="text/javascript"></script>-->
+	<script src="lib/ol3_object.js" type="text/javascript"></script>
+	<!--<script src="lib/mouse_position.js" type="text/javascript"></script>-->
+	<script src="lib/rotate_north.js" type="text/javascript"></script> <!-- Nécessaire pour initCarte -->
+	<script src="lib/initCarte.js" type="text/javascript"></script>
+	<script src="lib/layer_tree.js" type="text/javascript"></script>
+	<!--<script src="lib/outils.js" type="text/javascript"></script>-->
+	<!--<script src="lib/mesure.js" type="text/javascript"></script>-->
+	<script src="lib/geocodage.js" type="text/javascript"></script>
+	<!-- enlever interaction -->
+	<!--
+    <script src="lib/selection.js" type="text/javascript"></script>
+    <script src="lib/popup.js" type="text/javascript"></script>
+    -->
+	<script src="iqh/dist/js/data_loader.js"></script>
+	<!--<script src="iqh/dist/js/draw.js"></script>-->
+
+
+	<script >
+        var first=1;
+        var urlInterfaceWebPHP="http://igeomedia.com/~sandbox/apppfnl/version1.0/pfnl/php/";
+        // $(function() {
+        //     $( "#draggable" ).draggable();
+        //
+        //     /** ajouter dans css au lieu de jQuery -- à faire **/
+        //     $("#dialog").hide();
+        //     $("#dialog4").hide();
+
+            /** Test Mickael **/
+            // <?php
+            //
+            //
+            // if (empty($_SESSION['user'])) {
+            // 	echo('$("#gSignInWrapper").show();');
+            // 	//echo('$("#gSignInWrapperOut").hide();');
+            // }elseif ($_SESSION['user']=='test'){
+            // 	echo('$("#customBtn").css("display","none");');
+            // 	echo('$("#customBtnOut").css("display","inline-block");');
+            //         echo('$("#customBtnIQH").css("display","inline-block");');
+            // 	echo('$("#layer22").show();');
+            // 	echo('horseCrem.setVisible(true);');
+            // 	echo('$("#visible22").attr("checked", true);');
+            // }elseif ($_SESSION['user']=='bonniebrook'){
+            // 	echo('$("#gSignInWrapper").hide();');
+            // 	echo('$("#gSignInWrapperOut").show();');
+            // 	echo('$("#layer21").show();');
+            // 	echo('horseBonniebrook.setVisible(true);');
+            // 	echo('$("#visible21").attr("checked", true);');
+            // }
+            // ?>
+            /** Fin Test Mickael **/
+
+        //});
+        /**
+         * Arrange modal#message header and core by status
+         * @params { $( elem ) }
+         * @return { --- }
+         */
+        // function modalMessages( title, text, status ) {
+        //     var myModal = $( ".modal#messages" );
+        //     var myTitle = myModal.find( "*" ).children( ".modal-title" );
+        //     var myBody = myModal.find( "*" ).children( ".modal-body" );
+        //
+        //     if ( myModal.hasClass( "modal-" + status ) ) {
+        //         myModal.removeClass( "modal-" + status )
+        //             .addClass( "modal-" + status );
+        //     } else if ( myModal.hasClass( "modal-success" ) ) {
+        //         myModal.removeClass( "modal-success" )
+        //             .addClass( "modal-" + status);
+        //     } else if ( myModal.hasClass( "modal-warning" ) ) {
+        //         myModal.removeClass( "modal-warning" )
+        //             .addClass( "modal-" + status );
+        //     } else if ( myModal.hasClass( "modal-danger" ) ) {
+        //         myModal.removeClass( "modal-danger" )
+        //             .addClass( "modal-" + status );
+        //     } else {
+        //         myModal.addClass( "modal-" + status );
+        //     }
+        //
+        //     myTitle.html( title );
+        //     myBody.html( text );
+        //     myModal.modal( "show" );
+        // }
+
+
+        /**
+         * Validate the messages from post.respsonse
+         * @params { JSON }
+         */
+        // function validMessages( data ) {
+        //     if ( data.title !== undefined ) modalMessages( data.title, data.text, data.type );
+        // } /** validMessages() */
+
+
+        /**
+         * Build div content
+         * @params { JSON }
+         */
+        // function postExist( data ) {
+        //   if ( data.title !== undefined ) modalMessages( data.title, data.text, data.type );
+        //
+        //   if ( data.panel !== undefined ) {
+        //     for ( var i in data.panel ) {
+        //       var panel = data.panel[i];
+        //
+        //       if ( panel.node !== undefined ) {
+        //         indentDiv[ panel.action ]( panel );
+        //         if ( panel.after !== undefined ) resetMarkerPanel();
+        //         if ( panel.responsive !== undefined ) {
+        //           // Destroy the panel if the resolution is over PX values
+        //           //if ( screen.width < panel.resolution ) indentDiv[ panel.responsive ]( panel );
+        //         }
+        //       }
+        //     }
+        //   }
+        //
+        //   if ( data.operator !== undefined ) {
+        //     if ( data["operator"] === "login" ) {
+        //       //getNotice();
+        //     } else if ( data.operator === "local" ) {
+        //       var link = document.createElement("a");
+        //       link.href = data.href;
+        //       link.download = data.download;
+        //       link.target = "_blank";
+        //       link.click();
+        //     } else if ( data.operator == "getAll" ) {
+        //       var table = evalDataTable( $( data.table ) );
+        //
+        //       table.clear().draw();
+        //       for ( var i in data.list ) {
+        //         var value = [ data.list[i].last_name, data.list[i].first_name, data.list[i].email, data.list[i].id ];
+        //         table.row.add( value )
+        //           .draw( false );
+        //       }
+        //     }
+        //
+        //     if ( data.method !== undefined ) {
+        //       if( data.method === "export" ) {
+        //         resetDraw(); // If the project have been created, than draw vector layer have to be reset
+        //       } else if ( data.method === "load" ) {
+        //         var hex = randomHEX(); // create a random color to identifying the project when a feature is selected
+        //         layer2list( data, hex );
+        //         layer2map( data, hex );
+        //       }
+        //     }
+        //
+        //   } else if ( data.operator === undefined && data.method !== undefined ) {
+        //     if ( data.method === "list" ) {
+        //       if ( data.list !== undefined ) {
+        //         projectStore( data.list );
+        //       }
+        //     }
+        //   }
+        //
+        //  if ( data.max !== undefined) {
+        //      /**
+        //      max=8;
+        //      iqh2_WMS.getSource().updateParams({
+        //           'LAYERS': 'iqh8',
+        //           'VERSION': '1.1.1'
+        //
+        //       });
+        //      Groupe_IQH2.changed();
+        //      */
+        //  }
+        //
+        // } /* postExist() */
+
+
+        // /**
+        //  * Get & valid value from php
+        //  * @params {JSON}
+        //  */
+        // function postSuccess( data ) {
+        //   var response = $.parseJSON( data );
+        //   ( response.exist ) ? postExist( response ) : validMessages( response );
+        // }
+        //
+        //
+        // /**
+        //  * Get & valid value from php
+        //  * @params {JSON}
+        //  */
+        // function postError( data ) {
+        //   var type = "danger";
+        //   var title = "Connexion e&#769choue&#769e";
+        //   var text = "Une erreur interne s\'est de&#769clare&#769e. <br> Il est possible que votre signal Internet limite les e&#769changes de donne&#769es. <br> Si cela perdure, veuillez svp re&#769essayer plus tard.";
+        //   modalMessages( title, text, type );
+        // }
+
+
+        /**
+         * Verify if information is in SQLite database
+         * @params { STRING, STRING, function }
+         * @return { --- }
+         */
+        function submitValues( obj, file ) {
+            $.post( urlInterfaceWebPHP+file , obj )
+                .success(function( data ) { postSuccess( data ) })
+                .error(function( data ) { postError( data ) });
+        } /** submitValues() */
+
+        //   /**
+        //  * Verify if User can be log or not - Ajax login function with callback action
+        //  * @params { $( elem ) }
+        //  * @return { --- }
+        //  */
+        // function userLogin( elem ) {
+        //   var form = $(elem).parents(".user-body").children("form");
+        //   var values = form.serialize()+"&type=original";
+        //
+        //   submitValues( values, "login.php" );
+        // } /** userLogin() */
+        //
+        //
+        // /**
+        //  * Reset index.html url
+        //  * @params { --- }
+        //  * @return { --- }
+        //  */
+        // function userLogout() {
+        //   var results = document.URL.substring( 0, document.URL.lastIndexOf("/") );
+        //   if ( results.indexOf( "?" ) > -1 ) results = results.split( "?" )[0];
+        //
+        //   return results;
+        // }
+
+        //       /**
+        //  * Verify if User possess notices.
+        //  * @params { STRING }
+        //  * @return { --- }
+        //  */
+        // function getNotice( obj ) {
+        //   var email = $( ".user-image" ).attr( "user" );
+        //   var values = ( obj === undefined ) ? { email: email } : { email: email, id: obj };
+        //
+        //   submitValues( values, "notice.php" );
+        // } /** getNotice() */
+
+
+
+        /** Olivier **/
+
+        // $( function() {
+        //
+        //
+        //     String.prototype.replaceAll = function(search, replacement) {
+        //         var target = this;
+        //         return target.split(search).join(replacement);
+        //     };
+        //
+        //     var referrer = ( [ document.URL.substring( 0, document.URL.lastIndexOf("/") ), "/iqh/dist/json/projection.json" ] ).join( "/" );
+        //     $.get( referrer, srsStore );
+        //
+        //     var referrer = ( [ document.URL.substring( 0, document.URL.lastIndexOf("/") ), "/iqh/dist/json/validation.json" ] ).join( "/" );
+        //     $.get( referrer, validationStore );
+        //
+        //
+        //
+        //     if ( $(".user-image").attr("user") !== undefined ) {
+        //         var myData = { user: $(".user-image").attr("user"), method: "list" };
+        //         submitValues( myData, "export.php" );
+        //     }
+        //
+        //     // witch is for element with data-toggle already set
+        //     $("[rel='tooltip']").tooltip();
+        //
+        //     // Colorpicker plugin setting
+        //     $(".my-colorpicker").each(function() {
+        //         $(this).colorpicker({format : 'rgba'});
+        //     });
+        //
+        //
+        //     // iCheck - Line plugin setting
+        //     $( 'input.line-layer-selector' ).each( function() {
+        //         var self = $(this),
+        //             label = self.next(),
+        //             label_text = label.text();
+        //
+        //         label.remove();
+        //         self.iCheck({
+        //             checkboxClass: 'icheckbox_line-blue',
+        //             radioClass: 'iradio_line-blue',
+        //             insert: '<div class="icheck_line-icon"></div>' + label_text
+        //         });
+        //
+        //         self.on('ifChecked', function() {
+        //             layer2show(this, true);
+        //         });
+        //
+        //         self.on('ifUnchecked', function() {
+        //             layer2show(this, false);
+        //         });
+        //
+        //     });
+        //
+        //
+        //
+        //
+        // } ); /* $.onLoad() */
+
+
+        // function removeInteraction() {
+        //     sketch=null;
+        //     for (evt in interaction) {
+        //         tmp = interaction[evt]
+        //         map.removeInteraction(tmp);
+        //     }
+        // };
+
+
+        // /**
+        //  * Stop all interaction from draw.js
+        //  * @params {.li#id ==vector[name], feature display}
+        //  */
+        // function stopInteraction( class_name, evt ) {
+        //     $(".stop-interaction").fadeIn(500)
+        //         .click(function() {
+        //
+        //             removeInteraction();
+        //             resetMarkerPanel();
+        //             map.on('pointermove', function(evt) {
+        //                 info.tooltip('hide');
+        //             });
+        //
+        //             if (evt == 'clear') {
+        //                 try {
+        //                     vector[class_name].getSource().clear();
+        //                 } catch(err) {
+        //                     console.log(err);
+        //                 }
+        //             }
+        //         });
+        // };
+
+
+        /**
+         * Retrun values of a form
+         * @params {<form>}
+         * @return {array[]}
+         */
+        // function getFormContent( elem ) {
+        //     var form = ( $( elem ).is( "form" ) ) ? elem : $( elem ).parents( ".modal-content" ).find( "form" );
+        //     var results = form.serializeArray();
+        //
+        //     form.find( ".form-group" ).each( function() {
+        //         name = $( this ).attr( "name" );
+        //         if ( name ) {
+        //             if( name.indexOf( "comments" ) !== -1 ) {
+        //                 results.push( { name: name, value: $( this ).children( "textarea" ).val().replaceAll("'", "\\'") } );
+        //             }
+        //         }
+        //     } );
+        //     form[0].reset();
+        //
+        //     return results;
+        // } /** getFormContent() */
+
+
+        // function getSelectedFeature() {
+        //     var fid = $( ".box#feature-info tr#fid td#info" ).html();
+        //     var layer = layer2draw();
+        //     var source = getLayerSource( layer.layer );
+        //     var feature = source.getFeatureById( fid );
+        //     var geom = feature.getGeometry().getType();
+        //
+        //     return { fid: fid, layer: layer, source: source, feature: feature, geom: geom };
+        // }
+
+
+        // function setModalLabel( elem ) {
+        //   var options = $( ".modal#marker-label-editor form div#feature-type select option" );
+        //   var feature = getSelectedFeature();
+        //
+        //   for ( var i = 0; i < options.length; i++ ) {
+        //     $( options[i] ).removeAttr( "style" );
+        //     if ( $( options[i] ).attr( "geom" ) != "all" && $( options[i] ).attr( "geom" ) != feature.geom.toLowerCase() ) {
+        //       $( options[i] ).css( "display", "none" );
+        //     }
+        //   }
+        //
+        //   $( "select#feature-type" ).val( $( "select#feature-type option:first" ).val() );
+        //   $( ".modal#marker-label-editor" ).modal().show();
+        //
+        // } /* setModalLabel() */
+
+
+        /**
+         * Set the group's type depending of the selected option
+         * @params { array[] }
+         * @return { --- }
+         */
+        // function setFeatureType( elem ) {
+        //     var option = $( ".modal#marker-label-editor form div#feature-type select option:selected" );
+        //     var input = $( ".modal#marker-label-editor div.form-group#feature-name input");
+        //     var feature = getSelectedFeature();
+        //
+        //     ( option.attr( "type" ) != "defaut" ) ? input.prop( "disabled", true ) : input.prop( "disabled", false );
+        //     feature.feature.setProperties( { status: option.attr( "type" ) } );
+        //
+        // } /* setFeatureType() */
+
+
+        /**
+         * Return values of a form
+         * @params { array[] }
+         * @return { --- }
+         */
+        // function setFeatureLabel( elem ) {
+        //     var type = $( ".modal#marker-label-editor form div#feature-type select option:selected");
+        //     var name = ( type.attr( "type" ) != "defaut" ) ? type.val() : $( ".modal#marker-label-editor div.form-group#feature-name input").val().replaceAll( "'", "\'" );
+        //     var feature = getSelectedFeature();
+        //
+        //     $( ".box#feature-info tr#group td#info" ).html( type.val().replaceAll("\\", "") );
+        //     $( ".box#feature-info tr#label td#info" ).html( name.replaceAll("\\", "") );
+        //
+        //     feature.feature.setProperties( { name: name } ); // set feature's name
+        //
+        // } /** setFeatureGroup() */
+
+
+        /**
+         * Build ol.style.Style from colorPicker value
+         * @params {<button />}
+         */
+        // function setFeatureStyle( elem ) {
+        //     var feature = getSelectedFeature();
+        //     var color = $(".modal#marker-style-editor .my-colorpicker input").val();
+        //
+        //     style2feature( feature.feature, color );
+        //
+        // } /** setFeatureStyle() */
+
+
+        /**
+         * Force featurecolor to look like projectcolor
+         * @params { $( elem ) }
+         * @return { --- }
+         */
+        // function resetFeatureStyle( elem ) {
+        //     var feature = getSelectedFeature();
+        //
+        //     style2feature( feature.feature );
+        // } /* resetFeatureStyle() */
+
+
+        /**
+         * Set ol3 style
+         * @params { ol.feature, rgba( r, g, b, o ) }
+         * @return { --- }
+         */
+        // function style2feature( feature, color ) {
+        //     var span = $( ".box#feature-info tr#style td#info span" );
+        //     var hex = ( color ) ? rgb2hex( color ) : rgb2hex( feature.getProperties().projectcolor );
+        //     var rgba =  hex2rbga( hex, 0.2 );
+        //     var yiq = getContrastYIQ( hex, "rgba" );
+        //
+        //     ( color ) ? feature.setProperties( { featurecolor: hex } ) : feature.setProperties( { featurecolor: null } );
+        //     span.css( "background-color", hex );
+        //     span.css( "color", yiq["fill"] );
+
+        } /* style2feature() */
+
+
+        /*
+         * Get the drawed layer's name
+         * @params { --- }
+         * @return { --- }
+         */
+        function layer2draw() {
+            var results = {};
+            var draw = $( "ul.treeview-menu#draw" );
+
+            results.name = draw.attr( "layer_name" );
+            results.id = draw.attr( "layer_id" );
+            results.layer = ( results.name == "draw" ) ? "draw" : [ results.name, results.id ].join( "_" );
+
+            return results;
+        } /* layer2draw() */
+
+
+        /**
+         * Get user input and send it to the specific exporting function
+         * @params { hmtlNode }
+         * @return { --- }
+         */
+        // function getFeatureContent( elem ) {
+        //     var parent = $( elem ).parents( ".modal" );
+        //     var form = getFormContent( elem );
+        //     var results = { date: new Date().toLocaleDateString(), user: $( ".user-image" ).attr( "user" ), method: "export", type: parent.attr( "id" ).replace( "publisher-", "" ) };
+        //
+        //     for ( var i in form ) {
+        //         var key = form[i].name;
+        //         var val = form[i].value;
+        //
+        //         results[key] = val;
+        //     }
+        //
+        //     if ( results.type != "local" ) { // User can only export the original project to PostgreSQL
+        //         results["layer"] = "draw";
+        //         results["extension"] = "GeoJSON";
+        //         results["srs"] = "4326";
+        //     } else { // User can export any project on his computer
+        //         results["filename"] = layer2draw().layer;
+        //         results["layer"] = layer2draw().layer;
+        //         /*ajout Mickael - seulement 4326 pour savegarde dans fichier */
+        //         results["srs"] = "4326";
+        //     }
+        //
+        //     exportFeature( results );
+        //     parent.modal( "hide" );
+        //
+        // } /** getFeatureContent() */
+
+
+        /**
+         * Do jobs that have to be done after document render
+         * @params { --- }
+         * @return { --- }
+         */
+
+
+
+        /**
+         * Add or remove select's options
+         * @params { STRING, STRING, BOOL }
+         * @return { --- }
+         */
+        // function displayOption( select, name, id, bool ) {
+        //     select = $( "select#"+ select +" option[name='"+ name +"'][id='"+ id +"']" );
+        //
+        //     if ( bool ) {
+        //         select.removeAttr( "style" );
+        //     } else {
+        //         select.css( "display", "none" );
+        //     }
+        // } /* displayOption() */
+
+        //       /**
+        //  * Get user input and send it to the specific exporting function
+        //  * @params { hmtlNode }
+        //  * @return { --- }
+        //  */
+        // function loadProject( elem ) {
+        //
+        //   /*
+        //    * Translate the label group from SQLiteDB values
+        //    * @params { STRING }
+        //    * @return { STRING }
+        //    */
+        //   function changeLabel( obj ) {
+        //     var results = ( obj == "Partage" ) ? "share" :
+        //       ( obj == "Personnel" ) ? "personal" :
+        //       ( obj == "Publique" ) ? "public" :
+        //       obj;
+        //
+        //     return results;
+        //   } /* changeLabel() */
+        //
+        //
+        //   var form = $( "div.modal#load-project .modal-body form" );
+        //   var option = $( "div.modal#load-project .modal-body form select option:selected" );
+        //   var label = changeLabel( option.parent( "optgroup" ).attr( "label" ) );
+        //   var name = option.attr( "name" );
+        //   var id = option.attr( "id" );
+        //   var myData = { file: name, method: "load", user: $(".user-image").attr("user"), id: id, type: label };
+        //
+        //   form[0].reset();
+        //   displayOption( "project", name, id, false );
+        //   submitValues( myData, "export.php" )
+        //   $( "div.modal#load-project" ).modal( "hide" );
+        // } /* loadProject() */
+
+        /**
+         * Eval if table object is a DataTable();
+         * @params { $( elem ) }
+         * @return { $( elem ) }
+
+
+         */
+
+        // function evalDataTable( elem ) {
+        //     var id = $( elem ).attr( "id" );
+        //     var params = { "scrollY": "100px", "scrollCollapse": true, "autoWidth": false, "paging": false, "lengthChange": false, "searching": false, "ordering": true, "info": false, "select": true };
+        //     if ( id == "load" ) {
+        //         params.columnDefs = [ { "className": "dt-center", "width": "15%", "targets": 0 }, { "className": "dt-center", "width": "85%", "targets": 1 } ];
+        //     } else if ( id == "user" ) {
+        //         params.scrollY = "150px";
+        //         params.columnDefs = [ { "className": "dt-center", "width": "30%", "targets": 0 }, { "className": "dt-center", "width": "30%", "targets": 1 }, { "className": "dt-left", "width": "40%", "targets": 2 } ];;
+        //     }
+        //
+        //     var results = ( $.fn.dataTable.isDataTable( elem ) ) ? $( elem ).DataTable() : $( elem ).DataTable( params );
+        //
+        //     return results;
+        // } /** evalDataTable */
+
+        // /**
+        //  * Create the project icon types ;
+        //  * @params { STRING }
+        //  * @return { --- }
+        //  */
+        // function setProjectIcon( type ) {
+        //   results = $( "<i/>" );
+        //   if ( type == "personal" ) {
+        //     results.addClass( "fa fa-user" );
+        //   } else if ( type == "share" ) {
+        //     results.addClass( "fa fa-user-plus" );
+        //   } else if ( type == "public" ) {
+        //     results.addClass( "fa fa-users" );
+        //   }
+        //
+        //   return results;
+        // } /* setProjectIcon() */
+        //
+        // /**
+        //   * Add the load's layer to the project's DataTable();
+        //   * @params { OBJECT }
+        //   * @return { --- }
+        //   */
+        //  function layer2list( data, color ) {
+        //    var table = evalDataTable( $( ".table#load" ) );
+        //    var values = [ data.id, data.name, data.type, color, data.comments ];
+        //
+        //    table.row.add( values )
+        //      .draw( false );
+        //
+        //  } /* layer2list() */
+
+
+        /**
+         * Add the load's layer to map;
+         * @params { OBJECT }
+         * @return { --- }
+        //  */
+        // function layer2map( data, color ) {
+        //     var layer = { type: "vector", title:[ data.name, data.id ].join("_"), source:"geojson", color: color, opacity:1, visible:true, data:data.layer, epsg: 4326 };
+        //     var layer = constructor[ layer.type ]( layer );
+        //
+        //     map.addLayer( layer );
+        // } /* layer2map() */
+
+
+        //
+        //
+        //    /**
+        //  * Clear the source.Vector named "draw" ;
+        //  * @params { OBJECT }
+        //  * @return { --- }
+        //  */
+        // function resetDraw() {
+        //   map.getLayers().forEach( function( e ) {
+        //     if ( e.get( "name" ) == "draw" ) {
+        //       e.getSource().clear();
+        //     }
+        //   } );
+        // } /* resetDraw() */
+
+
+        // /**
+        //  * Text area characters left
+        //  * @params { $( elem ) }
+        //  * @return { --- }
+        //  */
+        // function textCounter( elem ) {
+        //   var parent = $( elem ).parent( "div.form-group" );
+        //   var counter = parent.children( "label" ).children( "small.text-counter" );
+        //   var results = $( elem ).attr( "maxlength" ) - $( elem ).val().length;
+        //   counter.html( results );
+        // } /* textCounter() */
+
+
+        // /**
+        //  * Modify the project's comments
+        //  * @params { $( elem ) }
+        //  * @return { --- }
+        //  */
+        // function setComments( elem ) {
+        //   var index = $( "div.box#load .box-body" ).attr( "index" );
+        //   var table = evalDataTable( $( ".table#load" ) );
+        //   var form = getFormContent( elem );
+        //   var data = table.row( index ).data();
+        //
+        //   data[4] = form[0].value;
+        //   table.row( index ).data( data );
+        //
+        //   $( ".box#comments .box-body p" ).html( ( form[0].value == "" ) ? "..." : form[0].value.replaceAll( "\\", "" ) );
+        //   $( elem ).parents( ".modal" ).modal( "hide" );
+        // } /* setComments() */
+
+
+        /**
+         * Get the center of a layer extent
+         * @params { STRING }
+         * @return { ARRAY( coordinates ) }
+         */
+        function extent2center( obj, type ) {
+            var results = { name: type, value: [] };
+
+            if ( type == "layer" ) {
+                map.getLayers().forEach( function( e ) {
+                    if ( e.get( "name" ) == obj.layer ) {
+                        var extent = e.getSource().getExtent();
+                        if ( extent !== undefined ) results.value = extent;
+                    }
+                } );
+            } else if ( type == "feature" ) {
+                var extent = obj.getGeometry().getExtent();
+                if ( extent !== undefined ) {
+                    results.value[0] = extent[0] + ( extent[2] - extent[0] ) / 2;
+                    results.value[1] = extent[1] + ( extent[3] - extent[1] ) / 2;
+                }
+            } else if ( type == "coordinates" ) {
+                results.value = obj;
+            }
+
+            return results;
+        } /* extent2center() */
+
+
+        /**
+         * Pan and zoom animation from the current view to an other position
+         * @params { ARRAY( coordinates ) }
+         * @return { --- }
+         */
+        function fly2position( coord ) {
+            var duration = ( coord.name == "layer" ) ? 2000 : 1000;
+            var start = +new Date();
+            var view = map.getView();
+
+            /** @type {ol.animation} */
+            var pan = ol.animation.pan( {
+                duration: duration,
+                source: ( view.getCenter() ), /** @type {ol.Coordinate} */
+                start: start
+            } );
+
+            /** @type {ol.animation} */
+            var bounce = ol.animation.bounce( {
+                duration: duration,
+                resolution: view.getResolution(),
+                start: start
+            } );
+
+            if ( coord.name == "layer" ) {
+                map.beforeRender( pan, bounce );
+                view.fitExtent( coord.value, map.getSize() );
+            } else if ( [ "feature", "coordinates" ].indexOf( coord.name ) != -1 ) {
+                map.beforeRender( pan );
+                view.setCenter( coord.value );
+            }
+
+        } /* fly2position() */
+
+
+        /*
+         * Prevents the layers that contain a point feature to enable the bounce function
+         * @params { dict{} }
+         * @return { dict{} }
+         */
+        function animation2solve( coord ) {
+            var results = coord;
+            var x = results.value[0] - results.value[2];
+            var y = results.value[1] - results.value[3];
+
+            if ( x == 0 && y == 0 ) {
+                results.name = "coordinates";
+            }
+
+            return results;
+        } /* animation2solve() */
+
+
+        /**
+         * Zoom to layer's extent
+         * @params { STRING }
+         * @return { --- }
+         */
+        // function zoom2layer( obj, type ) {
+        //     var coord = extent2center( obj, type );
+        //     if ( coord !== undefined ) {
+        //         if ( type == "layer" ) {
+        //             coord.type = animation2solve( coord );
+        //         }
+        //         fly2position( coord );
+        //     }
+        } /* zoom2layer() */
+
+
+        // /**
+        //  * Get the valid forms panel values and set theme to the feature properties
+        //  * @params { $( elem ) }
+        //  * @return { --- }
+        //  */
+        // function validForms2featureProperties( elem ) {
+        //   var parent = $( elem ).parents( ".modal" );
+        //   var form = getFormContent( elem );
+        //   var feature = getSelectedFeature();
+        //
+        //   var properties = {};
+        //   for ( var i in form ) {
+        //     var key = form[i].name;
+        //     var val = form[i].value.replaceAll( "'", "\&#39;" );
+        //
+        //     properties[key] = val;
+        //   }
+        //
+        //   feature.feature.setProperties( properties );
+        //
+        // } /* validForms2featureProperties() */
+
+
+        // /**
+        //  * Get the feature properties and set theme to the valid forms panel values, only if they match
+        //  * @params { $( elem ) }
+        //  * @return { --- }
+        //  */
+        // function featureProperties2validForms( elem ) {
+        //   var target = $( elem ).attr( "modal-target" );
+        //   var modal = $( ".modal#" + target );
+        //   var form = modal.find( "form" );
+        //   var keys = getFormContent( form );
+        //   var feature = getSelectedFeature();
+        //   var properties = feature.feature.getProperties();
+        //
+        //   for ( var i in keys ) {
+        //     var key = keys[i].name;
+        //     if ( properties[key] ) {
+        //       var value = properties[key].replaceAll( "\&#39;", "\'" );
+        //
+        //       if ( key.indexOf( "comments" ) != -1 ) {
+        //         form.find( "[name='" + key + "\']" ).children( "textarea" ).val( value.replaceAll( "\\", "" ) );
+        //       } else {
+        //         form.find( "[name='" + key + "\']" ).val( value );
+        //       }
+        //     }
+        //   }
+        //
+        //   modal.modal( "show" );
+        //
+        // } /* featureProperties2validForms() */
+
+
+        // function refreshTable( obj ) {
+        //   // Get the list of all users in sqliteDB
+        //   if ( $( obj ).is( "button" ) ) {
+        //     var parent = $( obj ).parents( ".box" );
+        //     var id = parent.attr( "id" );
+        //     var obj = ".table#" + id;
+        //   }
+        //   var table = evalDataTable( $( obj ) );
+        //   var email = $( ".user-image" ).attr( "user" );
+        //   var myData = { email: email, type: "profile", table: obj, methode: "getAll" };
+        //
+        //   table.clear().draw();
+        //   submitValues( myData, "getUsers.php" );
+        //
+        // } /** refreshTable() **/
+        //       /**main on tab **/
+
+        $( "div.tab-content" ).on('DOMNodeInserted', function() {
+
+            // //premiere fois d'un ajout (test à améliorer)
+            // if (first==1) {
+            //     if ( $(".user-image").attr("user") !== undefined ) {
+            //     var myData = { user: $(".user-image").attr("user"), method: "list" };
+            //     submitValues( myData, "export.php" );
+            //   }
+            //     first=first-1;
+            // }
+
+            /** Activate the new tooltip **/
+            $( "[rel='tooltip']" ).tooltip();
+
+
+
+            /** Block acces to the postionning function if user is on cumputer **/
+            if ( !window.cordova ) {
+                $( "i.fa.split" ).hide();
+                $( "button#position" ).hide();
+            } /** BLOCK MOBILE APPS ON WEB APPS **/
+
+
+            // /** Define the DataTable's params and the user loader function **/
+            // if ( $( "button#share-project" ).length > 0 ) {
+            //
+            //   if ( $.fn.dataTable.isDataTable( $( ".table#user" ) ) ) {
+            //     return
+            //   } else {
+            //
+            //     var table = evalDataTable( $( ".table#user" ) );
+            //     table.on( "click", "tr", function() {
+            //       if ( $( this ).hasClass('selected') ) {
+            //         $( this ).removeClass('selected');
+            //       } else {
+            //         table.$('tr.selected').removeClass('selected');
+            //         $( this ).addClass('selected');
+            //
+            //         var data = table.row( this ).data();
+            //         $( ".modal#user-status-managing" ).attr( "user", data[3] );
+            //       }
+            //     } );
+            //
+            //     // Set user's list from SQLiteDB
+            //     $( "button#share-project" ).click( function() {
+            //       refreshTable( ".table#user" );
+            //       $( ".modal#user-status-managing" ).modal( "show" );
+            //     } );
+            //
+            //
+            //     $( "button#share-saved" ).click( function() {
+            //       var myModal = $( ".modal#user-status-managing" );
+            //       var user = myModal.attr( "user" );
+            //       var layer = layer2draw();
+            //       var email = $( ".user-image" ).attr( "user" );
+            //       var myData = { email: email, user: user, project: layer.id, methode: "share" };
+            //
+            //       submitValues( myData, "getUsers.php" );
+            //       myModal.modal( "hide" );
+            //     } );
+            //
+            //
+            //     $( "button#stop-sharing" ).click( function() {
+            //       var myModal = $( ".modal#user-status-managing" );
+            //       var layer = layer2draw();
+            //       var email = $( ".user-image" ).attr( "user" );
+            //       var myData = { email: email, project: layer.id, methode: "unshare" };
+            //
+            //       submitValues( myData, "getUsers.php" );
+            //       myModal.modal( "hide" );
+            //     } );
+            //
+            //   }
+            //
+            // }
+
+
+            // /** Define the DataTable's params and the project loader function **/
+            // if ( $( ".table#load" ).length > 0 ) {
+            //
+            //   if ( $.fn.dataTable.isDataTable( $( ".table#load" ) ) ) {
+            //     return
+            //   } else {
+            //     var table = evalDataTable( $( ".table#load" ) );
+            //     $( "[rel='tooltip']" ).tooltip();
+            //
+            //     function evalLayerTools( layer, type ) {
+            //       var publish = $( "ul.treeview-menu#publish" );
+            //       if ( layer != "draw" ) {
+            //         publish.children().each( function() {
+            //           if ( [ "local", "personal" ].indexOf( $( this ).attr( "name" ) ) == -1 ) {
+            //             $( this ).css( "display", "none" );
+            //           }
+            //         } );
+            //
+            //         if ( navigator.onLine ) {
+            //           $( "button[name='project']" ).prop( "disabled", false );
+            //           $( ".box#comments .box-header button#modify-comments" ).prop( "disabled", false );
+            //           if ( [ "share", "public" ].indexOf( type ) != -1 ) {
+            //             $( "button[utility='share']" ).prop( "disabled", true );
+            //           }
+            //         }
+            //
+            //       } else {
+            //         publish.children().each( function() {
+            //           $( this ).removeAttr( "style" );
+            //         } );
+            //
+            //         if ( navigator.onLine ) {
+            //           $( "button[name='project']:not(#get-project)" ).prop( "disabled", true );
+            //           $( ".box#comments .box-header button#modify-comments" ).prop( "disabled", true );
+            //         }
+            //
+            //       }
+            //
+            //     } /* evalLayerTools() */
+            //
+            //
+            //     function setDataInfo( data ) {
+            //       var footer = $( "div.box#load div.clearfix" );
+            //       var tInfo = $( ".project-table-info tr" );
+            //       var layer = ( data[0] == "0" ) ? "draw" : data[1];
+            //       var comments = ( data[4] == "" ) ? "..." : data[4];
+            //
+            //       evalLayerTools( layer, data[2] );
+            //
+            //       // update info's form-group label
+            //       for ( var i = 0; i < tInfo.length; i++ ) {
+            //         $( tInfo[i] ).children("td#pId").html( data[0] );
+            //         $( tInfo[i] ).children("td#pName").html( data[1] );
+            //         indentDiv["replaceWith"]( {
+            //           last: $( tInfo[i] ).children("td#pType").children("span").children("i.fa" ),
+            //           html: setProjectIcon( data[2] ).addClass( "fa-w" )
+            //         } );
+            //         $( tInfo[i] ).children("td#pType").children("span").css( "background-color", data[3] )
+            //       }
+            //
+            //       // Set project's comments
+            //       $( ".box#comments .box-body p" ).html( comments.replaceAll( "\\", "" ) );
+            //
+            //       // Set layer to draw interaction
+            //       $( "ul.treeview-menu#draw" ).attr( "layer_name", layer );
+            //       $( "ul.treeview-menu#draw" ).attr( "layer_id", data[0] );
+            //       $( "ul.treeview-menu#draw" ).attr( "layer_color", data[3] );
+            //       $( "a.stop-interaction" ).click();
+            //
+            //     } /* setDataInfo() */
+            //
+            //
+            //     /**
+            //      * Diffent action depending on click events
+            //      * @params { STRING, $(elem), $(elem) }
+            //      * @return { --- }
+            //      */
+            //     function click2table( status, table, tr ) {
+            //       $( "div.box#load .box-body" ).attr( "index", table.row( tr ).index() );
+            //
+            //       if ( $( tr ).hasClass('selected') ) {
+            //         $( tr ).removeClass('selected');
+            //       } else {
+            //         table.$('tr.selected').removeClass('selected');
+            //         $( tr ).addClass('selected');
+            //
+            //         var data = table.row( tr ).data();
+            //         setDataInfo( data );
+            //         if ( status == "dbclick" ) zoom2layer( layer2draw(), "layer" );
+            //       }
+            //     } /* click2table() */
+            //
+            //
+            //     // on double click
+            //     table.on( "click", "tr", function() {
+            //       var $this = $(this);
+            //       if ( $this.hasClass( 'clicked' ) ){
+            //         //alert("Double click");
+            //         click2table( "dbclick", table, this );
+            //         return;
+            //       } else {
+            //         $this.addClass( 'clicked' );
+            //         click2table( "click", table, this );
+            //         setTimeout(function() {
+            //           $this.removeClass( 'clicked' );
+            //         }, 1000 );
+            //       }//end of else
+            //
+            //     } );
+            //
+            //
+            //     // Remove layer from map and table
+            //     $( "button#remove-project" ).click( function() {
+            //       var layer = layer2draw();
+            //       var index = $( "div.box#load .box-body" ).attr( "index" );
+            //       var data = table.row( 0 ).data();
+            //
+            //       if ( layer.layer != "draw" ) {
+            //         map.getLayers().forEach( function( e ) {
+            //           if ( e.get( "name" ) == layer.layer ) {
+            //             map.removeLayer( e );
+            //           }
+            //         } );
+            //
+            //         table.row( index )
+            //           .remove()
+            //           .draw( false );
+            //
+            //         setDataInfo( data );
+            //         displayOption( "project", layer.name, layer.id, true );
+            //       } else {
+            //         resetDraw(); // To clear draw vector layer on user demand
+            //       }
+            //
+            //     } );
+            //
+            //
+            //     // Remove layer from map and table
+            //     $( "button#save-project" ).click( function() {
+            //       var layer = layer2draw();
+            //       var index = $( "div.box#load .box-body" ).attr( "index" );
+            //       var data = table.row( index ).data();
+            //       var comments = data[4];
+            //       var type = data[2];
+            //       var myData = { layer: layer.layer, filename: layer.name, id: layer.id, user: $( ".user-image" ).attr( "user" ), extension: "GeoJSON", srs: "4326", method: "update", comments: comments, type: type };
+            //
+            //       exportFeature( myData, type, layer.layer );
+            //
+            //     } );
+            //
+            //
+            //     // Zoom to the layer's extent
+            //     $( ".box#project-info button#zoom-project" ).click( function() {
+            //       removeInteraction();
+            //       resetMarkerPanel();
+            //       zoom2layer( layer2draw(), "layer" );
+            //     } );
+            //
+            //
+            //     // Move to feature by ID. ( FID - 1 )
+            //     $( ".box#feature-info button#last-feature" ).click( function() {
+            //       var project = layer2draw();
+            //       var source = getLayerSource( project.layer );
+            //       var xtrm = getXtrmFid( source );
+            //       var fid = $( ".box#feature-info tr#fid td#info" ).html();
+            //       var feature;
+            //
+            //       if ( interaction.select == "" ) addFeatureInteraction( "select", layer2draw().layer );
+            //       if ( fid == "Identifiant" ) {
+            //         return
+            //       } else {
+            //         fid = parseInt( fid );
+            //         if ( fid == xtrm.min ) {
+            //           feature = source.getFeatureById( xtrm.max );
+            //         } else {
+            //           fid--;
+            //           while ( feature === undefined || feature === null ) {
+            //             feature = source.getFeatureById( fid );
+            //             fid--;
+            //           }
+            //         }
+            //         interaction.select.getFeatures().clear();
+            //         interaction.select.getFeatures().push( feature ); // updateMarkerPanel() is a callback function of this method
+            //         zoom2layer( feature, "feature" );
+            //       }
+            //
+            //     } ); /* .box#feature-info button#last-feature onClick() */
+            //
+            //
+            //     // Move to feature by ID. ( FID + 1 )
+            //     $( ".box#feature-info button#next-feature" ).click( function() {
+            //       var project = layer2draw();
+            //       var source = getLayerSource( project.layer );
+            //       var xtrm = getXtrmFid( source );
+            //       var fid = $( ".box#feature-info tr#fid td#info" ).html();
+            //       var feature;
+            //
+            //       if ( interaction.select == "" ) addFeatureInteraction( "select", project.layer );
+            //       if ( fid == "Identifiant" ) {
+            //         return
+            //       } else {
+            //         fid = parseInt( fid );
+            //         if ( fid == xtrm.max ) {
+            //           feature = source.getFeatureById( xtrm.min );
+            //         } else {
+            //           fid++;
+            //           while ( feature === undefined || feature === null ) {
+            //             feature = source.getFeatureById( fid );
+            //             fid++;
+            //           }
+            //         }
+            //         interaction.select.getFeatures().clear();
+            //         interaction.select.getFeatures().push( feature ); // updateMarkerPanel() is a callback function of this method
+            //         zoom2layer( feature, "feature" );
+            //       }
+            //
+            //     } ); /* .box#feature-info button#nextt-feature onClick() */
+            //
+            //
+            //     layer2list( { id: 0, name: "original", type: "personal", comments: "Donne&#769es originales" }, "#ffcc33" );
+            //
+            //   }
+            // }
+
+
+
+
+            // if ( $( "div#comments-box" ).parent( ".slimScrollDiv" ).length > 0 ) {
+            //     return
+            // } else {
+            //     $( "div#comments-box" ).slimScroll( { height: "100px" } );
+            //     $( "[rel='tooltip']" ).tooltip();
+            // }
+
+
+
+        } );
+	</script>
+
+
+
+
+</body>
 </html>

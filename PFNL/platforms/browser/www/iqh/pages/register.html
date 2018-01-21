@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portail PFNL | Devenir membre</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../plugins/iCheck/square/blue.css"> 
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../plugins/select2/select2.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="hold-transition register-page" style="background: url( '../dist/img/spbq/grappe_01.jpg' ) no-repeat center center fixed;">
+    <div class="register-box">
+      <!--div class="register-logo"> 
+        <span class="badge" style="background-color:#3C8DBC; font-size: 32px;!important !important">
+          <a href="../index.html" style="color:#ffffff;font-variant: small-caps;">
+            <b>Portail PFNL</b>
+          </a>
+        </span>
+      </div-->
+
+      <div class="register-box-body">
+        <p class="login-box-msg">
+         
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x" style="color:#3c8dbc;"></i>
+            <i class="fa fa-tree fa-stack-1x" style="color:white;"></i>
+          </span> 
+          Inscription pour devenir membre
+        </p>
+        <div class="callout callout-info">
+          <div class="row">
+            <div class="col-xs-10">
+              <h4> Info</h4>
+              <p> lorem epsum</p>
+            </div>
+            <div class="col-xs-2">
+              <a href="#" onClick="closeObj(  $( '.callout' )  )"><i class="fa fa-times-circle pull-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <form>
+          <div class="row">
+            <div class="col-xs-6">
+              <p><i class="glyphicon glyphicon-user"></i> Personnel</p>
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control " name="first_name" placeholder="Pre&#769nom">
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="last_name" placeholder="Nom">
+              </div>
+              <div class="form-group has-feedback">
+                <input type="radio" class="form-control" name="gender" value="male">
+                <label> Homme</label>
+                <input type="radio" class="form-control" name="gender" value="female">
+                <label> Femme</label>
+              </div>
+            </div>
+
+            <div class="col-xs-6">
+              <p><i class="fa fa-briefcase"></i> Affiliation</p>
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="company" placeholder="Organisation">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <p><i class="fa fa-building"></i> Adresse</p>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="address" placeholder="Adresse postale">
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="city" placeholder="Ville">
+              </div>
+              <div class="form-group has-feedback" id="state">
+                <select class="form-control select2" name="state">
+                  <option value="" style="display:none"> Province</option>
+                  <option value="Alberta"> Alberta</option>
+                  <option value="Comlombie Britanique"> Comlombie Britanique</option>
+                  <option value="Ile du Prince Edouard"> Ile du Prince Edouard</option>
+                  <option value="Manitoba"> Manitoba</option>
+                  <option value="Nouveau Brunswick"> Nouveau Brunswick</option>
+                  <option value="Nouvelle Ecosse"> Nouvelle Ecosse</option>
+                  <option value="Nunavut"> Nunavut</option>
+                  <option value="Ontario"> Ontario</option>
+                  <option value="Quebec"> Quebec</option>
+                  <option value="Saskatchewan"> Saskatchewan</option>
+                  <option value="Terre-Neuve - Labrador"> Terre-Neuve - Labrador</option>
+                  <option value="Territoires du Nord Ouest"> Territoires du Nord Ouest</option>
+                  <option value="Yukon"> Yukon</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="country" value="Canada" placeholder="Pays" disabled>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="zip_code" data-inputmask="&quot;mask&quot;: &quot;a9a-9a9&quot;" data-mask="" placeholder="Code postale">
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="telephone" data-inputmask="&quot;mask&quot;: &quot;( 999 ) 999-9999&quot;" data-mask="" placeholder="Te&#769le&#769phone">
+              </div>   
+           </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <p><i class="glyphicon glyphicon-envelope"></i> Courriel</p>
+              <div class="form-group has-feedback">
+                <input type="email" class="form-control" name="email" placeholder="Adresse courriel">
+              </div>
+              <div class="form-group has-feedback">
+                <input type="email" class="form-control" name="code_email" placeholder="Confirmation">
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <p><i class="glyphicon glyphicon-lock"></i> Mot de passe</p>
+              <div class="form-group has-feedback">
+                <input type="password" class="form-control" name="password" placeholder="Mot de passe">
+              </div>
+              <div class="form-group has-feedback">
+                <input type="password" class="form-control" name="code_password" placeholder="Confirmation">
+              </div>
+            </div>
+          </div><!-- /.row -->
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="checkbox icheck">
+                <label>
+                  <input type="checkbox" id="accept"> Je suis en accords avec les termes du pre&#769sent <a href="#">&nbsp;contrat</a>
+                </label>
+              </div>
+            </div><!-- /.col -->
+          </div><!-- /.row --> 
+
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-8">
+              <button type="button" class="btn btn-primary btn-block btn-flat" onClick="formSubmit( this )">Enregistrer</button>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+
+        </form>
+
+        <a href="../../index.php" class="text-center">Je suis de&#769ja&#768 membre.</a>
+      </div><!-- /.form-box -->
+    </div><!-- /.register-box -->
+
+    <!-- Modal - Info messages -->
+    <div class="modal fade" id="messages">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"> </h4>
+          </div>
+          <div class="modal-body"> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="end-messages" data-dismiss="modal"> Terminer</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal#marker-group-editor -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="../plugins/iCheck/icheck.min.js"></script>
+    <!-- InputMask -->
+    <script src="../plugins/input-mask/jquery.inputmask.js"></script>
+    <!-- Select2 -->
+    <script src="../plugins/select2/select2.full.min.js"></script>
+    <!-- Data_loader -->
+    <script src="../dist/js/data_loader.js"></script>
+
+    <script>
+    
+      $( function (  ) {
+
+        $( ".callout" ).hide(  ); 
+
+        $( "button" ).prop( "disabled", true );
+
+        $( 'input' ).iCheck( {
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        } );
+
+        $( "input#accept" ).on( "ifChecked", function(  ) {
+          $( "button" ).prop( "disabled", false ); 
+        } ).on( "ifUnchecked", function(  ) {
+          $( "button" ).prop( "disabled", true ); 
+        } ); 
+
+        $( "input" ).focusout( function(  ) {
+          var val = $( this ).val(  ); 
+          var parent = $( this ).parent(  ); 
+
+          validInput( parent, val ); 
+        } ).focusin( function(  ) {
+          var parent = $( this ).parent(  ); 
+
+          setObjLayout( parent, "has-", "feedback" ); 
+        } ); 
+
+
+        $( "select" ).focusout( function(  ) {
+          var val = $( this ).val(  ); 
+          var parent = $( this ).parent(  ); 
+
+          validInput( parent, val ); 
+        } ).focusin( function(  ) {
+          var parent = $( this ).parent(  ); 
+
+          setObjLayout( parent, "has-", "feedback" ); 
+        } ); 
+
+        $( "[data-mask]" ).inputmask(  ); 
+
+      } ); 
+
+
+      function setObjLayout( elem, obj, type ) {
+        if ( elem.hasClass( obj+type ) ){
+          elem.removeClass( obj+type )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"info" ) ) {
+          elem.removeClass( obj+"info" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"warning" ) ) {
+          elem.removeClass( obj+"warning" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"success" ) ) {
+          elem.removeClass( obj+"success" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"danger" ) ) {
+          elem.removeClass( obj+"danger" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"error" ) ) {
+          elem.removeClass( obj+"error" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"feedback" ) ) {
+          elem.removeClass( obj+"feedback" )
+            .addClass( obj+type );
+        } else {
+          elem.addClass( obj+type );
+        }
+      }
+
+
+      function closeObj( elem ) {
+        $( elem ).slideUp(  ); 
+      }
+
+
+      function validInput( elem, val, count ) {
+        if ( val === null || val == "" ) {
+          setObjLayout( elem, "has-", "error" ); 
+          if ( count !== undefined ) { count++; }
+        } else {
+          setObjLayout( elem, "has-", "success" ); 
+        }
+
+        return count; 
+      }
+
+
+      function setObjContent( elem, title, text ) {
+        elem.find( "*" ).children( "h4" ).html( title ); 
+        elem.find( "*" ).children( "p" ).html( text ); 
+        elem.slideDown(  ); 
+      }
+
+
+      function modalMessages( elem, title, text ) {
+        elem.find( "*" ).children( ".modal-title" ).html( title ); 
+        elem.find( "*" ).children( ".modal-body" ).html( text ); 
+        elem.modal( "show" ); 
+      }
+
+
+      function postSuccess( data ) {
+        var response = $.parseJSON( data ); 
+        var myModal = $( ".modal#messages" ); 
+        
+        setObjLayout( myModal, "modal-", response.type ); 
+        modalMessages( myModal, response.title, response.text ); 
+
+        if ( response.create == 1 ) {
+          $( "button#end-messages" ).click( function(  ) {
+            window.location.href = document.referrer; 
+          } ); 
+        }
+      }
+
+
+      function postError ( data ) {
+        var myModal = $( ".modal#messages" ); 
+        var type = "danger"; 
+        var title = "Connexion e&#769choue&#769e"; 
+        var text = "Une erreur interne s\'est de&#769clare&#769e. Veuillez svp re&#769essayer plus tard."; 
+
+        setObjLayout( myModal, "modal-", type ); 
+        modalMessages( myModal, title, text ); 
+      }
+
+
+      function submitValues( obj ) {
+        $.post(  url.file( url.php(  ), "subscribe.php" ), obj )
+          .success( function( data ) { postSuccess( data ) } )
+          .error( function( data ) { postError( data ) } ); 
+      }
+
+
+      function formSubmit( elem ) {
+        var val_list = $( "form" ).serializeArray(  ); 
+        var gender = 0; 
+        var valid = 0; 
+
+        for ( var i in val_list ) {
+          var tmp = val_list[i]; 
+          var layout = $( "[name="+tmp.name+"]" ).parent(  ); 
+
+          valid = validInput( layout, tmp.value, valid ); 
+          if ( tmp.name == "gender" ) { gender++; }
+        }
+
+        var callout, type, title, text; 
+        if ( valid > 0 ) {
+          callout = $( "div.callout" ); 
+          type = "info"; 
+          title = "Certains champs sont manquants"; 
+          text = "Veuillez corriger le proble&#768me avant de soumettre le formulaire."; 
+        } 
+        else if ( valid == 0 && gender == 0 ) {
+          callout = $( "div.callout" ); 
+          type = "info"; 
+          title = "Le genre est manquant"; 
+          text = "Veuillez corriger le proble&#768me avant de soumettre le formulaire."; 
+        }
+
+        if ( callout !== undefined ) {
+          setObjLayout( callout, "callout-", type ); 
+          setObjContent( callout, title, text ); 
+        } else {
+          var values = $( "form" ).serialize(  )+"&country=Canada";
+          submitValues(  values  ); 
+        }
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+{"attribut": [{
+	"name": "region", 
+	"id": "region", 
+	"title": "Re&#769gion", 
+	"data": [
+		{"name": "Abitibi-Te&#769miscamingue", "code": "08"}, 
+		{"name": "Bas-Saint-Laurent", "code": "01"}, 
+		{"name": "Capitale-Nationale", "code": "03"}, 
+		{"name": "Centre-du-Que&#769bec", "code": "17"}, 
+		{"name": "Chaudie&#768re-Appalaches", "code": "12"}, 
+		{"name": "Co&#770te-Nord", "code": "09"}, 
+		{"name": "Estrie", "code": "05"}, 
+		{"name": "Gaspe&#769sie - I&#770les-de-la-Madeleine", "code": "11"}, 
+		{"name": "Lanaudie&#768re", "code": "14"}, 
+		{"name": "Laurentides", "code": "15"}, 
+		{"name": "Laval", "code": "13"}, 
+		{"name": "Mauricie", "code": "04"}, 
+		{"name": "Monte&#769re&#769gie", "code": "16"}, 
+		{"name": "Montre&#769al", "code": "06"}, 
+		{"name": "Nord-du-Que&#769bec", "code": "10"}, 
+		{"name": "Outaouais", "code": "07"}, 
+		{"name": "Saguenay - Lac-Saint-Jean", "code": "02"}
+	]
+},{
+	"name": "drainage", 
+	"id": "cl_drain", 
+	"title": "Drainage des sols", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 
+		{"name": "Excessif", "code": "0"},
+		{"name": "Rapide", "code": "1"},
+		{"name": "Bon", "code": "2"},
+		{"name": "Mode&#769re&#769", "code": "3"},
+		{"name": "Imparfait", "code": "4"},
+		{"name": "Mauvais", "code": "5"},
+		{"name": "Tre&#768s mauvais", "code": "6"},
+		{"name": "Drainage complexe", "code": "16"}					
+	]
+},{
+	"name": "densite", 
+	"id": "cl_dens", 
+	"title": "Densite&#769 des peuplements", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 
+		{"name": ">= 80 %", "code": "A"},
+		{"name": ">= 60 % et < 80 %", "code": "B"},
+		{"name": ">= 40 % et < 60 %", "code": "C"},
+		{"name": ">= 25 % et < 40 %", "code": "D"}
+	]
+},{
+	"name": "essence", 
+	"id": "gr_essence", 
+	"title": "Type de couvert forestier",
+	"type": "select",
+	"pointer": "essence", 
+	"data": [
+		{"name": "Aucun", "code": "NA", "optgroup": "Groupe"}, 
+		{"name": "Peuplement feuillus", "code": "F0", "optgroup": "Groupe", "restrict": true }, 
+		{"name": "Peuplement re&#769sineux", "code": "R0", "optgroup": "Groupe", "restrict": true }, 
+		{"name": "Bouleau a&#768 papier", "code": "BP", "group": "F0", "optgroup": "Feuillus"}, 
+		{"name": "Bouleau gris", "code": "BG", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Bouleau jaune", "code": "BJ", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Caryer a&#768 fruits doux", "code": "CF", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Caryer cordiforme", "code": "CC", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Cerisier tardif", "code": "CT", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne a&#768 gros fruits", "code": "CG", "group": "F0", "optgroup": "Feuillus"}, 
+ 		{"name": "Che&#770ne bicolore", "code": "CI", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne blanc", "code": "CB", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne rouge", "code": "CR", "group": "F0", "optgroup": "Feuillus"},  	
+		{"name": "E&#769rable argente&#769", "code": "EA", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable noir", "code": "EI", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable a&#768 sucre", "code": "ES", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable rouge", "code": "EO", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne d&#39Ame&#769rique", "code": "FA", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne de Pennsylvanie", "code": "FP", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne noir", "code": "FO", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Hetre a&#768 grandes feuilles", "code": "HG", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Noyer cendre", "code": "NC", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Noyer noir", "code": "NN", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Orme d&#39Ame&#769rique", "code": "OA", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Orme de thomas", "code": "OA", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Orme rouge", "code": "OO", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Ostryer de virginie", "code": "OV", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Peuplier a&#768 feuilles delto&#239des", "code": "PL", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Peuplier a&#768 grandes dents", "code": "PD", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Peuplier baumier", "code": "PA", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Peuplier faux-tremble", "code": "PT", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "Tilleul d&#39Ame&#769rique", "code": "TA", "group": "F0", "optgroup": "Feuillus"},  
+		{"name": "E&#769pinette blanche", "code": "EB", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette noire", "code": "EN", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette rouge", "code": "EU", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette de Norve&#768ge", "code": "EV", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Me&#769le&#768ze laricin", "code": "ML", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin blanc", "code": "PB", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin gris", "code": "PG", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin rigide", "code": "PC", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin rouge", "code": "PR", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Pruche de l&#39est", "code": "PU", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Sapin baumier", "code": "SB", "group": "R0", "optgroup": "Re&#769sineux"},  
+		{"name": "Thuya occidental", "code": "TO", "group": "R0", "optgroup": "Re&#769sineux"}
+	]
+},{
+	"name": "couvert", 
+	"id": "type_couv", 
+	"title": "",  
+	"type": "select",
+	"pointer": "essence",  
+	"data": [
+		{"name": "Aucun", "code": "NA"},
+		{"name": "Feuillus", "code": "F"},
+		{"name": "Re&#769sineux", "code": "R"},	
+		{"name": "Mixte", "code": "M"}
+	]
+},{
+	"name": "etat", 
+	"id": "type_couv", 
+	"title": "",  
+	"type": "select",
+	"pointer": "essence",  
+	"data": [
+		{"name": "Groupe", "code": "G", "info": "Groupement tel que lu dans la base de donne&#769es."}, 
+		{"name": "Contient", "code": "C", "info": "Le groupement contient l&#39essence qu&#39elle que soit sa dominance."}, 
+		{"name": "Domine", "code": "D", "info": "L&#39essence domine le groupement."}, 
+		{"name": "Pure", "code": "P", "info": "Le groupement n&#39est constitue&#769 que de cette essence."}
+	]
+},{
+	"name": "depot", 
+	"id": "dep_sur", 
+	"title": "Classe de de&#769po&#770t de surface", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "depth": "De&#769po&#770t e&#769pais", "code": "NA"},
+		{"name": "Sable", "depth": "De&#769po&#770t e&#769pais", "code": "2A, 2AE, 2AK, 2AT, 2B, 2BD, 2BP, 2BE, 4GS, 4P, 5S, 6S, 9A, 9S"}, 
+		{"name": "Limon", "depth": "De&#769po&#770t e&#769pais", "code": "3A, 3AC, 3AE, 3AN, 3D, 3DD, 3DA, 3DE, 4A, 4GA, 4GD, 8C"},
+		{"name": "Argile", "depth": "De&#769po&#770t e&#769pais", "code": "5A, 5G, 8G, 8P"},		
+		{"name": "Gravier", "depth": "De&#769po&#770t e&#769pais", "code": "1A, 1AA, 1AC, 1AS, 1AD, 1AB, 1B, 1BD, 1BT, 1BP, 1BC, 1BN, 1BG, 1BF, 8A"},		
+		{"name": "Roc", "depth": "De&#769po&#770t e&#769pais", "code": "6G, 8E, 8F, R, RS, RC"},		
+		{"name": "Organique", "depth": "De&#769po&#770t e&#769pais", "code": "7E, 7T"} 	
+	]
+},{
+	"name": "epaisseur", 
+	"id": "dep_sur", 
+	"title": "", 
+	"type": "select",
+	"pointer": "depot",  
+	"data": [
+		{"name": "De&#769po&#770t e&#769pais", "code": "X"}, 
+		{"name": "De&#769po&#770t d&#39e&#769paisseur moyenne", "code": "XY"},
+		{"name": "De&#769po&#770t mince", "code": "XM"},
+		{"name": "De&#769po&#770t tre&#768s mince", "code": "MX"},
+		{"name": "De&#769po&#770t de mince a&#768 tre&#768s mince", "code": "RX"},
+		{"name": "De&#769po&#770t tre&#768s mince ou abscent", "code": "R"}
+	]
+},{
+	"name": "ecological", 
+	"id": "type_eco", 
+	"title": "Type e&#769cologique", 
+	"type": "select", 
+	"pointer": "type_eco", 
+	"data": [
+		{"code": "NA", "name": "Aucun"}, 
+	  {"code": "MS1", "name": "MS1"}, 
+	  {"code": "MS2", "name": "MS2"}, 
+	  {"code": "MS4", "name": "MS4"}, 
+	  {"code": "MS6", "name": "MS6"}, 
+	  {"code": "MS7", "name": "MS7"}, 
+	  {"code": "RB1", "name": "RB1"}, 
+	  {"code": "RB2", "name": "RB2"}, 
+	  {"code": "RB5", "name": "RB5"}, 
+	  {"code": "RC3", "name": "RC3"}, 
+	  {"code": "RE1", "name": "RE1"}, 
+	  {"code": "RE2", "name": "RE2"}, 
+	  {"code": "RE3", "name": "RE3"}, 
+	  {"code": "RE4", "name": "RE4"}, 
+	  {"code": "RE7", "name": "RE7"}, 
+	  {"code": "RP1", "name": "RP1"}, 
+	  {"code": "RS1", "name": "RS1"}, 
+	  {"code": "RS2", "name": "RS2"}, 
+	  {"code": "RS3", "name": "RS3"}, 
+	  {"code": "RS4", "name": "RS4"}, 
+	  {"code": "RS5", "name": "RS5"}, 
+	  {"code": "RS7", "name": "RS7"}, 
+	  {"code": "RT1", "name": "RT1"}, 
+	  {"code": "LA1", "name": "LA1"}, 
+	  {"code": "LA2", "name": "LA2"}, 
+	  {"code": "LA3", "name": "LA3"}, 
+	  {"code": "MA1", "name": "MA1"}, 
+	  {"code": "MA2", "name": "MA2"}, 
+	  {"code": "MA3", "name": "MA3"}, 
+	  {"code": "TA1", "name": "TA1"}, 
+	  {"code": "TA2", "name": "TA2"}, 
+	  {"code": "TOB", "name": "TA3"}, 
+	  {"code": "TOF", "name": "TOF"} 
+	]
+},{
+	"name": "age", 
+	"id": "cl_age",  
+	"title": "Âge des peuplements", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 		
+		{"name": "10 ans", "code": "10"},
+		{"name": "30 ans", "code": "20"},
+		{"name": "50 ans", "code": "50"},
+		{"name": "70 ans", "code": "70"},	
+		{"name": "90 ans", "code": "90"},
+		{"name": "120 ans", "code": "120"},
+		{"name": "JIN", "code": "JIN"},
+		{"name": "JIR", "code": "JIR"},
+		{"name": "VIN", "code": "VIN"},
+		{"name": "VIR", "code": "VIR"}
+	]
+},{
+	"name": "pente", 
+	"id": "cl_pente",  
+	"title": "Classe des pentes", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 		
+		{"name": "Nulle - de 0 à 3 %", "code": "A"},
+		{"name": "Faible - de 4 à 8 %", "code": "B"},
+		{"name": "Douce - de 9 à 15 %", "code": "C"},
+		{"name": "Modérée - de 16 à 30 %", "code": "D"},	
+		{"name": "Forte - de 31 à 40 %", "code": "E"},
+		{"name": "Abrupte - 41 % et plus", "code": "F"},
+		{"name": "Sommet - entourées de pentes de 41 % et plus", "code": "S"}
+	]
+},{
+	"name": "hauteur", 
+	"id": "cl_hauteur",  
+	"title": "Classe des hauteurs", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 		
+		{"name": "Plus grande ou égale à 22 m", "code": "1"},
+		{"name": "Plus grande ou égale à 17 m et plus petite que 22 m", "code": "2"},
+		{"name": "Plus grande ou égale à 12 m et plus petite que 17 m", "code": "3"},
+		{"name": "Plus grande ou égale à 7 m et plus petite que 12 m", "code": "4"},	
+		{"name": "Plus grande ou égale à 4 m et plus petite que 7 m", "code": "5"},
+		{"name": "Plus grande ou égale à 2 m et plus petite que 4", "code": "6"},
+		{"name": "Plus petite que 2 m", "code": "7"}
+	]
+},{
+	"name":  "first_physical", 
+	"id": "type_eco", 
+	"title": "", 
+	"type": "select", 
+	"pointer": "type_eco", 
+	"data": [
+		{"code": "NA", "name": "Aucun"}, 
+		{"code": "0", "name": "0"}, 
+		{"code": "1", "name": "1"}, 
+		{"code": "2", "name": "2"}, 
+		{"code": "3", "name": "3"}, 
+		{"code": "4", "name": "4"}, 
+		{"code": "5", "name": "5"}, 
+		{"code": "6", "name": "6"}, 
+		{"code": "7", "name": "7"}, 
+		{"code": "8", "name": "8"}, 
+		{"code": "9", "name": "9"} 
+	]
+},{
+	"name": "second_physical", 
+	"id": "type_eco", 
+	"title": "", 
+	"type": "select", 
+	"pointer": "type_eco", 
+	"data": [
+		{"code": "NA", "name": "Aucun"}, 
+		{"code": "A", "name": "A"}, 
+		{"code": "B", "name": "B"}, 
+		{"code": "F", "name": "F"}, 
+		{"code": "H", "name": "H"}, 
+		{"code": "K", "name": "K"}, 
+		{"code": "L", "name": "L"}, 
+		{"code": "M", "name": "M"}, 
+		{"code": "O", "name": "O"}, 
+		{"code": "P", "name": "P"}, 
+		{"code": "S", "name": "S"}, 
+		{"code": "U", "name": "U"} 
+	]
+},{
+	"name": "intervention", 
+	"id": "intervention", 
+	"title": "Type d&#39interventions", 
+	"type": "simple", 
+	"data": [
+		{"name": "Coupe par bande", "code": "CBA"}, 
+		{"name": "Coupe avec protection des tiges a&#768 diamètre variable", "code": "CDV"},
+		{"name": "Coupe d&#39ensemencement finale", "code": "CEF"},
+		{"name": "Coupe avec protection des hautes tiges marchandes et des sols", "code": "CPH"},
+		{"name": "Coupe avec protection de la re&#769ge&#769ne&#769ration", "code": "CPR"},
+		{"name": "Coupe avec protection des petites tiges marchandes et des sols", "code": "CPT"},
+		{"name": "Coupe de re&#769cupe&#769ration dans un brûlis", "code": "CRB"},
+		{"name": "Re&#769colte des tiges re&#769siduelles et des rebuts", "code": "CRR"},
+		{"name": "Coupe avec re&#769serve de semenciers", "code": "CRS"},
+		{"name": "Coupe totale", "code": "CT"},
+		{"name": "Ensemencement", "code": "ENS"},
+		{"name": "E&#769limination des tiges re&#769siduelles", "code": "ETR"},
+		{"name": "Plantation", "code": "P"},
+		{"name": "Regarni de re&#769ge&#769ne&#769ration pour constituer l&#39e&#769quivalent d&#39une plantation", "code": "PRR"},
+		{"name": "Re&#769ge&#769ne&#769ration d&#39une aire d&#39e&#769branchage", "code": "REA"},
+		{"name": "Re&#769ge&#769ne&#769ration de site d&#39infrastructure abandonne&#769e", "code": "RIA"},
+		{"name": "Re&#769cupe&#769ration en vertu d&#39un plan spe&#769cial d&#39ame&#769nagement", "code": "RPS"}
+	]
+}]}

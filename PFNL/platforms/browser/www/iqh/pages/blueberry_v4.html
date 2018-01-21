@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Créateur IQH | SIG</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="author" content="Mickael Germain">
+    <meta name="copyright" content="(c) 2015-2017 Olivier Dupras-Tessier; Mickael Germain">
+    <meta name="contact" content="mickael.germain@usherbrooke.ca">
+    <meta http-equiv="last-modified" content="2017-04-25@21:45:00 UTC/GMT -4 hours"> 
+
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Ion Slider -->
+    <link rel="stylesheet" href="../plugins/ion.rangeSlider-2.1.2/ion.rangeSlider-2.1.2/css/ion.rangeSlider.css">
+    <!-- Ion Slider Nice -->
+    <link rel="stylesheet" href="../plugins/ion.rangeSlider-2.1.2/ion.rangeSlider-2.1.2/css/ion.rangeSlider.skinModern.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+        <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="hold-transition skin-red layout-top-nav">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+          <div class="container">
+            <div class="col-xs-9">
+            <div class="navbar-header">
+              <a href="#" class="navbar-brand" id="logo" onClick="move2page( 'http://igeomedia.com/portail' )"><b>Créateur </b>IQH - <b>Bleuet sauvage</b></a>
+            </div>
+            </div>
+            <div class="col-xs-3">
+            <div >
+            <select class="form-control" name="histo" id="histo" >
+                          <option name="zero"> Nouveau</option>
+                          <option name="un"> IQH_Etienne_20171001</option>  
+                          <option name="deux"> IQH_Etienne_20171002</option>
+            </select>
+                </div>
+              </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Content Wrapper. Contains page content -->
+      <!--div class="content-wrapper"-->
+      <div class="content-wrapper">
+        <!--div class="container"-->
+        <div class="container">
+          <!-- Main row -->
+
+
+            
+          <section class="content">
+
+            <!-- Information cartographique-->  
+            <div class="row-fluid">
+            <div class="box box-solid box-default"> <div class="box-header with-border"><h3 class="box-title"><b>Information cartographique</b></h3></div>
+            <div class="box-body" >
+         
+              <div class="col-xs-6">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title"> Région d'étude</h3> 
+                  </div>
+                  <div class="box-body" id="general">
+                    <form>
+                      <div class="form-group">
+                        <!--select class="form-control" id="region" onchange="saveGeneral( this )"-->
+                        <select class="form-control" name="region" id="region" >
+                          <option style="display: none;"> Sélectionner</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>              
+              </div>
+
+              <div class="col-xs-6">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title"> Légende cartographique</h3> 
+                  </div><!-- /.box-header -->
+                  <div class="box-body">
+                    <table class="table table-hover table-bordered table-striped" id="echelle">
+                      <thead>
+                        <tr>
+                          <th style="width:60px;"> Potentiel</th>
+                          <th style="width:30px; text-align:center;"> Min</th>
+                          <th style="width:30px; text-align:center;"> Max</th>
+                        </tr>
+                      </thead>
+                      <tbody id="selected">
+                        <tr id="range_4">
+                          <td> E&#769leve&#769</td>
+                          <td style="text-align:center;"> 81</td>
+                          <td style="text-align:center;"> 100</td>
+                        </tr>
+                        <tr id="range_3">
+                          <td> Moyen</td>
+                          <td style="text-align:center;"> 61</td>
+                          <td style="text-align:center;"> 80</td>
+                        </tr>
+                        <tr id="range_2">
+                          <td> Faible</td>
+                          <td style="text-align:center;"> 41</td>
+                          <td style="text-align:center;"> 60</td>
+                        </tr>
+                        <tr id="range_1">
+                          <td> Absent</td>
+                          <td style="text-align:center;"> 0</td>
+                          <td style="text-align:center;"> 40</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box -->     
+              </div>   
+
+              
+            </div> 
+            </div><!-- /. row#general -->
+            </div>
+
+            <!-- Information habitat - IQH de présence -->
+            <div class="row-fluid">
+            <div class="box box-solid box-default"> <div class="box-header with-border"><h3 class="box-title"><b>Information habitat - IQH de présence</b></h3></div>
+            <div class="box-body" >
+
+              <div class="col-xs-4">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title"> Couvert (COUV)</h3>
+                  </div>
+                  <div class="box-body">
+                    <table class="table table-bordered table-striped" id="couvert">
+                      <thead>
+                        <tr>
+                          <th> Classe (code)</th>
+                          <th> Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody id="couvert">
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #couvert -->
+              </div>
+                
+              <div class="col-xs-8">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title"> Essence (ESS)</h3>
+                  </div>
+                  <div class="box-body">
+                    <table class="table table-bordered table-striped" id="essence">
+                      <thead>
+                        <tr>
+                          <th> Classe (code)</th>
+                          <th> Facteur</th>
+
+                        </tr>
+                      </thead>
+                      <tbody id="essence">
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #essence -->
+              </div>
+
+              <div class="col-xs-4">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title"> Drainage (DRAIN)</h3>
+                  </div>
+                  <div class="box-body">
+                    <table class="table table-bordered table-striped" id="drainage">
+                      <thead>
+                        <tr>
+                          <th> Classe (code)</th>
+                          <th> Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody id="drainage">
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #drainage -->
+              </div>
+
+              <div class="col-xs-8">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title"> De&#769po&#770t de surface (DEPOT)</h3>
+                  </div>
+                  <div class="box-body">
+                    <table class="table table-bordered table-striped" id="depot">
+                      <thead>
+                        <tr>
+                          <th> Classe (code)</th>
+                          <th> Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody id="depot">
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #depot -->
+              </div>
+
+             <div class="col-xs-12">
+                <div class="box box-solid box-success" id="iqhpres">
+                  <div class="box-header">
+                    <h3 class="box-title"> Équation IQH de présence - Saisir les pondérations entre 0 et 1 (somme doit être égale à 1)</h3>
+                  </div>
+                  <div class="box-body">
+                      <h3>IQH Présence = <input  id="iqhpres1" name="iqhpres1 "size="1" value="0.0"> x TYPEC + <input  id="iqhpres2" name="iqhpres2 "size="1" value="0.0"> x DRAIN + <input  id="iqhpres3" name="iqhpres3 "size="1" value="0.0"> x DEPOT</h3>    
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #depot -->
+              </div>
+                
+            
+            </div>
+            </div></div>
+
+
+             <!-- Information perturbation - IQH de perturbation -->
+            <div class="row-fluid">
+              <div class="box box-solid box-default"> <div class="box-header with-border"><h3 class="box-title"><b>Information perturbation - IQH de perturbation</b></h3></div>
+            <div class="box-body" >
+              <div class="col-xs-6">
+                <div class="box box-solid box-info" id="age_feux">
+                  <div class="box-header">
+                    <h3 class="box-title"> Âge des feux de forêt (AGE)</h3>
+                    
+                  </div>
+                  <div class="box-body">
+                   
+                    <table class="table table-bordered table-hover table-striped" id="age_feux">
+                      <thead>
+                        <tr>
+                          <th name="max">Minimum</th>
+                          <th name="min">Maximum</th>
+                          <th name="factor">Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody id="selected">
+                        <tr>
+                          <td>3</td>
+                          <td>8</td>
+                          <td>3</td>
+                        </tr> 
+                        <tr>
+                          <td>9</td>
+                          <td>12</td>
+                          <td>2</td>
+                        </tr> 
+                        <tr>
+                          <td>13</td>
+                          <td>20</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>2</td>
+                          <td>1</td>
+                        </tr> 
+                      </tbody>
+                      <tfooot>
+                    </table>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <i class="fa fa-plus-circle text-blue pull-right" id="age_feux" title="" data-toggle="tooltip" data-original-title="Ajouter" onClick="addNewRow( $( this ).attr( 'id' ) )"></i>
+                  </div><!-- /.box-footer -->
+                </div><!-- /.box #essence -->
+              </div><!-- /.col-xs-3 -->
+            <div class="col-xs-6">
+                <div class="box box-solid box-info" id="age_recolte">
+                  <div class="box-header">
+                    <h3 class="box-title"> Âge des récoltes forestières (AGE)</h3>
+                    
+                  </div>
+                  <div class="box-body">
+                   
+                    <table class="table table-bordered table-hover table-striped" id="age_feux">
+                      <thead>
+                        <tr>
+                          <th name="max">Minimum</th>
+                          <th name="min">Maximum</th>
+                          <th name="factor">Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody id="selected">
+                        <tr>
+                          <td>3</td>
+                          <td>8</td>
+                          <td>3</td>
+                        </tr> 
+                        <tr>
+                          <td>9</td>
+                          <td>12</td>
+                          <td>2</td>
+                        </tr> 
+                        <tr>
+                          <td>13</td>
+                          <td>20</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>2</td>
+                          <td>1</td>
+                        </tr> 
+                      </tbody>
+                      <tfooot>
+                    </table>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <i class="fa fa-plus-circle text-blue pull-right" id="age_feux" title="" data-toggle="tooltip" data-original-title="Ajouter" onClick="addNewRow( $( this ).attr( 'id' ) )"></i>
+                  </div><!-- /.box-footer -->
+                </div><!-- /.box #essence -->
+              </div><!-- /.col-xs-3 -->
+
+              <div class="col-xs-12">
+                <div class="box box-solid box-info" id="intervention">
+                  <div class="box-header">
+                    <h3 class="box-title"> Intervention (INTER)</h3>
+                    
+                  </div>
+                  <div class="box-body">
+                    
+                    <div class="row-margin">
+                      <div class="col-xs-12">
+                        <table class="table table-hover table-bordered table-striped" id="intervention">
+                          <thead>
+                            <tr>
+                              <th> Classe (code)</th>
+                              <th> Facteur</th>
+                            </tr>
+                          </thead>
+                          <tbody id="intervention">
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                    </div>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <i class="fa fa-plus-circle text-blue pull-right" id="age_intervention" title="" data-toggle="tooltip" data-original-title="Ajouter" onClick="addNewRow( $( this ).attr( 'id' ) )"></i>
+                  </div><!-- /.box-footer -->
+                </div><!-- /.box #essence -->
+              </div><!-- /.col-xs-8 -->
+                
+            <div class="col-xs-12">
+                <div class="box box-solid box-success" id="iqhpert">
+                  <div class="box-header">
+                    <h3 class="box-title"> Équation IQH de perturbation - Saisir les pondérations entre 0 et 1 (somme doit être égale à 1)</h3>
+                  </div>
+                  <div class="box-body">
+                      <h3>IQH Perturbation= <input id="iqhpert1" name="iqhpert1 "size="1" value="0.0"> x AGE + <input id="iqhpert2" name="iqhpert2 "size="1" value="0.0"> x INTER</h3>    
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #depot -->
+              </div>
+            </div>
+            
+            </div></div><!-- row-fluid -->
+                
+            <!-- Formulaire de soumission -->
+            <div class="row-fluid">    
+            <div class="col-xs-12">
+                <div class="box box-primary">
+                  <div class="box-body">
+                    <div class="callout callout-info" id="submit">
+                      <h4> Avant de soumettre le formulaire</h4>
+                      <p> Prenez soin de valider les informations contenues dans chacune des sections du formulaire.</p>
+                    </div>
+                    <div class="ready-panel text-center">
+                      <button class="btn btn-primary margin" onClick="submitFormsValues()"> -- Soumettez votre formulaire --</button>
+                    </div>
+                  </div>
+                </div>
+              </div>    
+            </div>
+
+          </section><!-- /content -->
+
+                
+        </div><!-- /.container -->
+
+        <!-- Echelle Modal cells editing content -->
+        <div class="modal fade" id="echelle-cells-editor">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <div class="row margin">
+                  <b> temp</b>
+                </div>
+                <div class="row margin">
+                  <div class="col-sm-12">
+                    <input class="slider" type="text" id="echelle" value="0;100">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveSliderChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#echelle-cells-editor -->
+
+        <!-- Perturbation Modal cells editing content -->
+        <div class="modal fade" id="perturbation-age-cells-editor">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form">
+                  <div class="form-group">
+                    <label> Facteur</label>
+                    <select class="form-control" name="factor">
+                      <option> 0</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                </form>
+                <div class="row margin">
+                  <div class="col-sm-12">
+                    <input class="slider" type="text" id="perturbation" value="0;50">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveSliderChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#perturbation-age-cells-editor -->
+
+        <!-- List cells editing content Modal-->
+        <div class="modal fade" id="list-cells-editor">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form">
+                  <div class="form-group">
+                    <label> Classe</label>
+                    <input class="form-control" name="class">
+                  </div>
+                  <div class="form-group">
+                    <label> Facteur</label>
+                    <select class="form-control" name="factor">
+                      <option> 0</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveRowChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#list-cells-editor -->
+
+        <!-- List Essence cells editing content Modal-->
+        <div class="modal fade" id="listeEssence-cells-editor">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title"> Liste des essences</h3>
+              </div>
+              <div class="modal-body"> 
+                <form role="form" >
+                  <div class="row-fluid" id="listeEssence-cells-editor">
+                      
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveRowChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#list-cells-editor -->            
+    
+        <!-- Depot cells editing content Modal-->
+        <div class="modal fade" id="depot-cells-editor">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form">
+                  <div class="form-group">
+                    <label> Classe</label>
+                    <input class="form-control" name="depot">
+                  </div>
+                  <div class="form-group">
+                    <label> E&#769paisseur</label>
+                    <select class="form-control" id="epaisseur" name="epaisseur">
+                      <option style="display: none;"> De&#769po&#770t e&#769pais</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                  <div class="form-group">
+                    <label> Facteur</label>
+                    <select class="form-control" name="factor">
+                      <option> 0</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveRowChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#list-cells-editor -->
+
+        <!-- Essence cells editing content Modal-->
+        <div class="modal fade" id="essence-cells-editor">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form" id="essence-cells-editor">
+                  <!-- First -->
+                  <div class="form-group has-feedback">
+                    <label> Essence</label>
+                    
+                  </div><!-- /.form group --> 
+
+                 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="tooltip" data-original-title="Terminer" onClick="saveRowChanges( this )"><i class="fa fa-check"></i></button>
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Suprimer" onClick="deleteRow( this )"><i class="fa fa-ban"></i></button> 
+                <button type="button" class="btn btn-success pull-left" id="refresh" data-toggle="tooltip" data-original-title="Réinitialiser" onClick="refreshRow( this )"><i class="fa fa-refresh"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#list-cells-editor -->
+
+      </div><!-- /.content-wrapper -->
+
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>BETA - Version</b> 1.1
+        </div>
+        <strong>Copyright &copy; 2015-2018 Olivier Dupras-Tessier; Mickael Germain; CGQ.</strong> Tous droits re&#769serve&#769s.
+      </footer>
+
+    </div><!-- ./wrapper -->
+
+    <!-- Modal - Info messages -->
+    <div class="modal fade" id="messages">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"> </h4>
+          </div>
+          <div class="modal-body"> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="end-messages" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer">
+              <i class="fa fa-check"></i>
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal#marker-group-editor -->
+                
+    <!-- Modal - Info messages erreur -->
+    <div class="modal fade" id="messages-erreur">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"> Erreur - Vérifier les pondérations</h4>
+          </div>
+          <div class="modal-body"> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="end-messages" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer">
+              <i class="fa fa-check"></i>
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal#marker-group-editor -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/app.min.js"></script>
+    <!-- Ion Slider -->
+    <script src="../plugins/ion.rangeSlider-2.1.2/ion.rangeSlider-2.1.2/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+    <!-- DataTables -->
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <!-- Data Loader -->
+    <script src="../dist/js/data_loader.js"></script>
+
+    <script> 
+
+
+      // Global constant
+      var json_data = {}; 
+      var json_values = {}; 
+      var rowEssence=1;
+
+      
+
+      
+      /***
+       
+       */
+      $( function() { 
+        
+          //Remplir le formulaire (Mickael Germain)
+          $.ajax({
+              url:'../dist/json/blueberry.json',
+              dataType: 'json',
+              type:'get',
+              cache:false,
+              success:function(data){
+                $(data.attribut).each(function(index,value){
+                    if (value.name=="region") {
+                        $(value.data).each(function(index,value){
+                        
+                            $('select#region').append('<option name='+value.name+'>'+value.name+'</option>');
+                        
+                        });
+                    }
+                    else if (value.name=="couvert"){
+                         i=0;
+                         $(value.data).each(function(index,value){
+                            i++ 
+                            $('tbody#couvert').append('<tr><td>'+value.name+' ('+value.code+')</td><td><select class="form-control" name="facteurCouvert'+i+'" id="facteurCouvert'+i+'" >'+
+                                '<option name="zero"> 0</option>'+
+                                '<option name="un"> 1</option>'+
+                                '<option name="deux"> 2</option>'+
+                                '<option name="trois"> 3</option></select></td></tr>');
+                         }); 
+                    }
+                    else if (value.name=="ecological"){
+                         $(value.data).each(function(index,value){
+                            $('select#ecologie').append('<option name='+value.name+'>'+value.name+' ('+value.code+')</option>');
+                         }); 
+                    }
+                    else if (value.name=="drainage"){
+                         i=0;
+                         $(value.data).each(function(index,value){
+                            i++ 
+                            $('tbody#drainage').append('<tr><td>'+value.name+' ('+value.code+')</td><td><select class="form-control" name="facteurDrain'+i+'" id="facteurDrain'+i+'" >'+
+                                '<option name="zero"> 0</option>'+
+                                '<option name="un"> 1</option>'+
+                                '<option name="deux"> 2</option>'+
+                                '<option name="trois"> 3</option></select></td></tr>');
+                         }); 
+                    }
+                    else if (value.name=="depot"){
+                         i=0;
+                         $(value.data).each(function(index,value){
+                            i++ 
+                            $('tbody#depot').append('<tr><td>'+value.name+' ('+value.code+')</td><td><select class="form-control" name="facteurDepot'+i+'" id="facteurDepot'+i+'" >'+
+                                '<option name="zero"> 0</option>'+
+                                '<option name="un"> 1</option>'+
+                                '<option name="deux"> 2</option>'+
+                                '<option name="trois"> 3</option></select></td></tr>');
+                         }); 
+                    }
+                     else if (value.name=="intervention"){
+                         i=0;
+                         $(value.data).each(function(index,value){
+                            i++ 
+                            $('tbody#intervention').append('<tr><td>'+value.name+' ('+value.code+')</td><td><select class="form-control" name="facteurInter'+i+'" id="facteurInter'+i+'" >'+
+                                '<option name="zero"> 0</option>'+
+                                '<option name="un"> 1</option>'+
+                                '<option name="deux"> 2</option>'+
+                                '<option name="trois"> 3</option></select></td></tr>');
+                         }); 
+                    }
+                    else if (value.name=="essence"){
+                         i=0;
+                         $(value.data).each(function(index,value){
+                            i++ 
+                            $('tbody#essence').append('<tr><td>'+value.name+' ('+value.code+')</td><td><select class="form-control" name="facteurEssence'+i+'" id="facteurEssence'+i+'" >'+
+                                '<option name="zero"> 0</option>'+
+                                '<option name="un"> 1</option>'+
+                                '<option name="deux"> 2</option>'+
+                                '<option name="trois"> 3</option></select></td></tr>');
+                         }); 
+                    }
+                    
+                    
+               
+            });
+          }
+              
+          });
+
+        
+       } ); 
+
+
+      function setObjLayout( elem, obj, type ) { 
+        if ( elem.hasClass( obj+type ) ){ 
+          elem.removeClass( obj+type )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"info" ) ) { 
+          elem.removeClass( obj+"info" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"primary" ) ) { 
+          elem.removeClass( obj+"primary" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"warning" ) ) { 
+          elem.removeClass( obj+"warning" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"success" ) ) { 
+          elem.removeClass( obj+"success" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"danger" ) ) { 
+          elem.removeClass( obj+"danger" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"error" ) ) { 
+          elem.removeClass( obj+"error" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"feedback" ) ) { 
+          elem.removeClass( obj+"feedback" )
+            .addClass( obj+type );
+        } else { 
+          elem.addClass( obj+type );
+        }
+      } /** setObjLayout() */
+
+
+      /** 
+       * Arrange modal#message header and core by status 
+       * @params { $( elem ) }
+       */
+      function modalMessages( title, text, status ) { 
+        var myModal = $( ".modal#messages" ); 
+        var myTitle = myModal.find( "*" ).children( ".modal-title" ); 
+        var myBody = myModal.find( "*" ).children( ".modal-body" ); 
+
+        setObjLayout( myModal, "modal-", status ); 
+
+        myTitle.html( title ); 
+        myBody.html( text ); 
+        myModal.modal( "show" ); 
+       } /** modalMessages() */
+
+
+      /* 
+       * Redirect user to another page
+       * @params {  STRING  }
+       * @return { --- }
+       */
+      function move2page( file ) { 
+        var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ); 
+        window.location.href = file + "?" + parameters; 
+      } /** move2Page() */
+
+
+      /** Ask $( elem ) to hide itself */
+      $( ".valid:not('#general')" ).hide(); 
+
+      /** Disabled submit button */
+      $( ".ready-panel button" ).prop( "disabled", false ); 
+
+      /** Indent Spinner to each appropriate box */
+      $( ".slider" ).each( function() { 
+        var id = $( this ).attr( "id" ); 
+        var params = { step: 1, min: 0, max: 100, from: 0, to: 100, grid: true, postfix: "%", hide_min_max: true, from_shadow: true, to_shadow: true }; 
+
+        if ( id && id == "perturbation" ) {
+          params.max = 50; 
+          params.to = 50; 
+          params.postfix = " ans";
+        }  
+
+        ( [ "echelle", "perturbation" ].indexOf( id ) == -1 ) ? params.type = "single" : params.type = "double"; 
+        $( this ).ionRangeSlider( params ); 
+       } ); 
+
+
+      /** 
+       * Eval if table object is a DataTable();  
+       * @params { $( elem ) }
+       */
+      function evalDataTable( elem ) { 
+        var params={ "paging": false, "lengthChange": false, "searching": false, "ordering": false, "info": false, "autoWidth": true };
+        var results = ( $.fn.dataTable.isDataTable( elem ) ) ? $( elem ).DataTable() : $( elem ).DataTable( params );
+
+        return results; 
+       } /** evalDataTable */
+
+
+      /**
+       * Animation of every panel when click on expendable button
+       * @params { STRING }
+       */
+      function panelAnimation( elem ) { 
+        var id = $( elem ).attr( "id" ); 
+        var valid_btn = $( ".valid#"+id ); 
+        var box = $( elem ).parents( ".box" ); 
+
+        if ( ["general, echelle"].indexOf( id ) == -1 ) { 
+          valid_btn.fadeToggle(); 
+         }
+
+        setObjLayout( box, "box-", "primary" ); 
+       } /** panelAnimation */
+
+
+      /** 
+       * Add a new row to a table
+       * @params { STRING }
+       * @return { --- }
+       */
+      function addNewRow( obj ) { 
+        var table = evalDataTable( $( ".table#"+obj ) );  
+        var values = ( [ "age_feux", "age_intervention" ].indexOf( obj ) != -1 ) ? [ 0, 0, 0 ] : ["Aucun", "Aucun", "Aucun", "Aucun", "Aucun", "Aucun", 0]; 
+
+        table.row.add( values )
+          .draw( false ); 
+       } /** addNewRow */ 
+
+        
+      /** 
+       * Validate input content
+       * @params { $( elem ) }
+       * @return { --- }
+       */
+      function validEssence( elem ) { 
+        var name = $( elem ).attr( "name" ); 
+        var val = $( elem ).val(); 
+        var form = $( elem ).parents( "form" ); 
+        var select = form.find( "select[name="+name+"]" ); 
+
+
+        /**
+         * Add or remove select's options 
+         * @params { STRING, STRING, BOOL }
+         * @return { --- }
+         */
+        function displayOption( option, bool ) {
+          if ( bool ) {
+            option.removeAttr( "style" ); 
+          } else {
+            option.css( "display", "none" ); 
+          }
+        } /* displayOption() */  
+
+
+        /** 
+         * Change properties of subSelect select input
+         * @params { $( elem ) }
+         * @return { --- }
+         */
+        function subSelect( obj ) {
+          obj.prop( "disabled", true ).val( "Aucun" ).trigger("change"); 
+          setObjLayout( obj.parent(), "has-", "feedback" ); 
+          //validEssence( obj ); 
+        } /** subSelect() */ 
+
+
+        /** 
+         * Set obj layout according to the value
+         * @params { STRING, $( elem ) }
+         * @return { --- }
+         */
+        function validValue( value, obj ) {
+          if ( value != "Aucun" ) {
+            setObjLayout( obj.parent(), "has-", "success" ); 
+          } else {
+            setObjLayout( obj.parent(), "has-", "feedback" ); 
+          }
+        } /** validValue() */
+
+
+        if ( [ "first", "second", "third" ].indexOf( name ) != -1 ) { 
+
+          if ( [ "Peuplement feuillus", "Peuplement résineux" ].indexOf( val ) != -1 ) {
+
+            select.attr( "restrict", "true" ); 
+            $( "select#essence" ).each( function() {
+              $( this ).find( "option[name*='Peuplement']" ).each( function() {  
+                displayOption( $( this ), false ); 
+              } ); 
+            } ); 
+
+          } else {
+
+            if ( select.attr( "restrict" ) ) {
+              select.removeAttr( "restrict" ); 
+              $( "select#essence" ).each( function() {
+                $( this ).find( "option[name*='Peuplement']" ).each( function() {  
+                  displayOption( $( this ), true ); 
+                } ); 
+              } ); 
+            }
+
+          }
+
+        }
+
+
+        if ( name == "first" ) { 
+          select.prop( "disabled", false ); 
+          var list = [ "state", "covert" ]; 
+          for ( var key in list ) {  
+            var sub_select = form.find( "select[name="+list[key]+"]" ) ;
+            if ( val != "Aucun" ) { 
+              setObjLayout( select.parent(), "has-", "success" ); 
+              sub_select.prop( "disabled", false ); 
+            } else { 
+              setObjLayout( select.parent(), "has-", "feedback" ); 
+              subSelect( sub_select ); 
+            }  
+          }
+        } else if ( name == "state" ) { 
+          var sub_select = form.find( "select[name='second']" ) ;
+          validValue( val, select ); 
+
+          if ( [ "Aucun", "Domine", "Pure", "Contient" ].indexOf( val ) == -1 ) { 
+            sub_select.prop( "disabled", false ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "second" ) { 
+          var sub_select = form.find( "select[name='third']" ) ;
+          if ( val != "Aucun" ) { 
+            sub_select.prop( "disabled", false ); 
+            setObjLayout( select.parent(), "has-", "success" ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "third" ) {
+          validValue( val, select ); 
+        } else if ( name == "covert" ) {
+          validValue( val, select ); 
+        } else if ( name == "ecological" ) {
+          var sub_select = form.find( "select[name='first_physical']" ); 
+          validValue( val, select ); 
+          if ( val != "Aucun" ) { 
+            sub_select.prop( "disabled", false ); 
+            setObjLayout( select.parent(), "has-", "success" ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "first_physical" ) {
+          var sub_select = form.find( "select[name='second_physical']" ); 
+          if ( val != "Aucun" ) { 
+            sub_select.prop( "disabled", false ); 
+            setObjLayout( select.parent(), "has-", "success" ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "second_physical" ) {
+          validValue( val, select ); 
+        }
+
+      } /** validEssence() */
+
+
+      function refreshRow( elem ) { 
+        var form = $( elem ).parents(".modal-content").find("form"); 
+        
+        form.find( "select[name='first']" ).val( "Aucun" ).trigger("change"); 
+        form.find( "select[name='ecological']" ).val( "Aucun" ).trigger("change");
+        form.find( "select[name='factor']" ).val( 0 ).trigger("change"); 
+      }
+
+
+      /** 
+       * Validation des boîtes - test Mickael ok
+       */
+      function validInput( elem ) { 
+        var box = $( elem ).parents( ".box" ); 
+        var layout = $( elem ).parent(); 
+        var value = $( elem ).val(); 
+
+        setObjLayout( box, "box-", "primary" ); 
+
+        if ( value === null || value == "" ) { 
+          setObjLayout( layout, "has-", "error" ); 
+          if ( count !== undefined ) {  count++;  }
+        } else { 
+          setObjLayout( layout, "has-", "success" ); 
+        }
+      } /** validInput() */
+
+
+      function getFormValues( elem ) {
+        var results = []; 
+        for ( var i = 0; i < elem[0].length; i++ ) {
+          name = $( elem[0][i] ).attr( "id" ); 
+          value = $( elem[0][i] ).val(); 
+          results.push( { name : name, value: value }  )
+        }
+
+        return results; 
+      }
+
+
+      /** 
+       * Validate and embridge forms content to a json_data / Exclusif to Echelle 
+       * @params {  $( elem )  }
+       * @return {  JSON  }
+       */
+      function validFormPanel( elem ) { 
+        var id = $( elem ).attr( "id" ); 
+        var box = $( elem ).parents( ".box" ); 
+        var form = box.find( "*" ).children( "form" );
+        var values = getFormValues( form ); //form.serializeArray(); 
+        var valid = 0; 
+
+        for ( var i in values ) { 
+          var tmp = values[i]; 
+          if ( tmp.value !== "Aucun" ) {  
+            /** Send data to Server to valid them - Change .modal#messages[name] */
+            //var myData = $.parseJSON( tmp[i] ); 
+            $( ".modal#messages" ).attr( "name", "valid_values" ); 
+            submitValues( tmp, "valid_values.php" ); 
+
+            json_data[tmp.name] = tmp.value; 
+          } else { 
+            valid++; 
+          }
+        } 
+
+        if ( id == "general" ) {
+          var tmp = { name: "espece", value: "Bleuet sauvage" }; 
+          submitValues( tmp, "valid_values.php" ); 
+          
+          json_data[tmp.name] = tmp.value; 
+        }
+
+        ( valid > 0 ) ? setObjLayout( box, "box-", "primary" ) : setObjLayout( box, "box-", "success" ); 
+        evalForms( id ); 
+      } /** validFormPanel() */
+
+
+      /** 
+       * Validate and embridge table content to a json_data / Exclusif to Echelle 
+       * @params { $( elem ) }
+       * @return { JSON }
+       */
+      function validEchelleForms( elem ) { 
+        var results; 
+        var values = []; 
+        var myData = elem.data(); 
+        for ( var i = 0; i < myData.length; i++ ) { 
+          values.push( { 
+            value: myData[i][0], 
+            maximum: parseInt( myData[i][1] ), 
+            minimum: parseInt( myData[i][2] )
+          } ); 
+        }
+        results = { value: values }
+
+        return results; 
+      } /** validEchelleForms() */
+
+
+      /** 
+       * Validate and embridge forms table content to a JSON
+       * @params { STRING }
+       * @return { --- }
+       */
+      function validTablePanel( elem ) { 
+
+        if ( typeof elem == "object" ) {
+          var id = $( elem ).attr( "id" ); 
+          var box = $( elem ).parents( ".box" );           
+        } else {
+          var id = elem; 
+          var box = $( ".table#" + id ).parents( ".box" ); 
+        }
+
+        var pond = box.find( "input" ).val(); 
+        var table = ( [ "age_intervention", "intervention" ].indexOf == -1 ) ? evalDataTable( box.find( ".table" ) ) : 
+          evalDataTable( box.find( ".table#" + id ) );  
+        
+        var headers = table.columns().header(); 
+        var rows = table.rows().data(); 
+
+        var results={ value:{}, ponderation: pond }; 
+        for ( var i=0; i < rows.length; i++ ) { 
+          var field, values=rows[i]; 
+          var facteur = values[values.length - 1]; 
+
+          // essence algorythm
+          if ( id == "essence" ) { 
+            if ( i == 0 ) results.value = [];  // Exceptionnaly, results.value is an array
+            if ( facteur != 0 ) { 
+              var store = { essence: $( ".store-essence" ), etat: $( ".store-etat" ), couvert: $( ".store-couvert" ) }; 
+              var etat = store.etat.children( "li[name=\""+values[1]+"\"]" ).attr( "code" ); 
+              var couvert = store.couvert.children( "li[name=\""+values[4]+"\"]" ).attr( "code" );
+              var essence = { 
+                dominant: store.essence.children( "li[name=\""+values[0]+"\"]" ).attr( "code" ), 
+                secondaire: store.essence.children( "li[name=\""+values[2]+"\"]" ).attr( "code" ), 
+                tertiaire: store.essence.children( "li[name=\""+values[3]+"\"]" ).attr( "code" ) 
+              };   
+              var type_eco = values[5]; 
+
+              if ( etat == "P" ) { 
+                var code = [ essence.dominant, essence.dominant ].join( "" ); 
+              } 
+
+              else { 
+                var code = []; 
+                for ( var key in essence ) { 
+                  if ( ( [ 'dominant', 'secondaire', 'tertiaire' ].indexOf( key ) != -1 ) && ( essence[key] != 'NA' ) ) { 
+                    code.push( essence[key] ); 
+                  }
+                }
+                code = code.join( "" ); 
+              }
+
+              if ( code.indexOf( "F0" ) != -1 ) {
+                store.essence.find("li[group='F0']").each( function() { 
+                  var tmp_essence = $( this ).attr( "code" ); 
+                  var tmp_code = code.replaceAll( "F0", tmp_essence ); 
+                  results.value.push( { value: facteur, essence: tmp_code, couvert: couvert, etat: etat, type_eco: type_eco } );
+                } ); 
+              } 
+
+              else if ( code.indexOf( "R0" ) != -1 ) { 
+                store.essence.find("li[group='R0']").each( function() { 
+                  var tmp_essence = $( this ).attr( "code" ); 
+                  var tmp_code = code.replaceAll( "R0", tmp_essence ); 
+                  results.value.push( { value: facteur, essence: tmp_code, couvert: couvert, etat: etat, type_eco: type_eco } );
+                } ); 
+              } 
+
+              else {
+                results.value.push( { value: facteur, essence: code, couvert: couvert, etat: etat, type_eco: type_eco } );
+              }
+           
+            }  
+          }
+
+          // depot algorythm
+          else if ( id == "depot" ) { 
+            if ( facteur != 0 ) { 
+              var store = { depot: $( ".store-depot" ), epaisseur: $( ".store-epaisseur" ) }; 
+              var depot = store.depot.children( "li[name=\""+values[0]+"\"]" ).attr( "code" ).split( ", " ); 
+              var epaisseur = store.epaisseur.children( "li[name=\""+values[1]+"\"]" ).attr( "code" );
+
+              for ( var j=0; j < depot.length; j++ ) { 
+                var code = epaisseur.replace( "X", depot[j] ); 
+                results.value[code] = facteur; 
+              }
+            } 
+          }
+
+          // echelle algorythm
+          else if ( [ "echelle" ].indexOf( id ) != -1 ) { 
+            results.value[values[0]] = [values[1], values[2]]; 
+          } 
+
+          else if ( [ "age_feux", "age_intervention" ].indexOf( id ) != -1 ) { 
+            if ( i == 0 ) results.value = [];
+            if ( facteur != 0 ) {
+              results.value.push( { value: facteur, age: [ values[0], values[1] ] } )
+            }
+          }
+          
+          // list algorythm
+          else { 
+            if ( values[1] != 0 ) { 
+              var store = $( ".store-"+id ); 
+              var code = store.children( "li[name=\""+values[0]+"\"]" ).attr( "code" ); 
+
+              results.value[code] = facteur; 
+            } 
+          }
+        } 
+
+
+        if ( id == "intervention" ) {
+          results.value["BR"] = "4"; 
+        }
+
+        //alert(results);
+        /** Send data to Server to valid them - Change .modal#messages[name] */
+        var myData = { data: JSON.stringify( results ), name: id }; 
+        $( ".modal#messages" ).attr( "name", "valid_values" ); 
+        submitValues( myData, "valid_values.php" ); 
+
+        json_data[id] = results; 
+        if ( id != "age_intervention" ) { 
+          setObjLayout( box, "box-", "success" ); 
+
+          if ( id != "echelle" ) $( elem ).fadeToggle(); 
+          evalForms( id ); 
+
+        } 
+
+        if ( id == "intervention" ) {
+          validTablePanel( "age_intervention" ); 
+        }
+      } /** validFormPanel() */
+
+
+      /*
+       * Find and replace HTML entities by Characters
+       * @params {  STRING  }
+       * @return {  STRING  }
+       */
+      function replaceEntities( obj ) { 
+        var results = obj; 
+        if ( results.indexOf( "&gt;" ) > -1 ) results = results.replace( "&gt;", ">" ); 
+        if ( results.indexOf( "&lt;" ) > -1 ) results = results.replace( "&lt;", "<" ); 
+
+        return results
+      } /** replaceEntities() */
+
+
+      /**
+       * Call modal to show itself onClick();
+       * @params { $( table-row ) }  
+       * @return { --- }
+       */
+      $('.table#essence').on('click', function(){
+          
+          $('.modal#listeEssence-cells-editor').modal("show");
+
+          
+      });
+        
+      $( '.table tbody#selected' ).on( 'click', 'tr', function () { 
+        var id = $( this ).parents( ".table" ).attr( "id" ); 
+        var table = evalDataTable( $( ".table#" + id ) );  
+        var index = table.row( this ).index(); 
+        var myData = table.row( this ).data(); 
+        var myModal = ( [ "essence", "depot", "echelle", "age_feux", "age_intervention" ].indexOf( id ) == -1 ) ? $( ".modal#list-cells-editor" ) : 
+          ( [ "age_feux", "age_intervention" ].indexOf( id ) != -1 ) ? $( ".modal#perturbation-age-cells-editor" ) :
+          $( ".modal#" + id + "-cells-editor" ); 
+
+        if ( [ "essence", "echelle", "age_feux", "age_intervention" ].indexOf( id ) == -1 ) { 
+          inputDisabled( myModal, true ); 
+          myData[0] = replaceEntities( myData[0] ); 
+          myModal.find( "*" ).children( "input" ).val( myData[0] ); 
+          if ( id == "depot" ) {
+            myModal.find( "select[name='epaisseur']" ).val( myData[1] ); 
+            myModal.find( "select[name='factor']" ).val( myData[2] ); 
+          } else {
+            myModal.find( "select[name='factor']" ).val( myData[1] ); 
+          }
+        } else if ( id == "essence" ) { 
+          var selectList = myModal.find( "select" );
+          var outlist = [ "ecological", "first_physical", "second_physical" ];  
+          for ( var i = 0; i < selectList.length; i++ ) { 
+            var select = $( selectList.get(i) ); 
+            if ( select.attr("id") == "ecological" ) {
+              if ( myData[i] == "Aucun" ) {
+                select.val( "Aucun" )
+                  .trigger( "change" ); 
+              } else {
+                var value = myData[i].split(""); 
+
+                var eco = ( value.slice( 0, 3 ).join( "" ) != "" ) ? value.slice( 0, 3 ).join( "" ) : "Aucun";
+                select.val( eco )
+                  .trigger( "change" ); 
+
+                var first = ( value.slice( 3 ,4 ).join( "" ) != "" ) ? value.slice( 3 ,4 ).join( "" ) : "Aucun"; 
+                myModal.find( "select[name='first_physical']" ).val( first )
+                  .trigger( "change" );
+
+                var second = ( value.slice( 4, value.length ).join( "" ) != "" ) ? value.slice( 4, value.length ).join( "" ) : "Aucun"; 
+                myModal.find( "select[name='second_physical']" ).val( second )
+                  .trigger( "change" ); 
+              }
+            }
+
+            if ( outlist.indexOf( select.attr("id") ) == -1 ) { 
+              if ( select.attr("id") == "factor" ) {
+                select.val( myData[ myData.length - 1 ] ).trigger("change"); 
+              } else {
+                select.val( myData[i] ).trigger("change"); 
+              }
+            }
+             
+          } 
+        } else if ( id == "echelle" ) { 
+          var tr_id = $( this ).attr( "id" ); 
+          var num = parseInt( tr_id.replace( "range_", "" ) ); 
+          var label = myModal.find( "b" ); 
+          var slider = myModal.find( ".slider" ).data( "ionRangeSlider" ); 
+
+          var top_tr = "tr#range_"+( num+1 ); 
+          var topData = table.row( top_tr ).data(); 
+
+          var bottom_tr = "tr#range_"+( num-1 );
+          var bottomData = table.row( bottom_tr ).data(); 
+
+          var values = { from: myData[1], to: myData[2] }; 
+          ( topData !== undefined ) ? values.to_max = ( parseInt( topData[2] ) - 1 ) : values.to_max = 100; 
+          ( bottomData !== undefined ) ? values.from_min = ( parseInt( bottomData[1] ) + 1 ) : values.from_min = 0; 
+
+          label.html( myData[0] ); 
+          slider.update( values ); 
+        
+        } else if ( [ "age_feux", "age_intervention" ].indexOf( id ) != -1 ) { 
+          var select = myModal.find( "select[name='factor']" ); 
+          var slider = myModal.find( ".slider" ).data( "ionRangeSlider" ); 
+          var values = { from: myData[0], to: myData[1] }; 
+
+          select.val( myData[2] ); 
+          slider.update( values ); 
+        }
+
+        myModal.attr( "name", id )
+          .attr( "row", index )
+          .modal( "show" ); 
+       } ); /** /.table tbody onClick EVENT */
+
+
+      /**
+       * Not Generic - Enabled/Disabled input
+       * @params { $( elem ), bool }
+       * @return { --- }
+       */
+      function inputDisabled( elem, state ) { 
+        try { 
+          elem.find( "form input.form-control" )
+            .prop( "disabled", state ); 
+         } catch( err ) { 
+          console.log( err.message );
+         }
+       } /** inputDisabled */
+
+
+      /**
+       * Enable or disable select input
+       * @params { $( elem ), bool }
+       * @return { --- }
+       */
+      function selectDisabled( elem, state ) { 
+        try { 
+          elem.find( "select" )
+            .each( function() { 
+              if ( state ) { 
+                if ( $( this ).val() == "Aucun" ) $( this ).prop( "disabled", state ); 
+              } else { 
+                $( this ).prop( "disabled", state ); 
+              }
+            } ); 
+        } catch( err ) { 
+          console.log( err.message );
+        }
+      } /** selectDisabled() */
+
+
+      /**
+       * Set the row's data  ;
+       * @params { $( elem ), array(), obj, int }  
+       * @return { --- }
+       */
+      function setDataRow( elem, data, table, index ) {
+        elem.modal( "hide" ); 
+        var values=[]; 
+        for ( var i in data ) { 
+          values.push( data[i].value ); 
+         }
+
+        inputDisabled( elem, true ); 
+        table.row( index )
+          .data( values )
+          .draw( false );        
+      } /** setDataRow */
+
+
+      /**
+       * Update table row selected with new entries;
+       * @params { STRING }  
+       * @return { --- }
+       */
+      function saveRowChanges( elem ) { 
+        var myModal = $( elem ).parents( ".modal" ); 
+        var form = myModal.find( "form" ); 
+        var index = myModal.attr( "row" ); 
+        var name = myModal.attr( "name" ); 
+        var table = evalDataTable( $( ".table#"+name ) ); 
+
+        inputDisabled( myModal, false ); 
+
+        var myData; 
+        selectDisabled( form, false ); 
+        myData = form.serializeArray(); 
+        selectDisabled( form, true ); 
+
+        var jsonData = {}; 
+        var tmpInd; 
+        var outlist = [ "ecological", "first_physical", "second_physical" ]; 
+        for ( var i in myData ) {
+          if ( outlist.indexOf( myData[i].name ) != -1 ) {
+            if ( jsonData["type_eco"] === undefined ) {
+              tmpInd = i; 
+              jsonData["type_eco"] = myData[i].value; 
+            } else {
+              if ( myData[i].value != "Aucun" ) {
+                jsonData["type_eco"] += myData[i].value;
+              }
+            }
+          } else {
+            jsonData[ myData[i].name ] = myData[i].value; 
+          }
+        }
+
+        if ( name == "essence" ) {
+          myData.splice( tmpInd, outlist.length, { name: "type_eco", value: jsonData.type_eco } );  
+          if ( jsonData["first"] != "Aucun" & jsonData["state"] == "Aucun" ) { 
+            var select = form.find("select#etat" ); 
+            var couvert = form.find("select#couvert" );
+            select.prop( "disabled", false ); 
+            couvert.prop( "disabled", false );
+            setObjLayout( select.parent(), "has-", "error" ); 
+          } else if ( jsonData["first"] != "Aucun" & [ "Aucun", "Pure", "Domine", "Contient" ].indexOf( jsonData["state"] ) == -1 & jsonData["second"] == "Aucun" ) {
+            var select = form.find("select#essence[name='second']" ); 
+            var couvert = form.find("select#couvert" );
+            select.prop( "disabled", false ); 
+            couvert.prop( "disabled", false );
+            setObjLayout( select.parent(), "has-", "error" ); 
+          } else if ( jsonData["type_eco"] == "Aucun" || jsonData["first"] == "Aucun" ) { 
+            
+            var select; 
+            if ( jsonData["type_eco"] == "Aucun" ) {
+              select = form.find( "select[name='ecological']" ); 
+              select.prop( "disabled", false ); 
+              setObjLayout( select.parent(), "has-", "error" );
+            }
+
+            if ( jsonData["first"] == "Aucun" ) {
+              select = form.find( "select[name='first']" ); 
+              select.prop( "disabled", false ); 
+              setObjLayout( select.parent(), "has-", "error" );
+            }
+
+          } else {
+            setDataRow( myModal, myData, table, index ); 
+          }
+        } else {
+          setDataRow( myModal, myData, table, index ); 
+        }
+
+       } /** saveRowChanges */
+
+
+      /**
+       * Update table with slider input values;
+       * @params { STRING }  
+       * @return { --- }
+       */
+      function saveSliderChanges( elem ) { 
+        var myModal = $( elem ).parents( ".modal" ); 
+        var index = parseInt( myModal.attr( "row" ) ); 
+        var name = myModal.attr( "name" ); 
+        var table = evalDataTable( $( ".table#"+name ) ); 
+        
+        if ( name == "echelle" ) {
+          var label = myModal.find( "b" ).html(); 
+          var slider = myModal.find( ".slider" ); 
+          var myData = slider.val().split( ";" );  
+          var values = [label, myData[0], myData[1]]; 
+          
+          table.row( index )
+            .data( values )
+            .draw( false ); 
+
+          var topTable = table.row( index - 1 ); 
+          var topData = topTable.data(); 
+          if ( topData !== undefined ) { 
+            topData[1] = ( parseInt( myData[1] ) + 1 ).toString(); 
+            topTable.data( topData )
+              .draw( false ); 
+          }
+
+          var bottomTable = table.row( index + 1 );
+          var bottomData = bottomTable.data(); 
+          if ( bottomData !== undefined ) { 
+            bottomData[2] = ( parseInt( myData[0] ) - 1 ).toString(); 
+            bottomTable.data( bottomData )
+              .draw( false ); 
+          }
+        } else {
+          var factor = myModal.find( "select option:selected" ).val(); 
+          var myData = myModal.find( ".slider" ).val().split(";"); 
+          var values = [ myData[0], myData[1], factor ]; 
+
+          table.row( index )
+            .data( values )
+            .draw( false );
+        }
+        
+       } /** saveSliderChanges */
+
+
+      /**
+       * Delete the selected row
+       * @params { STRING }
+       * @return { --- }
+       */
+      function deleteRow( elem ) { 
+        var myModal = $( elem ).parents( ".modal" ); 
+        var index = myModal.attr( "row" ); 
+        var name = myModal.attr( "name" ); 
+        var table = evalDataTable( $( ".table#"+name ) ); 
+
+        table.row( index )
+          .remove()
+          .draw( false ); 
+       } /** deleteRow */ 
+
+
+      /** 
+       * Eval the sum of the ponderation factor 
+       * @params { STRING }
+       * @return { --- }
+       */
+      function evalForms( id ) { 
+        var title, text, type
+        var info = $( ".callout#submit" ); 
+        var submit = $( ".ready-panel button" ); 
+        var start = 0;
+        var pond = { habitat: 0, perturbation: 0 }; 
+
+        for ( var key in json_data ) { 
+          if ( ["espece", "region", "echelle"].indexOf( key ) == -1 ) { 
+            if ( [ "age_feux", "intervention" ].indexOf( key ) != -1 ) {
+              pond.perturbation += parseInt( json_data[key].ponderation );
+            } else {
+              pond.habitat += parseInt( json_data[key].ponderation );
+            }
+          }
+        }
+
+        if ( json_data.espece !== undefined && json_data.region !== undefined && json_data.echelle !== undefined && pond !== undefined && pond == 100 ) { 
+
+          type = "success"; 
+          title = "Vous e&#770tes fin pre&#770t"; 
+          text = "Assurez-vous de la ve&#769racite&#769 des informations avant de les soumettre."; 
+          submit.prop( "disabled", false ); 
+
+        } else { 
+
+          if ( id == "general" ) { 
+
+            if ( json_data.espece === undefined && json_data.region === undefined ) { 
+              type = "warning"; 
+              title = "Vous n'avez pas spe&#769cifiez de champs"; 
+              text = "Les champs \"Champignon forestier\" et \"Re&#769gion\" doivent e&#770tre remplis avant de soumettre le formulaire."; 
+              submit.prop( "disabled", true ); 
+            } else if( json_data.espece === undefined && json_data.region !== undefined ) { 
+              type = "warning"; 
+              title = "Vous n'avez pas spe&#769cifiez d'espe&#768ce"; 
+              text = "Le champs \"Champignon forestier\" doit e&#770tre rempli avant de soumettre le formulaire."; 
+              submit.prop( "disabled", true ); 
+            } else if ( json_data.espece !== undefined && json_data.region === undefined ) { 
+              type = "warning"; 
+              title = "Vous n'avez pas spe&#769cifiez de re&#769gion"; 
+              text = "Le champs \"Re&#769gion\" doit e&#770tre rempli avant de soumettre le formulaire."; 
+              submit.prop( "disabled", true ); 
+            } else { 
+              type = "info"; 
+              title = "Avant de soumettre le formulaire"; 
+              text = "Prenez soin de valider les informations contenues dans chacune des sections du formulaire."; 
+              submit.prop( "disabled", true ); 
+            }
+
+          } else if ( id == "echelle" ) { 
+
+            if ( json_data.echelle === undefined ) { 
+              type = "danger"; 
+              title = "Proble&#768me d'indentation"; 
+              text = "Un proble&#768me externe est survenue. Veuillez re&#769essayer plus tard."; 
+              submit.prop( "disabled", true ); 
+             } else { 
+              type = "info"; 
+              title = "Avant de soumettre le formulaire"; 
+              text = "Prenez soin de valider les informations contenues dans chacune des sections du formulaire."; 
+              submit.prop( "disabled", true ); 
+             }
+
+          } else if ( ["general, echelle"].indexOf( id ) == -1 ) { 
+
+            if ( pond.habitat < 100 && pond.perturbation < 100 ) {
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat et de perturbation est infe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat > 100 && pond.perturbation > 100 ) {
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat et de perturbation est supe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( ( pond.habitat > 100 && pond.perturbation < 100) || ( pond.habitat < 100 && pond.perturbation > 100 ) ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "Revérifier les valeurs de ponde&#769ration d&#39habitat et de perturbation."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat < 100 && pond.perturbation == 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat est infe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            }  else if ( pond.habitat > 100 && pond.perturbation == 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat est supe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat == 100 && pond.perturbation < 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations de perturbation est infe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat == 100 && pond.perturbation > 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations de perturbation est supe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat == 100 && pond.perturbation == 100 ) { 
+              type = "info"; 
+              title = "Avant de soumettre le formulaire"; 
+              text = "Prenez soin de valider les informations contenues dans chacune des sections du formulaire."; 
+              submit.prop( "disabled", false ); 
+            }
+
+          }
+        
+        }
+
+        setObjLayout( info, "callout-", type ); 
+
+        info.children( "h4" )
+          .html( title ); 
+
+        info.children( "p" )
+          .html( text ); 
+
+       } /** evalForms */
+
+
+      /**
+       * Submit values selected by the user to process/python/addIPH_v1.1
+       * @params { --- }
+       * @return { JSON }
+       */
+      function submitFormsValues() { 
+        totalIQHPres = parseFloat($('input#iqhpres1').val())+parseFloat($('input#iqhpres2').val())+parseFloat($('input#iqhpres3').val()); 
+        totalIQHPert = parseFloat($('input#iqhpert1').val())+parseFloat($('input#iqhpert2').val()); 
+        if ( totalIQHPres != 1.0){     
+            $('.box-solid#iqhpres').removeClass("box-success");
+            $('.box-solid#iqhpres').addClass("box-danger")
+        }
+        if ( totalIQHPert != 1.0){
+            $('.box-solid#iqhpert').removeClass("box-success");
+            $('.box-solid#iqhpert').addClass("box-danger")
+        }
+        if ( (totalIQHPert != 1.0)|(totalIQHPres != 1.0) ) {$('.modal#messages-erreur').modal("show");}  
+          
+      } /** submitFormsValues() */
+
+
+      /** EVENT - Fire when a navbar element is add to the DOM */ 
+      $( "ul.navbar-nav" ).on( 'DOMNodeInserted', function() {  
+
+        if ( $( this ).children( "li.messages-menu#notification" ).length > 0 ) { 
+          /**
+           * Find json data url, load data, create <select />|< table /> store
+           * @params {  ---  }
+           * @return {  ---  }
+           */
+          $( "ul.menu" ).children( "li" ).click( function() { 
+            getNotice( $( this ).attr( "id" ) ); 
+            $( this ).remove(); 
+
+            var total = $( "ul.menu" ).children( "li" ).length; 
+            var span = $( "li.messages-menu#notification" ).find( "span.label" ); 
+            var header = $( "li.messages-menu#notification" ).find( "li.header" ); 
+            var core = '<li><ul class="menu"><li><a href="#"><h4 style="margin: 0; !important"> Aucun nouvel avis<p class="pull-right"><i class="fa fa-bell text-orange"></i></p></h4><p style="margin: 0; !important"> En attente de nouvels avis</p></a></li></ul></li>'
+            if ( total > 0 ) { 
+              var text = ( total == 1 ) ? [ total, "nouvel avis disponible" ].join( " " ) : [ total, "nouvels avis disponibles" ].join( " " ); 
+              span.html( total ); 
+             } else { 
+              var text = "Aucun nouvel avis disponible"; 
+              span.remove(); 
+              $( core ).insertBefore( $( "li.messages-menu#notification" ).find( "li.footer" ) ); 
+             }
+            header.html( text ); 
+
+           } ); 
+         }
+
+       } ); 
+
+    </script>
+
+  </body>
+</html>
