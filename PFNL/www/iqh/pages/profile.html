@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Portail PFNL | Profil</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="author" content="Olivier Dupras-Tessier">
+    <meta name="copyright" content="(c) 2015-2016 Olivier Dupras-Tessier">
+    <meta name="contact" content="olivier.dupras.tessier@gmail.com">
+    <meta http-equiv="last-modified" content="2016-04-25@21:45:00 UTC/GMT -4 hours"> 
+
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">  
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+      tr.selected {
+        background-color: #c4dcea; !important
+      }
+      td.dt-center, th.dt-center { 
+        text-align: center; 
+      }
+
+    </style>
+
+  </head>
+  <body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a href="#" class="navbar-brand" id="logo" onClick="move2page( '../index.html' )"><b>Portail</b>PFNL</a>
+            </div>
+
+          </div>
+        </nav>
+      </header>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!--div class="container"-->
+        <div class="container">
+          <!-- Main row -->
+          <section class="content-header">
+            <h1> Gestion des profils
+              <small> Profil d'utilisateur</small>
+            </h1>
+          </section>
+
+          <!-- Main content -->
+          <section class="content">
+
+            <div class="row">
+              <div class="col-md-3">
+
+                <!-- Profile Image -->
+                <div class="box box-primary">
+                  <div class="box-body box-profile">
+                    <img class="profile-user-img img-responsive img-circle" src="../dist/img/visual_pharm/user_male.png" alt="User profile picture">
+                    <h3 class="profile-username text-center" id="name" style="margin-bottom:0px;!important">Utilisateur</h3>
+                    <p class="text-center" id="company" style="font-style:italic;">Compagnie</h5>
+                    <p class="text-muted text-center" id="profile">Profil</p>
+                    
+                    <!--ul class="list-group list-group-unbordered">
+                      <li class="list-group-item" id="email">
+                         <a href="javascript:"> Courriel</a>
+                      </li>
+                      <li class="list-group-item" id="telephone">
+                        <b>Télépphone</b>
+                      </li>
+                      <li class="list-group-item" id="address">
+                        <b>Adresse postale</b>
+                      </li>
+                      <li class="list-group-item" id="city">
+                        <b>Ville</b>
+                      </li>
+                      <li class="list-group-item" id="zip_code">
+                        <b>Code postal</b>
+                      </li>
+                    </ul-->
+
+                    <a href="#" class="btn btn-primary btn-block" id="update" data-toggle="modal" data-target="#profile-editor"><b>Mise à jour</b></a>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box -->
+
+              </div><!-- /.col -->
+              <div class="col-md-9">
+                <div class="nav-tabs-custom">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#users" data-toggle="tab">Utilisateurs</a></li>
+                  </ul>
+                  <div class="tab-content" id="users">
+
+                    <div class="active tab-pane" id="users">
+                      <div class="box box-widget" id="user">
+                        <div class="box-header">
+                          <h3 class="box-title"> Liste</h3>
+                          <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool online" id="refresh-user" name="user" rel="tooltip" data-title="Rafrai&#770chir" onClick="refreshTable( this )">
+                              <i class="fa fa-refresh text-green"></i>
+                            </button>
+                          </div> 
+                        </div>
+                        <div class="box-body no-padding text-black" style="height:250px;">
+                          <div class="span-12">
+                            <table class="table display" cellspacing="0" id="user" width="100%">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Nom</th>
+                                  <th>Prénom</th>
+                                  <th>Courriel</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                            </table> 
+                          </div>
+                        </div><!-- /.box-body -->
+                        <div class="box-footer"></div>
+                      </div><!-- /.box #user -->
+
+                    </div><!-- /.tab-pane -->
+
+                  </div><!-- /.tab-content -->
+                </div><!-- /.nav-tabs-custom -->
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+
+          </section><!-- /.content -->
+        </div>
+      </div><!-- /.content-wrapper -->
+
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>BETA - Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2015-2016 <a href="https://ca.linkedin.com/in/olivier-dupras-tessier-3a2b8b63" target="_blank">Olivier Dupras-Tessier</a>.</strong> Tous droits re&#769serve&#769s.
+      </footer>
+
+      <!-- Modal - Info messages -->
+      <div class="modal fade" id="messages">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"> </h4>
+            </div>
+            <div class="modal-body"> 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="end-messages" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer">
+                <i class="fa fa-check"></i>
+              </button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal#marker-group-editor -->
+
+      <!-- List cells editing content Modal-->
+      <div class="modal fade" id="profile-editor">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title"> Mise a&#768 jour</h4>
+            </div>
+            <div class="modal-body"> 
+              <form role="form">
+                <div class="form-group">
+                  <label> Profile</label>
+                  <select class="form-control" id="profile" name="user_profile">
+                    <option value="membre"> Membre</option>
+                    <option value="developpeur"> Développeur</option>
+                  </select>
+                </div><!-- /.form group --> 
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="updateProfile( this )"><i class="fa fa-check"></i></button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal#list-cells-editor -->
+
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/app.min.js"></script>
+    <!-- Data Loader -->
+    <script src="../dist/js/data_loader.js"></script>
+    <script> 
+
+
+      function postValidPanel( data ) { 
+        for ( var i in data.panel ) { 
+          var panel = data.panel[i]; 
+          if ( $( panel.node ).length == 0 ) indentDiv[ panel.action ]( panel ); 
+        }
+      }
+
+
+      function postNot( data ) { 
+        //var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ) ; 
+
+        modalMessages( data.title, data.text, data.type ); 
+        $( "button#end-messages" ).click( function() { 
+          window.location.href = document.referrer;//+"?"+parameters; 
+        } );
+      }
+
+
+      function postExist( data ) { 
+
+        if ( data.panel ) {
+          postValidPanel( data);
+        } else if ( data.operator ) {
+          if ( data.operator == "update" ) {
+            modalMessages( data.title, data.text, data.type );
+            refreshTable( data.table ); 
+          } else if ( data.operator == "get" ) {
+            var table = evalDataTable( $( data.table ) ); 
+            for ( var i in data.list ) {
+              var value = [ data.list[i].id, data.list[i].last_name, data.list[i].first_name, data.list[i].email, data.list[i].status, data.list[i].gender, data.list[i].company, data.list[i].telephone, data.list[i].address, data.list[i].city, data.list[i].zip_code ]; 
+              table.row.add( value )
+                .draw( false );
+            }
+          }
+        }
+
+      }
+
+
+      function postSuccess( data ) { 
+        var response = $.parseJSON( data ); 
+        if ( response.exist ) {
+          postExist( response ); 
+        } else { 
+          if ( response.operator ) {
+            if ( response.operator == "exit" ) {
+              postNot( response );
+            } else {
+              modalMessages( response.title, response.text, response.type );
+            }
+          }
+        }
+      }
+
+
+      function postError( data ) { 
+        var name = $( ".modal#messages" ).attr( "name" ); 
+        var values = {}; 
+        values.type = "danger";
+        values.title = "Connexion e&#769choue&#769"; 
+        values.text = "Vous n'e&#770tes pas autorise&#769 a&#768 naviguer sur cette page.";  
+          
+        if ( data.oparator ) {
+          if ( data.operator == "exit" ) {
+            postNot( values ); 
+          }
+        } else {
+          modalMessages( values.title, values.text, values.type );
+        }
+          
+      }
+
+
+      function submitValues( obj, file ) { 
+        $.post( url.file( url.php(), file ), obj )
+          .success( function( data ) {  postSuccess( data );  } )
+          .error( function( data ) {  postError( data );  } ); 
+      }
+
+
+      $( function() {
+
+        var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ); 
+        
+        // Valid user's rights
+        var values = parameters+"&type=profile";
+        submitValues( values, "valid_user.php" ); 
+
+        refreshTable( ".table#user" ) 
+
+      } ); 
+
+
+      function refreshTable( obj ) {
+        // Get the list of all users in sqliteDB
+        if ( $( obj ).is( "button" ) ) {
+          var parent = $( obj ).parents( ".box" ); 
+          var id = parent.attr( "id" );
+          var obj = ".table#" + id; 
+        } 
+        var table = evalDataTable( $( obj ) ); 
+        var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ); 
+        var values = parameters+"&type=profile&table=" + obj + "&methode=get"; 
+        
+        table.on( "click", "tr", function() {
+          if ( $( this ).hasClass('selected') ) {
+            $( this ).removeClass('selected'); 
+          } else {
+            table.$('tr.selected').removeClass('selected');
+            $( this ).addClass('selected'); 
+
+            var data = table.row( this ).data(); 
+            setDataInfo( data ); 
+          }
+        } ); 
+
+        table.clear().draw(); 
+        submitValues( values, "getUsers.php" ); 
+
+      }
+
+
+      function setObjLayout( elem, obj, type ) { 
+        if ( elem.hasClass( obj+type ) ){ 
+          elem.removeClass( obj+type )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"info" ) ) { 
+          elem.removeClass( obj+"info" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"primary" ) ) { 
+          elem.removeClass( obj+"primary" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"warning" ) ) { 
+          elem.removeClass( obj+"warning" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"success" ) ) { 
+          elem.removeClass( obj+"success" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"danger" ) ) { 
+          elem.removeClass( obj+"danger" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"error" ) ) { 
+          elem.removeClass( obj+"error" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"feedback" ) ) { 
+          elem.removeClass( obj+"feedback" )
+            .addClass( obj+type );
+        } else { 
+          elem.addClass( obj+type );
+        }
+      } /** setObjLayout() */
+
+
+      /** 
+       * Arrange modal#message header and core by status 
+       * @params { $( elem ) }
+       */
+      function modalMessages( title, text, status ) { 
+        var myModal = $( ".modal#messages" ); 
+        var myTitle = myModal.find( "*" ).children( ".modal-title" ); 
+        var myBody = myModal.find( "*" ).children( ".modal-body" ); 
+
+        setObjLayout( myModal, "modal-", status ); 
+
+        myTitle.html( title ); 
+        myBody.html( text ); 
+        myModal.modal( "show" ); 
+      } /** modalMessages() */
+
+
+      /* 
+       * Redirect user to another page
+       * @params {  STRING  }
+       * @return { --- }
+       */
+      function move2page( file ) { 
+        var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ); 
+        window.location.href = file + "?" + parameters; 
+      } /** move2Page() */
+
+
+      /** 
+       * Eval if table object is a DataTable();  
+       * @params { $( elem ) }
+       * @return { $( elem ) }
+       */
+      function evalDataTable( elem ) { 
+        var params = { "scrollY": "200px", "scrollCollapse": true, "paging": false, "lengthChange": false, "searching": false, "ordering": true, "info": false, "select": true, "columnDefs": [ { "className": "dt-center", "width": "15%", "targets": 0 }, { "className": "dt-center", "width": "40%", "targets": 1 }, { "className": "dt-center", "width": "40%", "targets": 2 }, { "className": "dt-center", "width": "40%", "targets": 3 } ] };
+       
+        var results = ( $.fn.dataTable.isDataTable( elem ) ) ? $( elem ).DataTable() : $( elem ).DataTable( params ); 
+
+        return results; 
+      } /** evalDataTable */ 
+
+
+      /**
+       * Get the real employed function name of a status 
+       * @params { $_POST['status'] }
+       */
+      function getStatusRole( status ) {
+        var results; 
+        if ( status == "membre" ) {
+          results = "Membre";
+        } else if ( status == "developpeur" ) {
+          results = "De&#769veloppeur";
+        } else if ( status == "admin" ) {
+          results = "Administrateur";
+        } else {
+          results = "Profile"; 
+        }
+
+        return results; 
+      } /** getStatusRole() */
+
+
+      function getGenderImage( gender ) {
+        var img = ( gender == "male" ) ? "avatar5.png" : 
+          ( gender == "female" ) ? "avatar2.png" : 
+          "visual_pharm/user_male.png";
+        var results = [ "../dist/img", img ].join( "/" );
+        return results; 
+      }
+
+
+      function setDataInfo( data ) {  
+        $( "div.box-profile" ).attr( "id", data[0] ); 
+        $( ".profile-username#name" ).html( [ data[2], data[1] ].join(" ") ); 
+        $( "li#email a" ).attr( "href", "mailto:" + data[3] ).html( data[3] ); 
+        $( ".text-muted#profile" ).html( getStatusRole( data[4] ) ); 
+        $( "img.profile-user-img" ).attr( "src", getGenderImage( data[5] ) );  
+        $( "p#company" ).html( data[6] ); 
+
+      } /* setDataInfo() */ 
+
+
+      function updateProfile( elem ) {
+        var myModal = $( elem ).parents( ".modal" ); 
+        var profile = myModal.find( ".form-control#profile option:selected" ).val(); 
+        var id = $( "div.box-profile" ).attr( "id" ); 
+        var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" );
+        var myData = parameters + "&methode=update&id=" + id + "&status=" + profile + "&table=.table#user"; 
+
+        submitValues( myData, "getUsers.php" ); 
+        setDataInfo( [ "", "Profile", "", "", "", "", "Comganie", "Te&#769le&#769phone", "Adresse postale", "Ville", "Code postal" ] ); 
+        myModal.modal( "hide" );
+      } /* updateProfile() */
+
+
+       /** EVENT - Fire when a navbar element is add to the DOM */ 
+      $( "ul.navbar-nav" ).on( 'DOMNodeInserted', function() {  
+
+        if ( $( this ).children( "li.messages-menu#notification" ).length > 0 ) { 
+          /**
+           * Find json data url, load data, create <select />|< table /> store
+           * @params {  ---  }
+           * @return {  ---  }
+           */
+          $( "ul.menu" ).children( "li" ).click( function() { 
+            getNotice( $( this ).attr( "id" ) ); 
+            $( this ).remove(); 
+
+            var total = $( "ul.menu" ).children( "li" ).length; 
+            var span = $( "li.messages-menu#notification" ).find( "*" ).children( "span.label" ); 
+            var header = $( "li.messages-menu#notification" ).find( "*" ).children( "li.header" ); 
+            var core = '<li><ul class="menu"><li><a href="#"><h4 style="margin: 0; !important"> Aucun nouvel avis<p class="pull-right"><i class="fa fa-bell text-orange"></i></p></h4><p style="margin: 0; !important"> En attente de nouvels avis</p></a></li></ul></li>'
+            if ( total > 0 ) { 
+              var text = ( total == 1 ) ? [ total, "nouvel avis disponible" ].join( " " ) : [ total, "nouvels avis disponibles" ].join( " " ); 
+              span.html( total ); 
+             } else { 
+              var text = "Aucun nouvel avis disponible"; 
+              span.remove(); 
+              $( core ).insertBefore( $( "li.messages-menu#notification" ).children( "ul.dropdown-menu" ).children( "li.footer" ) ); 
+             }
+            header.html( text ); 
+
+           } ); 
+         }
+
+       } ); 
+
+    </script>
+
+  </body>
+</html>

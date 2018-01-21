@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Créateur IQH | SIG</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="author" content="Olivier Dupras-Tessier">
+    <meta name="copyright" content="(c) 2015-2016 Olivier Dupras-Tessier">
+    <meta name="contact" content="olivier.dupras.tessier@gmail.com">
+    <meta http-equiv="last-modified" content="2016-04-25@21:45:00 UTC/GMT -4 hours"> 
+
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Ion Slider -->
+    <link rel="stylesheet" href="../plugins/ion.rangeSlider-2.1.2/ion.rangeSlider-2.1.2/css/ion.rangeSlider.css">
+    <!-- Ion Slider Nice -->
+    <link rel="stylesheet" href="../plugins/ion.rangeSlider-2.1.2/ion.rangeSlider-2.1.2/css/ion.rangeSlider.skinModern.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+        <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a href="#" class="navbar-brand" id="logo" onClick="move2page( '../index.html' )"><b>Créateur </b>IQH</a>
+            </div>
+
+          </div>
+        </nav>
+      </header>
+
+      <!-- Content Wrapper. Contains page content -->
+      <!--div class="content-wrapper"-->
+      <div class="content-wrapper">
+        <!--div class="container"-->
+        <div class="container">
+          <!-- Main row -->
+          <section class="content-header">
+            <h1> Bleuet sauvage
+            </h1>
+          </section>
+
+          <section class="content">
+
+            <div class="row-fluid">
+              <div class="col-xs-4">
+                <div class="box box-primary">
+                  <div class="box-header">
+                    <h3 class="box-title"> Ge&#769ne&#769rale</h3> 
+                    <div class="box-tools pull-right">
+                      <button class="btn btn-box-tool" id="general" title="" data-toggle="tooltip" data-original-title="Valider" onClick="validFormPanel( this )">
+                        <i class="fa fa-check-circle text-blue"></i>
+                      </button>
+                    </div> 
+                  </div>
+                  <div class="box-body" id="general">
+                    <form>
+                      <label>Re&#769gion</label>
+                      <div class="form-group">
+                        <!--select class="form-control" id="region" onchange="saveGeneral( this )"-->
+                        <select class="form-control" name="region" id="region" onChange="validInput( this )">
+                          <option style="display: none;"> Aucun</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>              
+              </div>
+
+              <div class="col-xs-4">
+                <div class="box box-primary">
+                  <div class="box-header">
+                    <h3 class="box-title"> E&#769chelle qualitative</h3>
+                    <div class="box-tools pull-right">
+                      <button class="btn btn-box-tool" id="echelle" title="" data-toggle="tooltip" data-original-title="Valider" onClick="validTablePanel( this )">
+                        <i class="fa fa-check-circle text-blue"></i>
+                      </button>
+                    </div> 
+                  </div><!-- /.box-header -->
+                  <div class="box-body">
+                    <table class="table table-hover table-bordered table-striped" id="echelle">
+                      <thead>
+                        <tr>
+                          <th style="width:60px;"> Potentiel</th>
+                          <th style="width:30px; text-align:center;"> Min</th>
+                          <th style="width:30px; text-align:center;"> Max</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="range_4">
+                          <td> E&#769leve&#769</td>
+                          <td style="text-align:center;"> 81</td>
+                          <td style="text-align:center;"> 100</td>
+                        </tr>
+                        <tr id="range_3">
+                          <td> Moyen</td>
+                          <td style="text-align:center;"> 61</td>
+                          <td style="text-align:center;"> 80</td>
+                        </tr>
+                        <tr id="range_2">
+                          <td> Faible</td>
+                          <td style="text-align:center;"> 41</td>
+                          <td style="text-align:center;"> 60</td>
+                        </tr>
+                        <tr id="range_1">
+                          <td> Absent</td>
+                          <td style="text-align:center;"> 0</td>
+                          <td style="text-align:center;"> 40</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box -->     
+              </div>   
+
+              <div class="col-xs-4">
+                <div class="box box-primary">
+                  <div class="box-body">
+                    <div class="callout callout-info" id="submit">
+                      <h4> Avant de soumettre le formulaire</h4>
+                      <p> Prenez soin de valider les informations contenues dans chacune des sections du formulaire.</p>
+                    </div>
+                    <div class="ready-panel text-center">
+                      <button class="btn btn-primary margin" onClick="submitFormsValues()"> -- Soumettez votre formulaire --</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /. row#general -->
+
+            <!-- Essence table forms -->
+            <div class="row-fluid">
+              <div class="col-xs-12">
+                <h3> Habitat </h3>
+              </div>
+              <div class="col-xs-12">
+                <div class="box collapsed-box" id="essence">
+                  <div class="box-header">
+                    <h3 class="box-title"> Type de couvert forestier</h3>
+                    <div class="box-tools pull-right">
+                      <i class="fa fa-check-circle text-blue valid" data-widget="collapse" id="essence" title="" data-toggle="tooltip" data-original-title="Valider" onClick="validTablePanel( this )"></i>
+                      <button class="btn btn-box-tool" data-widget="collapse" id="essence" onClick="panelAnimation( this )">
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div> 
+                  </div>
+                  <div class="box-body">
+                    <div class="row margin">
+                      <div class="col-sm-6 col-sm-offset-3" data-toggle="tooltip" data-original-title="Ponde&#769ration">
+                        <input class="slider" type="text" id="essence" value="0;100">
+                      </div>
+                    </div>
+                    <table class="table table-bordered table-hover table-striped" id="essence">
+                      <thead>
+                        <tr>
+                          <th name="first">Dominant</th>
+                          <th name="state">E&#769tat</th>
+                          <th name="second">Secondaire</th>
+                          <th name="third">Tertiaire</th>
+                          <th name="couvert">Couvert</th>
+                          <th name="ecological">Type e&#769cologique</th>
+                          <th name="factor">Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Aucun</td>
+                          <td>Aucun</td>
+                          <td>Aucun</td>
+                          <td>Aucun</td>
+                          <td>Aucun</td>
+                          <td>Aucun</td>
+                          <td>0</td>
+                        </tr> 
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <i class="fa fa-plus-circle text-blue pull-right" id="essence" title="" data-toggle="tooltip" data-original-title="Ajouter" onClick="addNewRow( $( this ).attr( 'id' ) )"></i>
+                  </div><!-- /.box-footer -->
+                </div><!-- /.box #essence -->
+              </div><!-- /.col-xs-12 -->
+            </div><!-- row-fluid -->
+
+            <div class="row-fluid"> 
+
+              <div class="col-xs-4">
+                <div class="box collapsed-box">
+                  <div class="box-header">
+                    <h3 class="box-title"> Drainage des peuplements</h3>
+                    <div class="box-tools pull-right">
+                      <i class="fa fa-check-circle text-blue valid" data-widget="collapse" id="drainage" title="" data-toggle="tooltip" data-original-title="Valider" onClick="validTablePanel( this )"></i>
+                      <button class="btn btn-box-tool" data-widget="collapse" id="drainage" onClick="panelAnimation( this )">
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div> 
+                  </div>
+                  <div class="box-body">
+                    <div class="row margin">
+                      <div class="col-sm-10 col-sm-offset-1" data-toggle="tooltip" data-original-title="Ponde&#769ration">
+                        <input class="slider" type="text" name="range_4" value="0;100">
+                      </div>
+                    </div>
+                    <table class="table table-hover table-bordered table-striped" id="drainage">
+                      <thead>
+                        <tr>
+                          <th> Classe</th>
+                          <th> Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #drainage -->
+              </div>
+
+              <div class="col-xs-8">
+                <div class="box collapsed-box">
+                  <div class="box-header">
+                    <h3 class="box-title"> De&#769po&#770t de surface</h3>
+                    <div class="box-tools pull-right">
+                      <i class="fa fa-check-circle text-blue valid" data-widget="collapse" id="depot" title="" data-toggle="tooltip" data-original-title="Valider" onClick="validTablePanel( this )"></i>
+                      <button class="btn btn-box-tool" data-widget="collapse" id="depot" onClick="panelAnimation( this )">
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div> 
+                  </div>
+                  <div class="box-body">
+                    <div class="row margin">
+                      <div class="col-sm-8 col-sm-offset-2" data-toggle="tooltip" data-original-title="Ponde&#769ration">
+                        <input class="slider" type="text" id="depot" value="0;100">
+                      </div>
+                    </div>
+                    <table class="table table-hover table-bordered table-striped" id="depot">
+                      <thead>
+                        <tr>
+                          <th> Classe</th>
+                          <th> E&#769paisseur</th>
+                          <th> Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box #depot -->
+              </div>
+
+            </div>
+
+            <div class="row-fluid">
+              <div class="col-xs-12">
+                <h3> Perturbation - Intervention </h3>
+              </div>
+              <div class="col-xs-4">
+                <div class="box collapsed-box" id="age_feux">
+                  <div class="box-header">
+                    <h3 class="box-title"> Âge des feux de forêt</h3>
+                    <div class="box-tools pull-right">
+                      <i class="fa fa-check-circle text-blue valid" data-widget="collapse" id="age_feux" title="" data-toggle="tooltip" data-original-title="Valider" onClick="validTablePanel( this )"></i>
+                      <button class="btn btn-box-tool" data-widget="collapse" id="age_feux" onClick="panelAnimation( this )">
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div> 
+                  </div>
+                  <div class="box-body">
+                    <div class="row margin">
+                      <div class="col-sm-8 col-sm-offset-2" data-toggle="tooltip" data-original-title="Ponde&#769ration">
+                        <input class="slider" type="text" id="age_fire" value="0;100">
+                      </div> 
+                    </div> 
+                    <table class="table table-bordered table-hover table-striped" id="age_feux">
+                      <thead>
+                        <tr>
+                          <th name="max">Maximum</th>
+                          <th name="min">Minimum</th>
+                          <th name="factor">Facteur</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>3</td>
+                          <td>8</td>
+                          <td>3</td>
+                        </tr> 
+                        <tr>
+                          <td>9</td>
+                          <td>12</td>
+                          <td>2</td>
+                        </tr> 
+                        <tr>
+                          <td>13</td>
+                          <td>20</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>2</td>
+                          <td>1</td>
+                        </tr> 
+                      </tbody>
+                      <tfooot>
+                    </table>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <i class="fa fa-plus-circle text-blue pull-right" id="age_feux" title="" data-toggle="tooltip" data-original-title="Ajouter" onClick="addNewRow( $( this ).attr( 'id' ) )"></i>
+                  </div><!-- /.box-footer -->
+                </div><!-- /.box #essence -->
+              </div><!-- /.col-xs-3 -->              
+
+              <div class="col-xs-12">
+                <div class="box collapsed-box" id="intervention">
+                  <div class="box-header">
+                    <h3 class="box-title"> Intervention</h3>
+                    <div class="box-tools pull-right">
+                      <i class="fa fa-check-circle text-blue valid" data-widget="collapse" id="intervention" title="" data-toggle="tooltip" data-original-title="Valider" onClick="validTablePanel( this )"></i>
+                      <button class="btn btn-box-tool" data-widget="collapse" id="intervention" onClick="panelAnimation( this )">
+                        <i class="fa fa-plus"></i>
+                      </button>
+                    </div> 
+                  </div>
+                  <div class="box-body">
+                    <div class="row margin">
+                      <div class="col-sm-8 col-sm-offset-2" data-toggle="tooltip" data-original-title="Ponde&#769ration">
+                        <input class="slider" type="text" id="intervention" value="0;100">
+                      </div> 
+                    </div> 
+                    <div class="row-margin">
+                      <div class="col-xs-8">
+                        <table class="table table-hover table-bordered table-striped" id="intervention">
+                          <thead>
+                            <tr>
+                              <th> Classe</th>
+                              <th> Facteur</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="col-xs-4">
+                        <table class="table table-bordered table-hover table-striped" id="age_intervention">
+                          <thead>
+                            <tr>
+                              <th name="max">Maximum</th>
+                              <th name="min">Minimum</th>
+                              <th name="factor">Facteur</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>3</td>
+                              <td>8</td>
+                              <td>3</td>
+                            </tr> 
+                            <tr>
+                              <td>9</td>
+                              <td>12</td>
+                              <td>2</td>
+                            </tr> 
+                            <tr>
+                              <td>13</td>
+                              <td>20</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>2</td>
+                              <td>1</td>
+                            </tr> 
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div><!-- /.box-body -->
+                  <div class="box-footer">
+                    <i class="fa fa-plus-circle text-blue pull-right" id="age_intervention" title="" data-toggle="tooltip" data-original-title="Ajouter" onClick="addNewRow( $( this ).attr( 'id' ) )"></i>
+                  </div><!-- /.box-footer -->
+                </div><!-- /.box #essence -->
+              </div><!-- /.col-xs-8 -->
+
+            </div><!-- row-fluid -->
+
+          </section><!-- /content -->
+
+        </div><!-- /.container -->
+
+        <!-- Echelle Modal cells editing content -->
+        <div class="modal fade" id="echelle-cells-editor">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <div class="row margin">
+                  <b> temp</b>
+                </div>
+                <div class="row margin">
+                  <div class="col-sm-12">
+                    <input class="slider" type="text" id="echelle" value="0;100">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveSliderChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#echelle-cells-editor -->
+
+        <!-- Perturbation Modal cells editing content -->
+        <div class="modal fade" id="perturbation-age-cells-editor">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form">
+                  <div class="form-group">
+                    <label> Facteur</label>
+                    <select class="form-control" name="factor">
+                      <option> 0</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                </form>
+                <div class="row margin">
+                  <div class="col-sm-12">
+                    <input class="slider" type="text" id="perturbation" value="0;50">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveSliderChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#perturbation-age-cells-editor -->
+
+        <!-- List cells editing content Modal-->
+        <div class="modal fade" id="list-cells-editor">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form">
+                  <div class="form-group">
+                    <label> Classe</label>
+                    <input class="form-control" name="class">
+                  </div>
+                  <div class="form-group">
+                    <label> Facteur</label>
+                    <select class="form-control" name="factor">
+                      <option> 0</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveRowChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#list-cells-editor -->
+
+        <!-- Depot cells editing content Modal-->
+        <div class="modal fade" id="depot-cells-editor">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form">
+                  <div class="form-group">
+                    <label> Classe</label>
+                    <input class="form-control" name="depot">
+                  </div>
+                  <div class="form-group">
+                    <label> E&#769paisseur</label>
+                    <select class="form-control" id="epaisseur" name="epaisseur">
+                      <option style="display: none;"> De&#769po&#770t e&#769pais</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                  <div class="form-group">
+                    <label> Facteur</label>
+                    <select class="form-control" name="factor">
+                      <option> 0</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer" onClick="saveRowChanges( this )"><i class="fa fa-check"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#list-cells-editor -->
+
+        <!-- Essence cells editing content Modal-->
+        <div class="modal fade" id="essence-cells-editor">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"> Mise a&#768 jour</h4>
+              </div>
+              <div class="modal-body"> 
+                <form role="form" id="essence-cells-editor">
+                  <!-- First -->
+                  <div class="form-group has-feedback">
+                    <label> Dominant</label>
+                    <select class="form-control" id="essence" name="first" onChange="validEssence( this )">
+                      <option style="display: none;"> Aucun</option>
+                    </select>
+                  </div><!-- /.form group --> 
+
+                  <!-- State -->
+                  <div class="form-group has-feedback">
+                    <label> E&#769tat</label>
+                    <select class="form-control" id="etat" name="state" onChange="validEssence( this )" disabled>
+                      <option style="display: none;"> Aucun</option>
+                    </select>
+                  </div><!-- /.form group --> 
+
+                  <!-- Second -->
+                  <div class="form-group has-feedback">
+                    <label> Secondaire</label>
+                    <select class="form-control" id="essence" name="second" onChange="validEssence( this )" disabled>
+                      <option style="display: none;"> Aucun</option>
+                    </select>
+                  </div><!-- /.form group --> 
+
+                  <!-- Third -->
+                  <div class="form-group has-feedback">
+                    <label> Tertiaire</label>
+                    <select class="form-control" id="essence" name="third" onChange="validEssence( this )" disabled>
+                      <option style="display: none;"> Aucun</option>
+                    </select>
+                  </div><!-- /.form group --> 
+
+                  <!-- Covert -->
+                  <div class="form-group has-feedback">
+                    <label> Couvert</label>
+                    <select class="form-control" id="couvert" name="covert" onChange="validEssence( this )" disabled>
+                      <option style="display: none;"> Aucun</option>
+                    </select>
+                  </div><!-- /.form group --> 
+
+                  <!-- Type ecologique -->
+                  <div class="form-group has-feedback">
+                    <label> Type e&#769cologique</label>
+                    <div class="form-inline">
+                      <select class="form-control" id="ecological" name="ecological" onChange="validEssence( this )">
+                        <option style="display: none;"> Aucun</option>
+                      </select>
+                      <select class="form-control" id="first_physical" name="first_physical" onChange="validEssence( this )" disabled>
+                        <option style="display: none;"> Aucun</option>
+                      </select>
+                      <select class="form-control" id="second_physical" name="second_physical" onChange="validEssence( this )" disabled>
+                        <option style="display: none;"> Aucun</option>
+                      </select>
+                    </div>
+                  </div><!-- /.form group --> 
+
+                  <div class="form-group has-feedback">
+                    <label> Facteur</label>
+                    <select class="form-control" id="factor" name="factor" onChange="validEssence( this )">
+                      <option> 0</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                    </select>
+                  </div><!-- /.form group --> 
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="tooltip" data-original-title="Terminer" onClick="saveRowChanges( this )"><i class="fa fa-check"></i></button>
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" data-toggle="tooltip" data-original-title="Suprimer" onClick="deleteRow( this )"><i class="fa fa-ban"></i></button> 
+                <button type="button" class="btn btn-success pull-left" id="refresh" data-toggle="tooltip" data-original-title="Réinitialiser" onClick="refreshRow( this )"><i class="fa fa-refresh"></i></button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal#list-cells-editor -->
+
+      </div><!-- /.content-wrapper -->
+
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>BETA - Version</b> 1.0.2.6
+        </div>
+        <strong>Copyright &copy; 2015-2016 <a href="https://ca.linkedin.com/in/olivier-dupras-tessier-3a2b8b63" target="_blank">Olivier Dupras-Tessier</a>.</strong> Tous droits re&#769serve&#769s.
+      </footer>
+
+    </div><!-- ./wrapper -->
+
+    <!-- Modal - Info messages -->
+    <div class="modal fade" id="messages">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"> </h4>
+          </div>
+          <div class="modal-body"> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="end-messages" data-dismiss="modal" data-toggle="tooltip" data-original-title="Terminer">
+              <i class="fa fa-check"></i>
+            </button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal#marker-group-editor -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/app.min.js"></script>
+    <!-- Ion Slider -->
+    <script src="../plugins/ion.rangeSlider-2.1.2/ion.rangeSlider-2.1.2/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+    <!-- DataTables -->
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="../plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <!-- Data Loader -->
+    <script src="../dist/js/data_loader.js"></script>
+
+    <script> 
+
+
+      // Global constant
+      var json_data = {}; 
+      var json_values = {}; 
+
+
+      function setPonderation( obj ) {  
+        var results = {}; 
+        for ( var key in obj ) { 
+          if ( ["espece", "region", "echelle"].indexOf( key ) == -1 ) results[key] = obj[key].ponderation; 
+        }
+
+        return results; 
+      }
+
+
+      function postFinalStep( data ) { 
+
+        if ( data.name == "id_user" ) {  /** If receive "user" info, do "ponderation" validation */
+          var pond = { value: setPonderation( json_data ) }; 
+          var myData = { data: JSON.stringify( pond ), name: "ponderation" }; 
+          submitValues( myData, "valid_values.php" ); 
+        } else if ( data.name == "id_ponderation" ) {  /** If receive "ponderation" info, do "iqh" validation */
+          json_values.date = new Date().toLocaleDateString();
+          var tmp_value = { value: json_values }; 
+          var myData = { data: JSON.stringify( tmp_value ), name: "iqh" }; 
+          submitValues( myData, "valid_values.php" ); 
+        } else if ( data.name == "id_iqh" ) {  /** If receive "iqh" info, call iqh constructor and close the page */
+          var process = url.file( url.python(), "addIPH_v1.0.1" ); 
+          var myData = { value: json_values.id_iqh, name: process }; 
+          postNot( data ); 
+          submitValues( myData, "call_constructor.php" ); 
+        }
+      } 
+
+
+      function postValidPanel( data ) { 
+        var referrer = document.referrer; 
+        if ( referrer.indexOf( "?" ) > -1 ) referrer = referrer.split( "?" )[0]; 
+        if ( referrer.indexOf( "/index.html" ) > -1 ) referrer = referrer.replace( "/index.html", "" ); 
+        referrer = [ referrer, "pfnl/iqh/dist/json/blueberry.json" ].join( "/" ); 
+        for ( var i in data.panel ) { 
+          var panel = data.panel[i]; 
+          if ( $( panel.node ).length == 0 ) indentDiv[ panel.action ]( panel ); 
+        }
+        $.get( referrer, mushroomStore ); 
+      }
+
+
+      function postNot( data ) { 
+        //var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ) ; 
+
+        modalMessages( data.title, data.text, data.type ); 
+        $( "button#end-messages" ).click( function() { 
+          move2page( '../index.html' ); 
+        } );
+      }
+
+
+      function postExist( data ) { 
+        var name = $( ".modal#messages" ).attr( "name" ); 
+
+        if ( name == "valid_user" ) { 
+          ( data.panel !== undefined ) ? postValidPanel( data ) : postNot( data ); 
+        } else if ( name == "valid_values" ) { 
+          json_values[data.name] = data.value; 
+          if ( ["id_user", "id_ponderation", "id_iqh"].indexOf( data.name ) != -1 ) postFinalStep( data ); 
+        }
+      }
+
+
+      function postSuccess( data ) { 
+        var response = $.parseJSON( data ); 
+        ( response.exist ) ? postExist( response ) : postNot( response ); 
+      }
+
+
+      function postError( data ) { 
+        var name = $( ".modal#messages" ).attr( "name" ); 
+        var values = {}; 
+        if ( name == "valid_user" ) { 
+          values.type = "danger";
+          values.title = "Connexion e&#769choue&#769"; 
+          values.text = "Vous n'e&#770tes pas autorise&#769 a&#768 naviguer sur cette page.";  
+          
+          postNot( values ); 
+        } else if ( name == "valid_values" ) { 
+          values.type = "danger";
+          values.title = "Connexion e&#769choue&#769"; 
+          values.text = "L'envoie des donne&#769es a&#768 echoue&#769e.<br>Veuillez re&#769essayer plus tard.";
+
+          modalMessages( values.title, values.text, values.type );
+        }
+      }
+
+
+      function submitValues( obj, file ) { 
+        $.post( url.file( url.php(), file ), obj )
+          .success( function( data ) {  postSuccess( data );  } )
+          .error( function( data ) {  postError( data );  } ); 
+      }
+
+      
+      /***
+       * Find json data url, load data, create <select />|< table /> store
+       * @params {}
+       */
+      $( function() { 
+
+        String.prototype.replaceAll = function(search, replacement) {    
+          var target = this;   
+          return target.split(search).join(replacement);
+        };
+
+        var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ) ; 
+        var values = parameters+"&type=mushroom";
+
+        $( ".modal#messages" ).attr( "name", "valid_user" );
+        submitValues( values, "valid_user.php" ); 
+        
+       } ); 
+
+
+      function setObjLayout( elem, obj, type ) { 
+        if ( elem.hasClass( obj+type ) ){ 
+          elem.removeClass( obj+type )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"info" ) ) { 
+          elem.removeClass( obj+"info" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"primary" ) ) { 
+          elem.removeClass( obj+"primary" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"warning" ) ) { 
+          elem.removeClass( obj+"warning" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"success" ) ) { 
+          elem.removeClass( obj+"success" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"danger" ) ) { 
+          elem.removeClass( obj+"danger" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"error" ) ) { 
+          elem.removeClass( obj+"error" )
+            .addClass( obj+type ); 
+        } else if ( elem.hasClass( obj+"feedback" ) ) { 
+          elem.removeClass( obj+"feedback" )
+            .addClass( obj+type );
+        } else { 
+          elem.addClass( obj+type );
+        }
+      } /** setObjLayout() */
+
+
+      /** 
+       * Arrange modal#message header and core by status 
+       * @params { $( elem ) }
+       */
+      function modalMessages( title, text, status ) { 
+        var myModal = $( ".modal#messages" ); 
+        var myTitle = myModal.find( "*" ).children( ".modal-title" ); 
+        var myBody = myModal.find( "*" ).children( ".modal-body" ); 
+
+        setObjLayout( myModal, "modal-", status ); 
+
+        myTitle.html( title ); 
+        myBody.html( text ); 
+        myModal.modal( "show" ); 
+       } /** modalMessages() */
+
+
+      /* 
+       * Redirect user to another page
+       * @params {  STRING  }
+       * @return { --- }
+       */
+      function move2page( file ) { 
+        var parameters = location.search.replace( "?", "" ).replace( "%20target=", "" ); 
+        window.location.href = file + "?" + parameters; 
+      } /** move2Page() */
+
+
+      /** Ask $( elem ) to hide itself */
+      $( ".valid:not('#general')" ).hide(); 
+
+      /** Disabled submit button */
+      $( ".ready-panel button" ).prop( "disabled", true ); 
+
+      /** Indent Spinner to each appropriate box */
+      $( ".slider" ).each( function() { 
+        var id = $( this ).attr( "id" ); 
+        var params = { step: 1, min: 0, max: 100, from: 0, to: 100, grid: true, postfix: "%", hide_min_max: true, from_shadow: true, to_shadow: true }; 
+
+        if ( id && id == "perturbation" ) {
+          params.max = 50; 
+          params.to = 50; 
+          params.postfix = " ans";
+        }  
+
+        ( [ "echelle", "perturbation" ].indexOf( id ) == -1 ) ? params.type = "single" : params.type = "double"; 
+        $( this ).ionRangeSlider( params ); 
+       } ); 
+
+
+      /** 
+       * Eval if table object is a DataTable();  
+       * @params { $( elem ) }
+       */
+      function evalDataTable( elem ) { 
+        var params={ "paging": false, "lengthChange": false, "searching": false, "ordering": false, "info": false, "autoWidth": true };
+        var results = ( $.fn.dataTable.isDataTable( elem ) ) ? $( elem ).DataTable() : $( elem ).DataTable( params );
+
+        return results; 
+       } /** evalDataTable */
+
+
+      /**
+       * Animation of every panel when click on expendable button
+       * @params { STRING }
+       */
+      function panelAnimation( elem ) { 
+        var id = $( elem ).attr( "id" ); 
+        var valid_btn = $( ".valid#"+id ); 
+        var box = $( elem ).parents( ".box" ); 
+
+        if ( ["general, echelle"].indexOf( id ) == -1 ) { 
+          valid_btn.fadeToggle(); 
+         }
+
+        setObjLayout( box, "box-", "primary" ); 
+       } /** panelAnimation */
+
+
+      /** 
+       * Add a new row to a table
+       * @params { STRING }
+       * @return { --- }
+       */
+      function addNewRow( obj ) { 
+        var table = evalDataTable( $( ".table#"+obj ) );  
+        var values = ( [ "age_feux", "age_intervention" ].indexOf( obj ) != -1 ) ? [ 0, 0, 0 ] : ["Aucun", "Aucun", "Aucun", "Aucun", "Aucun", "Aucun", 0]; 
+
+        table.row.add( values )
+          .draw( false ); 
+       } /** addNewRow */ 
+
+
+      /** 
+       * Validate input content
+       * @params { $( elem ) }
+       * @return { --- }
+       */
+      function validEssence( elem ) { 
+        var name = $( elem ).attr( "name" ); 
+        var val = $( elem ).val(); 
+        var form = $( elem ).parents( "form" ); 
+        var select = form.find( "select[name="+name+"]" ); 
+
+
+        /**
+         * Add or remove select's options 
+         * @params { STRING, STRING, BOOL }
+         * @return { --- }
+         */
+        function displayOption( option, bool ) {
+          if ( bool ) {
+            option.removeAttr( "style" ); 
+          } else {
+            option.css( "display", "none" ); 
+          }
+        } /* displayOption() */  
+
+
+        /** 
+         * Change properties of subSelect select input
+         * @params { $( elem ) }
+         * @return { --- }
+         */
+        function subSelect( obj ) {
+          obj.prop( "disabled", true ).val( "Aucun" ).trigger("change"); 
+          setObjLayout( obj.parent(), "has-", "feedback" ); 
+          //validEssence( obj ); 
+        } /** subSelect() */ 
+
+
+        /** 
+         * Set obj layout according to the value
+         * @params { STRING, $( elem ) }
+         * @return { --- }
+         */
+        function validValue( value, obj ) {
+          if ( value != "Aucun" ) {
+            setObjLayout( obj.parent(), "has-", "success" ); 
+          } else {
+            setObjLayout( obj.parent(), "has-", "feedback" ); 
+          }
+        } /** validValue() */
+
+
+        if ( [ "first", "second", "third" ].indexOf( name ) != -1 ) { 
+
+          if ( [ "Peuplement feuillus", "Peuplement résineux" ].indexOf( val ) != -1 ) {
+
+            select.attr( "restrict", "true" ); 
+            $( "select#essence" ).each( function() {
+              $( this ).find( "option[name*='Peuplement']" ).each( function() {  
+                displayOption( $( this ), false ); 
+              } ); 
+            } ); 
+
+          } else {
+
+            if ( select.attr( "restrict" ) ) {
+              select.removeAttr( "restrict" ); 
+              $( "select#essence" ).each( function() {
+                $( this ).find( "option[name*='Peuplement']" ).each( function() {  
+                  displayOption( $( this ), true ); 
+                } ); 
+              } ); 
+            }
+
+          }
+
+        }
+
+
+        if ( name == "first" ) { 
+          select.prop( "disabled", false ); 
+          var list = [ "state", "covert" ]; 
+          for ( var key in list ) {  
+            var sub_select = form.find( "select[name="+list[key]+"]" ) ;
+            if ( val != "Aucun" ) { 
+              setObjLayout( select.parent(), "has-", "success" ); 
+              sub_select.prop( "disabled", false ); 
+            } else { 
+              setObjLayout( select.parent(), "has-", "feedback" ); 
+              subSelect( sub_select ); 
+            }  
+          }
+        } else if ( name == "state" ) { 
+          var sub_select = form.find( "select[name='second']" ) ;
+          validValue( val, select ); 
+
+          if ( [ "Aucun", "Domine", "Pure", "Contient" ].indexOf( val ) == -1 ) { 
+            sub_select.prop( "disabled", false ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "second" ) { 
+          var sub_select = form.find( "select[name='third']" ) ;
+          if ( val != "Aucun" ) { 
+            sub_select.prop( "disabled", false ); 
+            setObjLayout( select.parent(), "has-", "success" ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "third" ) {
+          validValue( val, select ); 
+        } else if ( name == "covert" ) {
+          validValue( val, select ); 
+        } else if ( name == "ecological" ) {
+          var sub_select = form.find( "select[name='first_physical']" ); 
+          validValue( val, select ); 
+          if ( val != "Aucun" ) { 
+            sub_select.prop( "disabled", false ); 
+            setObjLayout( select.parent(), "has-", "success" ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "first_physical" ) {
+          var sub_select = form.find( "select[name='second_physical']" ); 
+          if ( val != "Aucun" ) { 
+            sub_select.prop( "disabled", false ); 
+            setObjLayout( select.parent(), "has-", "success" ); 
+          } else { 
+            subSelect( sub_select ); 
+          }
+        } else if ( name == "second_physical" ) {
+          validValue( val, select ); 
+        }
+
+      } /** validEssence() */
+
+
+      function refreshRow( elem ) { 
+        var form = $( elem ).parents(".modal-content").find("form"); 
+        
+        form.find( "select[name='first']" ).val( "Aucun" ).trigger("change"); 
+        form.find( "select[name='ecological']" ).val( "Aucun" ).trigger("change");
+        form.find( "select[name='factor']" ).val( 0 ).trigger("change"); 
+      }
+
+
+      /** 
+       * Validation des boîtes - test Mickael ok
+       */
+      function validInput( elem ) { 
+        var box = $( elem ).parents( ".box" ); 
+        var layout = $( elem ).parent(); 
+        var value = $( elem ).val(); 
+
+        setObjLayout( box, "box-", "primary" ); 
+
+        if ( value === null || value == "" ) { 
+          setObjLayout( layout, "has-", "error" ); 
+          if ( count !== undefined ) {  count++;  }
+        } else { 
+          setObjLayout( layout, "has-", "success" ); 
+        }
+      } /** validInput() */
+
+
+      function getFormValues( elem ) {
+        var results = []; 
+        for ( var i = 0; i < elem[0].length; i++ ) {
+          name = $( elem[0][i] ).attr( "id" ); 
+          value = $( elem[0][i] ).val(); 
+          results.push( { name : name, value: value }  )
+        }
+
+        return results; 
+      }
+
+
+      /** 
+       * Validate and embridge forms content to a json_data / Exclusif to Echelle 
+       * @params {  $( elem )  }
+       * @return {  JSON  }
+       */
+      function validFormPanel( elem ) { 
+        var id = $( elem ).attr( "id" ); 
+        var box = $( elem ).parents( ".box" ); 
+        var form = box.find( "*" ).children( "form" );
+        var values = getFormValues( form ); //form.serializeArray(); 
+        var valid = 0; 
+
+        for ( var i in values ) { 
+          var tmp = values[i]; 
+          if ( tmp.value !== "Aucun" ) {  
+            /** Send data to Server to valid them - Change .modal#messages[name] */
+            //var myData = $.parseJSON( tmp[i] ); 
+            $( ".modal#messages" ).attr( "name", "valid_values" ); 
+            submitValues( tmp, "valid_values.php" ); 
+
+            json_data[tmp.name] = tmp.value; 
+          } else { 
+            valid++; 
+          }
+        } 
+
+        if ( id == "general" ) {
+          var tmp = { name: "espece", value: "Bleuet sauvage" }; 
+          submitValues( tmp, "valid_values.php" ); 
+          
+          json_data[tmp.name] = tmp.value; 
+        }
+
+        ( valid > 0 ) ? setObjLayout( box, "box-", "primary" ) : setObjLayout( box, "box-", "success" ); 
+        evalForms( id ); 
+      } /** validFormPanel() */
+
+
+      /** 
+       * Validate and embridge table content to a json_data / Exclusif to Echelle 
+       * @params { $( elem ) }
+       * @return { JSON }
+       */
+      function validEchelleForms( elem ) { 
+        var results; 
+        var values = []; 
+        var myData = elem.data(); 
+        for ( var i = 0; i < myData.length; i++ ) { 
+          values.push( { 
+            value: myData[i][0], 
+            maximum: parseInt( myData[i][1] ), 
+            minimum: parseInt( myData[i][2] )
+          } ); 
+        }
+        results = { value: values }
+
+        return results; 
+      } /** validEchelleForms() */
+
+
+      /** 
+       * Validate and embridge forms table content to a JSON
+       * @params { STRING }
+       * @return { --- }
+       */
+      function validTablePanel( elem ) { 
+
+        if ( typeof elem == "object" ) {
+          var id = $( elem ).attr( "id" ); 
+          var box = $( elem ).parents( ".box" );           
+        } else {
+          var id = elem; 
+          var box = $( ".table#" + id ).parents( ".box" ); 
+        }
+
+        var pond = box.find( "input" ).val(); 
+        var table = ( [ "age_intervention", "intervention" ].indexOf == -1 ) ? evalDataTable( box.find( ".table" ) ) : 
+          evalDataTable( box.find( ".table#" + id ) );  
+        
+        var headers = table.columns().header(); 
+        var rows = table.rows().data(); 
+
+        var results={ value:{}, ponderation: pond }; 
+        for ( var i=0; i < rows.length; i++ ) { 
+          var field, values=rows[i]; 
+          var facteur = values[values.length - 1]; 
+
+          // essence algorythm
+          if ( id == "essence" ) { 
+            if ( i == 0 ) results.value = [];  // Exceptionnaly, results.value is an array
+            if ( facteur != 0 ) { 
+              var store = { essence: $( ".store-essence" ), etat: $( ".store-etat" ), couvert: $( ".store-couvert" ) }; 
+              var etat = store.etat.children( "li[name=\""+values[1]+"\"]" ).attr( "code" ); 
+              var couvert = store.couvert.children( "li[name=\""+values[4]+"\"]" ).attr( "code" );
+              var essence = { 
+                dominant: store.essence.children( "li[name=\""+values[0]+"\"]" ).attr( "code" ), 
+                secondaire: store.essence.children( "li[name=\""+values[2]+"\"]" ).attr( "code" ), 
+                tertiaire: store.essence.children( "li[name=\""+values[3]+"\"]" ).attr( "code" ) 
+              };   
+              var type_eco = values[5]; 
+
+              if ( etat == "P" ) { 
+                var code = [ essence.dominant, essence.dominant ].join( "" ); 
+              } 
+
+              else { 
+                var code = []; 
+                for ( var key in essence ) { 
+                  if ( ( [ 'dominant', 'secondaire', 'tertiaire' ].indexOf( key ) != -1 ) && ( essence[key] != 'NA' ) ) { 
+                    code.push( essence[key] ); 
+                  }
+                }
+                code = code.join( "" ); 
+              }
+
+              if ( code.indexOf( "F0" ) != -1 ) {
+                store.essence.find("li[group='F0']").each( function() { 
+                  var tmp_essence = $( this ).attr( "code" ); 
+                  var tmp_code = code.replaceAll( "F0", tmp_essence ); 
+                  results.value.push( { value: facteur, essence: tmp_code, couvert: couvert, etat: etat, type_eco: type_eco } );
+                } ); 
+              } 
+
+              else if ( code.indexOf( "R0" ) != -1 ) { 
+                store.essence.find("li[group='R0']").each( function() { 
+                  var tmp_essence = $( this ).attr( "code" ); 
+                  var tmp_code = code.replaceAll( "R0", tmp_essence ); 
+                  results.value.push( { value: facteur, essence: tmp_code, couvert: couvert, etat: etat, type_eco: type_eco } );
+                } ); 
+              } 
+
+              else {
+                results.value.push( { value: facteur, essence: code, couvert: couvert, etat: etat, type_eco: type_eco } );
+              }
+           
+            }  
+          }
+
+          // depot algorythm
+          else if ( id == "depot" ) { 
+            if ( facteur != 0 ) { 
+              var store = { depot: $( ".store-depot" ), epaisseur: $( ".store-epaisseur" ) }; 
+              var depot = store.depot.children( "li[name=\""+values[0]+"\"]" ).attr( "code" ).split( ", " ); 
+              var epaisseur = store.epaisseur.children( "li[name=\""+values[1]+"\"]" ).attr( "code" );
+
+              for ( var j=0; j < depot.length; j++ ) { 
+                var code = epaisseur.replace( "X", depot[j] ); 
+                results.value[code] = facteur; 
+              }
+            } 
+          }
+
+          // echelle algorythm
+          else if ( [ "echelle" ].indexOf( id ) != -1 ) { 
+            results.value[values[0]] = [values[1], values[2]]; 
+          } 
+
+          else if ( [ "age_feux", "age_intervention" ].indexOf( id ) != -1 ) { 
+            if ( i == 0 ) results.value = [];
+            if ( facteur != 0 ) {
+              results.value.push( { value: facteur, age: [ values[0], values[1] ] } )
+            }
+          }
+          
+          // list algorythm
+          else { 
+            if ( values[1] != 0 ) { 
+              var store = $( ".store-"+id ); 
+              var code = store.children( "li[name=\""+values[0]+"\"]" ).attr( "code" ); 
+
+              results.value[code] = facteur; 
+            } 
+          }
+        } 
+
+
+        if ( id == "intervention" ) {
+          results.value["BR"] = "4"; 
+        }
+
+        //alert(results);
+        /** Send data to Server to valid them - Change .modal#messages[name] */
+        var myData = { data: JSON.stringify( results ), name: id }; 
+        $( ".modal#messages" ).attr( "name", "valid_values" ); 
+        submitValues( myData, "valid_values.php" ); 
+
+        json_data[id] = results; 
+        if ( id != "age_intervention" ) { 
+          setObjLayout( box, "box-", "success" ); 
+
+          if ( id != "echelle" ) $( elem ).fadeToggle(); 
+          evalForms( id ); 
+
+        } 
+
+        if ( id == "intervention" ) {
+          validTablePanel( "age_intervention" ); 
+        }
+      } /** validFormPanel() */
+
+
+      /*
+       * Find and replace HTML entities by Characters
+       * @params {  STRING  }
+       * @return {  STRING  }
+       */
+      function replaceEntities( obj ) { 
+        var results = obj; 
+        if ( results.indexOf( "&gt;" ) > -1 ) results = results.replace( "&gt;", ">" ); 
+        if ( results.indexOf( "&lt;" ) > -1 ) results = results.replace( "&lt;", "<" ); 
+
+        return results
+      } /** replaceEntities() */
+
+
+      /**
+       * Call modal to show itself onClick();
+       * @params { $( table-row ) }  
+       * @return { --- }
+       */
+      $( ".table tbody" ).on( 'click', 'tr', function () { 
+        var id = $( this ).parents( ".table" ).attr( "id" ); 
+        var table = evalDataTable( $( ".table#" + id ) );  
+        var index = table.row( this ).index(); 
+        var myData = table.row( this ).data(); 
+        var myModal = ( [ "essence", "depot", "echelle", "age_feux", "age_intervention" ].indexOf( id ) == -1 ) ? $( ".modal#list-cells-editor" ) : 
+          ( [ "age_feux", "age_intervention" ].indexOf( id ) != -1 ) ? $( ".modal#perturbation-age-cells-editor" ) :
+          $( ".modal#" + id + "-cells-editor" ); 
+
+        if ( [ "essence", "echelle", "age_feux", "age_intervention" ].indexOf( id ) == -1 ) { 
+          inputDisabled( myModal, true ); 
+          myData[0] = replaceEntities( myData[0] ); 
+          myModal.find( "*" ).children( "input" ).val( myData[0] ); 
+          if ( id == "depot" ) {
+            myModal.find( "select[name='epaisseur']" ).val( myData[1] ); 
+            myModal.find( "select[name='factor']" ).val( myData[2] ); 
+          } else {
+            myModal.find( "select[name='factor']" ).val( myData[1] ); 
+          }
+        } else if ( id == "essence" ) { 
+          var selectList = myModal.find( "select" );
+          var outlist = [ "ecological", "first_physical", "second_physical" ];  
+          for ( var i = 0; i < selectList.length; i++ ) { 
+            var select = $( selectList.get(i) ); 
+            if ( select.attr("id") == "ecological" ) {
+              if ( myData[i] == "Aucun" ) {
+                select.val( "Aucun" )
+                  .trigger( "change" ); 
+              } else {
+                var value = myData[i].split(""); 
+
+                var eco = ( value.slice( 0, 3 ).join( "" ) != "" ) ? value.slice( 0, 3 ).join( "" ) : "Aucun";
+                select.val( eco )
+                  .trigger( "change" ); 
+
+                var first = ( value.slice( 3 ,4 ).join( "" ) != "" ) ? value.slice( 3 ,4 ).join( "" ) : "Aucun"; 
+                myModal.find( "select[name='first_physical']" ).val( first )
+                  .trigger( "change" );
+
+                var second = ( value.slice( 4, value.length ).join( "" ) != "" ) ? value.slice( 4, value.length ).join( "" ) : "Aucun"; 
+                myModal.find( "select[name='second_physical']" ).val( second )
+                  .trigger( "change" ); 
+              }
+            }
+
+            if ( outlist.indexOf( select.attr("id") ) == -1 ) { 
+              if ( select.attr("id") == "factor" ) {
+                select.val( myData[ myData.length - 1 ] ).trigger("change"); 
+              } else {
+                select.val( myData[i] ).trigger("change"); 
+              }
+            }
+             
+          } 
+        } else if ( id == "echelle" ) { 
+          var tr_id = $( this ).attr( "id" ); 
+          var num = parseInt( tr_id.replace( "range_", "" ) ); 
+          var label = myModal.find( "b" ); 
+          var slider = myModal.find( ".slider" ).data( "ionRangeSlider" ); 
+
+          var top_tr = "tr#range_"+( num+1 ); 
+          var topData = table.row( top_tr ).data(); 
+
+          var bottom_tr = "tr#range_"+( num-1 );
+          var bottomData = table.row( bottom_tr ).data(); 
+
+          var values = { from: myData[1], to: myData[2] }; 
+          ( topData !== undefined ) ? values.to_max = ( parseInt( topData[2] ) - 1 ) : values.to_max = 100; 
+          ( bottomData !== undefined ) ? values.from_min = ( parseInt( bottomData[1] ) + 1 ) : values.from_min = 0; 
+
+          label.html( myData[0] ); 
+          slider.update( values ); 
+        
+        } else if ( [ "age_feux", "age_intervention" ].indexOf( id ) != -1 ) { 
+          var select = myModal.find( "select[name='factor']" ); 
+          var slider = myModal.find( ".slider" ).data( "ionRangeSlider" ); 
+          var values = { from: myData[0], to: myData[1] }; 
+
+          select.val( myData[2] ); 
+          slider.update( values ); 
+        }
+
+        myModal.attr( "name", id )
+          .attr( "row", index )
+          .modal( "show" ); 
+       } ); /** /.table tbody onClick EVENT */
+
+
+      /**
+       * Not Generic - Enabled/Disabled input
+       * @params { $( elem ), bool }
+       * @return { --- }
+       */
+      function inputDisabled( elem, state ) { 
+        try { 
+          elem.find( "form input.form-control" )
+            .prop( "disabled", state ); 
+         } catch( err ) { 
+          console.log( err.message );
+         }
+       } /** inputDisabled */
+
+
+      /**
+       * Enable or disable select input
+       * @params { $( elem ), bool }
+       * @return { --- }
+       */
+      function selectDisabled( elem, state ) { 
+        try { 
+          elem.find( "select" )
+            .each( function() { 
+              if ( state ) { 
+                if ( $( this ).val() == "Aucun" ) $( this ).prop( "disabled", state ); 
+              } else { 
+                $( this ).prop( "disabled", state ); 
+              }
+            } ); 
+        } catch( err ) { 
+          console.log( err.message );
+        }
+      } /** selectDisabled() */
+
+
+      /**
+       * Set the row's data  ;
+       * @params { $( elem ), array(), obj, int }  
+       * @return { --- }
+       */
+      function setDataRow( elem, data, table, index ) {
+        elem.modal( "hide" ); 
+        var values=[]; 
+        for ( var i in data ) { 
+          values.push( data[i].value ); 
+         }
+
+        inputDisabled( elem, true ); 
+        table.row( index )
+          .data( values )
+          .draw( false );        
+      } /** setDataRow */
+
+
+      /**
+       * Update table row selected with new entries;
+       * @params { STRING }  
+       * @return { --- }
+       */
+      function saveRowChanges( elem ) { 
+        var myModal = $( elem ).parents( ".modal" ); 
+        var form = myModal.find( "form" ); 
+        var index = myModal.attr( "row" ); 
+        var name = myModal.attr( "name" ); 
+        var table = evalDataTable( $( ".table#"+name ) ); 
+
+        inputDisabled( myModal, false ); 
+
+        var myData; 
+        selectDisabled( form, false ); 
+        myData = form.serializeArray(); 
+        selectDisabled( form, true ); 
+
+        var jsonData = {}; 
+        var tmpInd; 
+        var outlist = [ "ecological", "first_physical", "second_physical" ]; 
+        for ( var i in myData ) {
+          if ( outlist.indexOf( myData[i].name ) != -1 ) {
+            if ( jsonData["type_eco"] === undefined ) {
+              tmpInd = i; 
+              jsonData["type_eco"] = myData[i].value; 
+            } else {
+              if ( myData[i].value != "Aucun" ) {
+                jsonData["type_eco"] += myData[i].value;
+              }
+            }
+          } else {
+            jsonData[ myData[i].name ] = myData[i].value; 
+          }
+        }
+
+        if ( name == "essence" ) {
+          myData.splice( tmpInd, outlist.length, { name: "type_eco", value: jsonData.type_eco } );  
+          if ( jsonData["first"] != "Aucun" & jsonData["state"] == "Aucun" ) { 
+            var select = form.find("select#etat" ); 
+            var couvert = form.find("select#couvert" );
+            select.prop( "disabled", false ); 
+            couvert.prop( "disabled", false );
+            setObjLayout( select.parent(), "has-", "error" ); 
+          } else if ( jsonData["first"] != "Aucun" & [ "Aucun", "Pure", "Domine", "Contient" ].indexOf( jsonData["state"] ) == -1 & jsonData["second"] == "Aucun" ) {
+            var select = form.find("select#essence[name='second']" ); 
+            var couvert = form.find("select#couvert" );
+            select.prop( "disabled", false ); 
+            couvert.prop( "disabled", false );
+            setObjLayout( select.parent(), "has-", "error" ); 
+          } else if ( jsonData["type_eco"] == "Aucun" || jsonData["first"] == "Aucun" ) { 
+            
+            var select; 
+            if ( jsonData["type_eco"] == "Aucun" ) {
+              select = form.find( "select[name='ecological']" ); 
+              select.prop( "disabled", false ); 
+              setObjLayout( select.parent(), "has-", "error" );
+            }
+
+            if ( jsonData["first"] == "Aucun" ) {
+              select = form.find( "select[name='first']" ); 
+              select.prop( "disabled", false ); 
+              setObjLayout( select.parent(), "has-", "error" );
+            }
+
+          } else {
+            setDataRow( myModal, myData, table, index ); 
+          }
+        } else {
+          setDataRow( myModal, myData, table, index ); 
+        }
+
+       } /** saveRowChanges */
+
+
+      /**
+       * Update table with slider input values;
+       * @params { STRING }  
+       * @return { --- }
+       */
+      function saveSliderChanges( elem ) { 
+        var myModal = $( elem ).parents( ".modal" ); 
+        var index = parseInt( myModal.attr( "row" ) ); 
+        var name = myModal.attr( "name" ); 
+        var table = evalDataTable( $( ".table#"+name ) ); 
+        
+        if ( name == "echelle" ) {
+          var label = myModal.find( "b" ).html(); 
+          var slider = myModal.find( ".slider" ); 
+          var myData = slider.val().split( ";" );  
+          var values = [label, myData[0], myData[1]]; 
+          
+          table.row( index )
+            .data( values )
+            .draw( false ); 
+
+          var topTable = table.row( index - 1 ); 
+          var topData = topTable.data(); 
+          if ( topData !== undefined ) { 
+            topData[1] = ( parseInt( myData[1] ) + 1 ).toString(); 
+            topTable.data( topData )
+              .draw( false ); 
+          }
+
+          var bottomTable = table.row( index + 1 );
+          var bottomData = bottomTable.data(); 
+          if ( bottomData !== undefined ) { 
+            bottomData[2] = ( parseInt( myData[0] ) - 1 ).toString(); 
+            bottomTable.data( bottomData )
+              .draw( false ); 
+          }
+        } else {
+          var factor = myModal.find( "select option:selected" ).val(); 
+          var myData = myModal.find( ".slider" ).val().split(";"); 
+          var values = [ myData[0], myData[1], factor ]; 
+
+          table.row( index )
+            .data( values )
+            .draw( false );
+        }
+        
+       } /** saveSliderChanges */
+
+
+      /**
+       * Delete the selected row
+       * @params { STRING }
+       * @return { --- }
+       */
+      function deleteRow( elem ) { 
+        var myModal = $( elem ).parents( ".modal" ); 
+        var index = myModal.attr( "row" ); 
+        var name = myModal.attr( "name" ); 
+        var table = evalDataTable( $( ".table#"+name ) ); 
+
+        table.row( index )
+          .remove()
+          .draw( false ); 
+       } /** deleteRow */ 
+
+
+      /** 
+       * Eval the sum of the ponderation factor 
+       * @params { STRING }
+       * @return { --- }
+       */
+      function evalForms( id ) { 
+        var title, text, type
+        var info = $( ".callout#submit" ); 
+        var submit = $( ".ready-panel button" ); 
+        var start = 0;
+        var pond = { habitat: 0, perturbation: 0 }; 
+
+        for ( var key in json_data ) { 
+          if ( ["espece", "region", "echelle"].indexOf( key ) == -1 ) { 
+            if ( [ "age_feux", "intervention" ].indexOf( key ) != -1 ) {
+              pond.perturbation += parseInt( json_data[key].ponderation );
+            } else {
+              pond.habitat += parseInt( json_data[key].ponderation );
+            }
+          }
+        }
+
+        if ( json_data.espece !== undefined && json_data.region !== undefined && json_data.echelle !== undefined && pond !== undefined && pond == 100 ) { 
+
+          type = "success"; 
+          title = "Vous e&#770tes fin pre&#770t"; 
+          text = "Assurez-vous de la ve&#769racite&#769 des informations avant de les soumettre."; 
+          submit.prop( "disabled", false ); 
+
+        } else { 
+
+          if ( id == "general" ) { 
+
+            if ( json_data.espece === undefined && json_data.region === undefined ) { 
+              type = "warning"; 
+              title = "Vous n'avez pas spe&#769cifiez de champs"; 
+              text = "Les champs \"Champignon forestier\" et \"Re&#769gion\" doivent e&#770tre remplis avant de soumettre le formulaire."; 
+              submit.prop( "disabled", true ); 
+            } else if( json_data.espece === undefined && json_data.region !== undefined ) { 
+              type = "warning"; 
+              title = "Vous n'avez pas spe&#769cifiez d'espe&#768ce"; 
+              text = "Le champs \"Champignon forestier\" doit e&#770tre rempli avant de soumettre le formulaire."; 
+              submit.prop( "disabled", true ); 
+            } else if ( json_data.espece !== undefined && json_data.region === undefined ) { 
+              type = "warning"; 
+              title = "Vous n'avez pas spe&#769cifiez de re&#769gion"; 
+              text = "Le champs \"Re&#769gion\" doit e&#770tre rempli avant de soumettre le formulaire."; 
+              submit.prop( "disabled", true ); 
+            } else { 
+              type = "info"; 
+              title = "Avant de soumettre le formulaire"; 
+              text = "Prenez soin de valider les informations contenues dans chacune des sections du formulaire."; 
+              submit.prop( "disabled", true ); 
+            }
+
+          } else if ( id == "echelle" ) { 
+
+            if ( json_data.echelle === undefined ) { 
+              type = "danger"; 
+              title = "Proble&#768me d'indentation"; 
+              text = "Un proble&#768me externe est survenue. Veuillez re&#769essayer plus tard."; 
+              submit.prop( "disabled", true ); 
+             } else { 
+              type = "info"; 
+              title = "Avant de soumettre le formulaire"; 
+              text = "Prenez soin de valider les informations contenues dans chacune des sections du formulaire."; 
+              submit.prop( "disabled", true ); 
+             }
+
+          } else if ( ["general, echelle"].indexOf( id ) == -1 ) { 
+
+            if ( pond.habitat < 100 && pond.perturbation < 100 ) {
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat et de perturbation est infe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat > 100 && pond.perturbation > 100 ) {
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat et de perturbation est supe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( ( pond.habitat > 100 && pond.perturbation < 100) || ( pond.habitat < 100 && pond.perturbation > 100 ) ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "Revérifier les valeurs de ponde&#769ration d&#39habitat et de perturbation."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat < 100 && pond.perturbation == 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat est infe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            }  else if ( pond.habitat > 100 && pond.perturbation == 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations d&#39habitat est supe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat == 100 && pond.perturbation < 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations de perturbation est infe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat == 100 && pond.perturbation > 100 ) { 
+              type = "warning"; 
+              title = "Prenez garde aux ponde&#769rations!"; 
+              text = "La somme des ponde&#769rations de perturbation est supe&#769rieur a&#768 100%."; 
+              submit.prop( "disabled", true ); 
+            } else if ( pond.habitat == 100 && pond.perturbation == 100 ) { 
+              type = "info"; 
+              title = "Avant de soumettre le formulaire"; 
+              text = "Prenez soin de valider les informations contenues dans chacune des sections du formulaire."; 
+              submit.prop( "disabled", false ); 
+            }
+
+          }
+        
+        }
+
+        setObjLayout( info, "callout-", type ); 
+
+        info.children( "h4" )
+          .html( title ); 
+
+        info.children( "p" )
+          .html( text ); 
+
+       } /** evalForms */
+
+
+      /**
+       * Submit values selected by the user to process/python/addIPH_v1.1
+       * @params { --- }
+       * @return { JSON }
+       */
+      function submitFormsValues() { 
+        var value = location.search.replace( "?email=", "" ).replace( "%20target=", "" );
+        var myData = { value: value, name: "user" }; 
+
+        submitValues( myData, "valid_values.php" ); 
+      } /** submitFormsValues() */
+
+
+      /** EVENT - Fire when a navbar element is add to the DOM */ 
+      $( "ul.navbar-nav" ).on( 'DOMNodeInserted', function() {  
+
+        if ( $( this ).children( "li.messages-menu#notification" ).length > 0 ) { 
+          /**
+           * Find json data url, load data, create <select />|< table /> store
+           * @params {  ---  }
+           * @return {  ---  }
+           */
+          $( "ul.menu" ).children( "li" ).click( function() { 
+            getNotice( $( this ).attr( "id" ) ); 
+            $( this ).remove(); 
+
+            var total = $( "ul.menu" ).children( "li" ).length; 
+            var span = $( "li.messages-menu#notification" ).find( "span.label" ); 
+            var header = $( "li.messages-menu#notification" ).find( "li.header" ); 
+            var core = '<li><ul class="menu"><li><a href="#"><h4 style="margin: 0; !important"> Aucun nouvel avis<p class="pull-right"><i class="fa fa-bell text-orange"></i></p></h4><p style="margin: 0; !important"> En attente de nouvels avis</p></a></li></ul></li>'
+            if ( total > 0 ) { 
+              var text = ( total == 1 ) ? [ total, "nouvel avis disponible" ].join( " " ) : [ total, "nouvels avis disponibles" ].join( " " ); 
+              span.html( total ); 
+             } else { 
+              var text = "Aucun nouvel avis disponible"; 
+              span.remove(); 
+              $( core ).insertBefore( $( "li.messages-menu#notification" ).find( "li.footer" ) ); 
+             }
+            header.html( text ); 
+
+           } ); 
+         }
+
+       } ); 
+
+    </script>
+
+  </body>
+</html>

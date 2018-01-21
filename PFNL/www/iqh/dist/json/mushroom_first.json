@@ -1,0 +1,199 @@
+{"attribut": [{
+	"name": "espece", 
+	"id": "mushroom", 
+	"title": "Champignon forestier", 
+	"data": [
+		{"name": "Armilaire ventru"},
+		{"name": "Ce&#768pe"}, 
+		{"name": "Chanterelle commune"},
+		{"name": "Chanterelle tube"}, 
+		{"name": "Hydne ombilique&#769e"}, 
+		{"name": "Matsutake"},
+		{"name": "Pholiote ride&#769e"}, 
+		{"name": "Pied mouton"},
+		{"name": "Russule homard"}
+	]
+},{
+	"name": "region", 
+	"id": "region", 
+	"title": "Re&#769gion", 
+	"data": [
+		{"name": "Abitibi-Te&#769miscamingue", "code": "08"}, 
+		{"name": "Bas-Saint-Laurent", "code": "01"}, 
+		{"name": "Capitale-Nationale", "code": "03"}, 
+		{"name": "Centre-du-Que&#769bec", "code": "17"}, 
+		{"name": "Chaudie&#768re-Appalaches", "code": "12"}, 
+		{"name": "Co&#770te-Nord", "code": "09"}, 
+		{"name": "Estrie", "code": "05"}, 
+		{"name": "Gaspe&#769sie - I&#770les-de-la-Madeleine", "code": "11"}, 
+		{"name": "Lanaudie&#768re", "code": "14"}, 
+		{"name": "Laurentides", "code": "15"}, 
+		{"name": "Laval", "code": "13"}, 
+		{"name": "Mauricie", "code": "04"}, 
+		{"name": "Monte&#769re&#769gie", "code": "16"}, 
+		{"name": "Montre&#769al", "code": "06"}, 
+		{"name": "Nord-du-Que&#769bec", "code": "10"}, 
+		{"name": "Outaouais", "code": "07"}, 
+		{"name": "Saguenay - Lac-Saint-Jean", "code": "02"}
+	]
+},{
+	"name": "origine", 
+	"id": "origine", 
+	"title": "Origine des peuplements", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"},
+		{"name": "Plantation", "code": "P"}, 
+		{"name": "Peuplement naturel", "code": "NA"}
+	]
+},{
+	"name": "age", 
+	"id": "cl_age",  
+	"title": "Âge des peuplements", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 		
+		{"name": "10 ans", "code": "10"},
+		{"name": "30 ans", "code": "20"},
+		{"name": "50 ans", "code": "50"},
+		{"name": "70 ans", "code": "70"},	
+		{"name": "90 ans", "code": "90"},
+		{"name": "120 ans", "code": "120"},
+		{"name": "JIN", "code": "JIN"},
+		{"name": "JIR", "code": "JIR"},
+		{"name": "VIN", "code": "VIN"},
+		{"name": "VIR", "code": "VIR"}
+	]
+},{
+	"name": "densite", 
+	"id": "cl_dens", 
+	"title": "Densite&#769 des peuplements", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 
+		{"name": ">= 80 %", "code": "A"},
+		{"name": ">= 60 % et < 80 %", "code": "B"},
+		{"name": ">= 40 % et < 60 %", "code": "C"},
+		{"name": ">= 25 % et < 40 %", "code": "D"}
+	]
+},{
+	"name": "drainage", 
+	"id": "cl_drain", 
+	"title": "Drainage des sols", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "code": "NA"}, 
+		{"name": "Excessif", "code": "0"},
+		{"name": "Rapide", "code": "1"},
+		{"name": "Bon", "code": "2"},
+		{"name": "Mode&#769re&#769", "code": "3"},
+		{"name": "Imparfait", "code": "4"},
+		{"name": "Mauvais", "code": "5"},
+		{"name": "Tre&#768s mauvais", "code": "6"},
+		{"name": "Drainage complexe", "code": "16"}					
+	]
+},{
+	"name": "essence", 
+	"id": "gr_essence", 
+	"title": "Type de couvert forestier",
+	"type": "select",
+	"pointer": "essence", 
+	"data": [
+		{"name": "Aucun", "code": "NA", "optgroup": "Groupe"}, 
+		{"name": "Peuplement feuillus", "code": "F0", "optgroup": "Groupe"}, 
+		{"name": "Peuplement re&#769sineux", "code": "R0", "optgroup": "Groupe"}, 
+		{"name": "Bouleau a&#768 papier", "code": "BP", "optgroup": "Feuillus"}, 
+		{"name": "Bouleau gris", "code": "BG", "optgroup": "Feuillus"},  
+		{"name": "Bouleau jaune", "code": "BJ", "optgroup": "Feuillus"},  
+		{"name": "Caryer a&#768 fruits doux", "code": "CF", "optgroup": "Feuillus"},  
+		{"name": "Caryer cordiforme", "code": "CC", "optgroup": "Feuillus"},  
+		{"name": "Cerisier tardif", "code": "CT", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne a&#768 gros fruits", "code": "CG", "optgroup": "Feuillus"}, 
+ 		{"name": "Che&#770ne bicolore", "code": "CI", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne blanc", "code": "CB", "optgroup": "Feuillus"},  
+		{"name": "Che&#770ne rouge", "code": "CR", "optgroup": "Feuillus"},  	
+		{"name": "E&#769rable argente&#769", "code": "EA", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable noir", "code": "EI", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable a&#768 sucre", "code": "ES", "optgroup": "Feuillus"},  
+		{"name": "E&#769rable rouge", "code": "EO", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne d&#39Ame&#769rique", "code": "FA", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne de Pennsylvanie", "code": "FP", "optgroup": "Feuillus"},  
+		{"name": "Fre&#770ne noir", "code": "FO", "optgroup": "Feuillus"},  
+		{"name": "Hetre a&#768 grandes feuilles", "code": "HG", "optgroup": "Feuillus"},  
+		{"name": "Noyer cendre", "code": "NC", "optgroup": "Feuillus"},  
+		{"name": "Noyer noir", "code": "NN", "optgroup": "Feuillus"},  
+		{"name": "Orme d&#39Ame&#769rique", "code": "OA", "optgroup": "Feuillus"},  
+		{"name": "Orme de thomas", "code": "OA", "optgroup": "Feuillus"},  
+		{"name": "Orme rouge", "code": "OO", "optgroup": "Feuillus"},  
+		{"name": "Ostryer de virginie", "code": "OV", "optgroup": "Feuillus"},  
+		{"name": "Peuplier a&#768 feuilles delto&#239des", "code": "PL", "optgroup": "Feuillus"},  
+		{"name": "Peuplier a&#768 grandes dents", "code": "PD", "optgroup": "Feuillus"},  
+		{"name": "Peuplier baumier", "code": "PA", "optgroup": "Feuillus"},  
+		{"name": "Peuplier faux-tremble", "code": "PT", "optgroup": "Feuillus"},  
+		{"name": "Tilleul d&#39Ame&#769rique", "code": "TA", "optgroup": "Feuillus"},  
+		{"name": "E&#769pinette blanche", "code": "EB", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette noire", "code": "EN", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette rouge", "code": "EU", "optgroup": "Re&#769sineux"},  
+		{"name": "E&#769pinette de Norve&#768ge", "code": "EV", "optgroup": "Re&#769sineux"},  
+		{"name": "Me&#769le&#768ze laricin", "code": "ML", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin blanc", "code": "PB", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin gris", "code": "PG", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin rigide", "code": "PC", "optgroup": "Re&#769sineux"},  
+		{"name": "Pin rouge", "code": "PR", "optgroup": "Re&#769sineux"},  
+		{"name": "Pruche de l&#39est", "code": "PU", "optgroup": "Re&#769sineux"},  
+		{"name": "Sapin baumier", "code": "SB", "optgroup": "Re&#769sineux"},  
+		{"name": "Thuya occidental", "code": "TO", "optgroup": "Re&#769sineux"}
+	]
+},{
+	"name": "couvert", 
+	"id": "type_couv", 
+	"title": "",  
+	"type": "select",
+	"pointer": "essence",  
+	"data": [
+		{"name": "Aucun", "code": "NA"},
+		{"name": "Feuillus", "code": "F"},
+		{"name": "Re&#769sineux", "code": "R"},	
+		{"name": "Mixte", "code": "M"}
+	]
+},{
+	"name": "etat", 
+	"id": "type_couv", 
+	"title": "",  
+	"type": "select",
+	"pointer": "essence",  
+	"data": [
+		{"name": "Groupe", "code": "G", "info": "Groupement tel que lu dans la base de donne&#769es."}, 
+		{"name": "Contient", "code": "C", "info": "Le groupement contient l'essence qu'elle que soit sa dominance."}, 
+		{"name": "Domine", "code": "D", "info": "L'essence domine le groupement."}, 
+		{"name": "Pure", "code": "P", "info": "Le groupement n'est constitue&#769 que de cette essence."}
+	]
+},{
+	"name": "depot", 
+	"id": "dep_sur", 
+	"title": "Classe de de&#769po&#770t de surface", 
+	"type": "simple", 
+	"data": [
+		{"name": "Aucun", "depth": "De&#769po&#770t e&#769pais", "code": "NA"},
+		{"name": "Sable", "depth": "De&#769po&#770t e&#769pais", "code": "2A, 2AE, 2AK, 2AT, 2B, 2BD, 2BP, 2BE, 4GS, 4P, 5S, 6S, 9A, 9S"}, 
+		{"name": "Limon", "depth": "De&#769po&#770t e&#769pais", "code": "3A, 3AC, 3AE, 3AN, 3D, 3DD, 3DA, 3DE, 4A, 4GA, 4GD, 8C"},
+		{"name": "Argile", "depth": "De&#769po&#770t e&#769pais", "code": "5A, 5G, 8G, 8P"},		
+		{"name": "Gravier", "depth": "De&#769po&#770t e&#769pais", "code": "1A, 1AA, 1AC, 1AS, 1AD, 1AB, 1B, 1BD, 1BT, 1BP, 1BC, 1BN, 1BG, 1BF, 8A"},		
+		{"name": "Roc", "depth": "De&#769po&#770t e&#769pais", "code": "6G, 8E, 8F, R, RS, RC"},		
+		{"name": "Organique", "depth": "De&#769po&#770t e&#769pais", "code": "7E, 7T"} 	
+	]
+},{
+	"name": "epaisseur", 
+	"id": "dep_sur", 
+	"title": "", 
+	"type": "select",
+	"pointer": "depot",  
+	"data": [
+		{"name": "De&#769po&#770t e&#769pais", "code": "X"}, 
+		{"name": "De&#769po&#770t d'e&#769paisseur moyenne", "code": "XY"},
+		{"name": "De&#769po&#770t mince", "code": "XM"},
+		{"name": "De&#769po&#770t tre&#768s mince", "code": "MX"},
+		{"name": "De&#769po&#770t de mince a&#768 tre&#768s mince", "code": "RX"},
+		{"name": "De&#769po&#770t tre&#768s mince ou abscent", "code": "R"}
+	]
+}]}
