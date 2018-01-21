@@ -1,0 +1,73 @@
+@media (max-width: 768px), (max-height: 600px) {
+	#pulldown { width: 100%;  left:0; height: 0;  top: 0;  z-index: 1100;}
+	#header {height: 50px !important;}
+	/* #menu_deroulant { display: none;} */
+	#pulldown-content .panel > .accordion-toggle {padding-bottom: 12px; padding-top: 12px;}
+	.img { background-image: url("../image/image/AGIR_small.png"); height:25px; width:80px; margin-top: 12px; margin-left:10px;}
+	#search-container {left: 20px; margin-top: 10px;}
+	.toggle.collapsed { margin-left: .4em; box-shadow: none; background: transparent; height: 50px;border: 0; color: #333!important;}
+	.toggle { width: 58px; margin-left: auto; position: absolute; right: 0; top: 0; height: 40px; border-bottom-right-radius: 0;}
+	.toggle .visible-collapsed *, .toggle .icon-caret-up, .toggle span[translate] {  display: none;}
+	.toggle .fa-bars{  display: inline-block; top:25px;}
+	
+	.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {  width: 200px; top:0px;}
+	#buttonGroup {  bottom: 5px;  left: 5px;} 
+	#foot {  width:250px; }
+	#gSignInWrapper{display:none;}
+	.search-bar .pull-left { margin-left: 100px; top: 2px; position:fixed;}
+	.search-bar .navbar-form {  padding: 0px 0px;  margin-top: 5px; margin-right:auto; width:80%}
+	#adress{  width: 100%;  height: 34px;}
+	/* #geocodage{  width: 60%;  height: 34px;} */
+	.input-group-btn .btn-default {  width: 40px;}
+	
+	.ol-popup {  width:230px;}
+	.rotate-north { top: 15px;  }
+	.ol-rotate {  top: 45px;  }
+	.ol-zoom {  top: 85px;}
+	.ol-full-screen { top: 150px; }
+	.ol-control button {width:20px; height:20px; }
+	.ol-touch .ol-control button { font-size: 1em;}
+	
+	#assistance {display:none;}
+	#contact {display:none;}
+	.col-xs-6{  padding-right: 5px;  padding-left: 0px;}
+}
+
+@media (min-width: 769px) and (max-width: 1000px) {
+	.search-bar .pull-left { margin-left: 15px;}
+	.navbar-form .input-group {  width: 300px;}
+	#customBtn {  width: 140px;}
+	span.buttonText {  padding-left: 10px;  padding-right: 10px;}
+	#assistance .pull-right{top:50px; right:90px; position:absolute;}
+	#contact .pull-right{top:50px; right:15px; position:absolute;}
+
+
+}
+
+/* @media (max-width: 480px) {
+	#pulldown { height: 0; top: 0; width: 100%; z-index: 1100;}
+	#pulldown .hidden-collapsed {display: inline;}
+	#pulldown .visible-collapsed {display: none;}
+	#pulldown .collapsed .hidden-collapsed {display: none;}
+	#pulldown .collapsed .visible-collapsed {display: inline;}
+	#pulldown .panel {border: 0 none; margin: 0; overflow: visible;}
+	#pulldown .panel:last-child .accordion-toggle.collapsed { border-bottom: 0 none;}
+	#pulldown .panel-body {background-color: #fff;border-top: 0 none; font-size: 12px; max-height: 400px; overflow-y: auto;}
+	#pulldown .panel-body {background-color: rgba(255, 255, 255, 0.9); font-size: 14px; max-height: 250px;}
+	#pulldown.selection-and-catalog-shown .panel-body {max-height: 250px;}
+	}
+@media (max-height: 800px) {
+	#pulldown .panel-body { max-height: 300px;}
+}
+@media (max-height: 680px) {
+	#pulldown .panel-body { max-height: 200px;}
+}
+@media (max-height: 550px) {
+	#pulldown .panel-body { max-height: 150px;}
+}
+@media (max-height: 480px) {
+	#pulldown .panel-body { max-height: 100px;}
+}
+@media (max-height: 800px) {
+	#pulldown.selection-and-catalog-shown .panel-body { max-height: 150px;}
+} */
