@@ -1,0 +1,40 @@
+LAYER
+	NAME 'IQH8'
+	STATUS on
+	TYPE POLYGON
+
+	TILEINDEX '/home/odupras/public_html/data/iqh/iqh8/tileindex/iqh8.shp'
+	TILEITEM 'LOCATION'
+
+	PROJECTION
+		'init=epsg:4326'
+	END
+
+	METADATA
+		'wms_title' 'IQH8 - Polygones forestiers'
+		'wms_srs' 'EPSG:4326 EPSG:900913 EPSG:3857'
+	END
+
+	CLASSITEM 'potential'
+	CLASS
+		NAME 'ELEVE'
+		EXPRESSION 'Eleve'
+		STYLE
+			COLOR 204 76 2
+		END
+	END
+	CLASS
+		NAME 'MOYEN'
+		EXPRESSION 'Moyen'
+		STYLE
+			COLOR 254 153 41
+		END
+	END
+	CLASS
+		NAME 'FAIBLE'
+		EXPRESSION 'Faible'
+		STYLE
+			COLOR 254 217 142
+		END
+	END
+END

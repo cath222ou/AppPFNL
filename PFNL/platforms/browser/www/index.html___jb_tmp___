@@ -124,7 +124,7 @@
 
 
 </head>
-<body>
+<body >
 <div class="wrapper"></div>
 <div id="header" class="navbar navbar-fixed-top">
 	<div id="logo" class="pull-left">
@@ -1699,15 +1699,15 @@
          * @params { ol.feature, rgba( r, g, b, o ) }
          * @return { --- }
          */
-        // function style2feature( feature, color ) {
-        //     var span = $( ".box#feature-info tr#style td#info span" );
-        //     var hex = ( color ) ? rgb2hex( color ) : rgb2hex( feature.getProperties().projectcolor );
-        //     var rgba =  hex2rbga( hex, 0.2 );
-        //     var yiq = getContrastYIQ( hex, "rgba" );
-        //
-        //     ( color ) ? feature.setProperties( { featurecolor: hex } ) : feature.setProperties( { featurecolor: null } );
-        //     span.css( "background-color", hex );
-        //     span.css( "color", yiq["fill"] );
+        function style2feature( feature, color ) {
+            var span = $( ".box#feature-info tr#style td#info span" );
+            var hex = ( color ) ? rgb2hex( color ) : rgb2hex( feature.getProperties().projectcolor );
+            var rgba =  hex2rbga( hex, 0.2 );
+            var yiq = getContrastYIQ( hex, "rgba" );
+
+            ( color ) ? feature.setProperties( { featurecolor: hex } ) : feature.setProperties( { featurecolor: null } );
+            span.css( "background-color", hex );
+            span.css( "color", yiq["fill"] );
 
         } /* style2feature() */
 
@@ -1734,33 +1734,33 @@
          * @params { hmtlNode }
          * @return { --- }
          */
-        // function getFeatureContent( elem ) {
-        //     var parent = $( elem ).parents( ".modal" );
-        //     var form = getFormContent( elem );
-        //     var results = { date: new Date().toLocaleDateString(), user: $( ".user-image" ).attr( "user" ), method: "export", type: parent.attr( "id" ).replace( "publisher-", "" ) };
-        //
-        //     for ( var i in form ) {
-        //         var key = form[i].name;
-        //         var val = form[i].value;
-        //
-        //         results[key] = val;
-        //     }
-        //
-        //     if ( results.type != "local" ) { // User can only export the original project to PostgreSQL
-        //         results["layer"] = "draw";
-        //         results["extension"] = "GeoJSON";
-        //         results["srs"] = "4326";
-        //     } else { // User can export any project on his computer
-        //         results["filename"] = layer2draw().layer;
-        //         results["layer"] = layer2draw().layer;
-        //         /*ajout Mickael - seulement 4326 pour savegarde dans fichier */
-        //         results["srs"] = "4326";
-        //     }
-        //
-        //     exportFeature( results );
-        //     parent.modal( "hide" );
-        //
-        // } /** getFeatureContent() */
+        function getFeatureContent( elem ) {
+            var parent = $( elem ).parents( ".modal" );
+            var form = getFormContent( elem );
+            var results = { date: new Date().toLocaleDateString(), user: $( ".user-image" ).attr( "user" ), method: "export", type: parent.attr( "id" ).replace( "publisher-", "" ) };
+
+            for ( var i in form ) {
+                var key = form[i].name;
+                var val = form[i].value;
+
+                results[key] = val;
+            }
+
+            if ( results.type != "local" ) { // User can only export the original project to PostgreSQL
+                results["layer"] = "draw";
+                results["extension"] = "GeoJSON";
+                results["srs"] = "4326";
+            } else { // User can export any project on his computer
+                results["filename"] = layer2draw().layer;
+                results["layer"] = layer2draw().layer;
+                /*ajout Mickael - seulement 4326 pour savegarde dans fichier */
+                results["srs"] = "4326";
+            }
+
+            exportFeature( results );
+            parent.modal( "hide" );
+
+        } /** getFeatureContent() */
 
 
         /**
@@ -1776,15 +1776,15 @@
          * @params { STRING, STRING, BOOL }
          * @return { --- }
          */
-        // function displayOption( select, name, id, bool ) {
-        //     select = $( "select#"+ select +" option[name='"+ name +"'][id='"+ id +"']" );
-        //
-        //     if ( bool ) {
-        //         select.removeAttr( "style" );
-        //     } else {
-        //         select.css( "display", "none" );
-        //     }
-        // } /* displayOption() */
+        function displayOption( select, name, id, bool ) {
+            select = $( "select#"+ select +" option[name='"+ name +"'][id='"+ id +"']" );
+
+            if ( bool ) {
+                select.removeAttr( "style" );
+            } else {
+                select.css( "display", "none" );
+            }
+        } /* displayOption() */
 
         //       /**
         //  * Get user input and send it to the specific exporting function
@@ -1829,20 +1829,20 @@
 
          */
 
-        // function evalDataTable( elem ) {
-        //     var id = $( elem ).attr( "id" );
-        //     var params = { "scrollY": "100px", "scrollCollapse": true, "autoWidth": false, "paging": false, "lengthChange": false, "searching": false, "ordering": true, "info": false, "select": true };
-        //     if ( id == "load" ) {
-        //         params.columnDefs = [ { "className": "dt-center", "width": "15%", "targets": 0 }, { "className": "dt-center", "width": "85%", "targets": 1 } ];
-        //     } else if ( id == "user" ) {
-        //         params.scrollY = "150px";
-        //         params.columnDefs = [ { "className": "dt-center", "width": "30%", "targets": 0 }, { "className": "dt-center", "width": "30%", "targets": 1 }, { "className": "dt-left", "width": "40%", "targets": 2 } ];;
-        //     }
-        //
-        //     var results = ( $.fn.dataTable.isDataTable( elem ) ) ? $( elem ).DataTable() : $( elem ).DataTable( params );
-        //
-        //     return results;
-        // } /** evalDataTable */
+        function evalDataTable( elem ) {
+            var id = $( elem ).attr( "id" );
+            var params = { "scrollY": "100px", "scrollCollapse": true, "autoWidth": false, "paging": false, "lengthChange": false, "searching": false, "ordering": true, "info": false, "select": true };
+            if ( id == "load" ) {
+                params.columnDefs = [ { "className": "dt-center", "width": "15%", "targets": 0 }, { "className": "dt-center", "width": "85%", "targets": 1 } ];
+            } else if ( id == "user" ) {
+                params.scrollY = "150px";
+                params.columnDefs = [ { "className": "dt-center", "width": "30%", "targets": 0 }, { "className": "dt-center", "width": "30%", "targets": 1 }, { "className": "dt-left", "width": "40%", "targets": 2 } ];;
+            }
+
+            var results = ( $.fn.dataTable.isDataTable( elem ) ) ? $( elem ).DataTable() : $( elem ).DataTable( params );
+
+            return results;
+        } /** evalDataTable */
 
         // /**
         //  * Create the project icon types ;
@@ -1881,13 +1881,13 @@
          * Add the load's layer to map;
          * @params { OBJECT }
          * @return { --- }
-        //  */
-        // function layer2map( data, color ) {
-        //     var layer = { type: "vector", title:[ data.name, data.id ].join("_"), source:"geojson", color: color, opacity:1, visible:true, data:data.layer, epsg: 4326 };
-        //     var layer = constructor[ layer.type ]( layer );
-        //
-        //     map.addLayer( layer );
-        // } /* layer2map() */
+         */
+        function layer2map( data, color ) {
+            var layer = { type: "vector", title:[ data.name, data.id ].join("_"), source:"geojson", color: color, opacity:1, visible:true, data:data.layer, epsg: 4326 };
+            var layer = constructor[ layer.type ]( layer );
+
+            map.addLayer( layer );
+        } /* layer2map() */
 
 
         //
@@ -2025,14 +2025,14 @@
          * @params { STRING }
          * @return { --- }
          */
-        // function zoom2layer( obj, type ) {
-        //     var coord = extent2center( obj, type );
-        //     if ( coord !== undefined ) {
-        //         if ( type == "layer" ) {
-        //             coord.type = animation2solve( coord );
-        //         }
-        //         fly2position( coord );
-        //     }
+        function zoom2layer( obj, type ) {
+            var coord = extent2center( obj, type );
+            if ( coord !== undefined ) {
+                if ( type == "layer" ) {
+                    coord.type = animation2solve( coord );
+                }
+                fly2position( coord );
+            }
         } /* zoom2layer() */
 
 
